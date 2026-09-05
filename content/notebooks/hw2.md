@@ -316,6 +316,7 @@ Define the position vector as `r = np.array([x, y, z])`, then run the code and p
 # fig.set_xlabel('x')
 # fig.set_ylabel('y')
 # fig.set_zlabel('z')
+r = np.array([x, y, z])
 fig.scatter(r[0],r[1],r[2])
 ```
 
