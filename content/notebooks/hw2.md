@@ -19,11 +19,11 @@ Total points: **100**.
 
 +++ {"editable": true}
 
-**Practicalities about  homeworks and projects**
+**Practicalities about homeworks and projects**
 
 1. You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. **Remember to write your name(s)**!
 2. Homeworks are available approximately ten days before the deadline. You should anticipate this work.
-3. How do I(we)  hand in?  You can hand in the paper and pencil exercises as a **single scanned PDF document**. For this homework this applies to exercises 1-5. Your jupyter notebook file should be converted to a **PDF** file, attached to the same PDF file as for the pencil and paper exercises.
+3. How do I/we hand in? You can submit the paper-and-pencil exercises as a **single scanned PDF document**. For this homework, this applies to exercises 1–5. Your Jupyter notebook should be converted to a **PDF** and attached to the same PDF document.
 
 +++ {"editable": true}
 
@@ -31,13 +31,13 @@ Total points: **100**.
 
 These questions expect not only an answer, but an explanation of your reasoning. 
 
-*To receive full credit, these answers should include both the underlying physics that explains your answer, but how you feel about that answer (i.e. are you confident? do you like this answer? do it unsettle you? it's ok to feel uncomfortable right now with these ideas; physics intuition is developed and often has to be resolved with our everyday experiences).*
+*To receive full credit, these answers should include both the underlying physics that explains your answer and a reflection on your reasoning (for example, whether you are confident in the answer). Physics intuition develops over time and often needs to be reconciled with everyday experience.*
 
 * 1a (2pt) Single force. Can an object affected only by a single force have zero acceleration?
 
 * 1b (2pt) Zero velocity. If you throw a ball vertically it has zero velocity at its maximum point. Does it also have zero acceleration at this point?
 
-* 1c (3pt) Acceleration of gravity. You measure the acceleration of gravity in an elevator moving at a velocity of 9.8m/s downwards. What will you measure?
+* 1c (3pt) Acceleration due to gravity. You measure the acceleration of gravity in an elevator moving downward at a constant velocity of $9.8\,\mathrm{m/s}$. What will you measure?
 
 * 1d (3pt) Air resistance. You throw a ball straight up and measure the velocity as it passes you on its way down. Will the velocity be larger, the same, or smaller if you did the same experiment in vacuum?
 
@@ -55,23 +55,22 @@ A person jumps from an airplane, falling freely for several seconds before the p
 
 * 2b (3pt)  Identify the forces acting on the parachuter and draw a free-body diagram of the parachuter after the person has pulled the cord. Include a brief discussion of any assumptions you make, motivate and justify your choices.
 
-* 2c (4pt)  Sketch the net force acting on the parachuter as a function of time, F(t). Your sketch should be qualitatively correct, indicate the axes, and show clearly which forces are acting on the parachuter before and after the person has pulled the cord. 
+* 2c (4pt) Sketch the net force acting on the parachuter as a function of time, $F(t)$. Choose and state a positive direction. Model the parachute deployment as a short transition from the pre-deployment drag force to the post-deployment drag force, and indicate the forces before and after deployment.
 
 +++ {"editable": true}
 
-### Exercise 3 (10 pt), Space shuttle with air resistance
+### Exercise 3 (10 pt), Space shuttle immediately after lift-off
 
 Useful material here to read is: Malthe-Sørenssen chapters 5.1, 5.2 and 5.3
 
-During lift-off of the space shuttle the engines provide a force of $35\times 10^{6}$ N. The mass of the shuttle is approximately
-$2\times 10^6$ kg.
+During lift-off of the space shuttle, the engines provide an upward force of $35\times 10^{6}\,\mathrm{N}$. The mass of the shuttle is approximately $2\times 10^6\,\mathrm{kg}$. Take upward as positive. Immediately after lift-off, the shuttle's speed is approximately zero, so air resistance can be neglected at that instant.
 
 * 3a (3pt) Draw a free-body diagram of the space shuttle immediately after lift-off.
 
 * 3b (3pt)  Find an expression for the acceleration of the space shuttle immediately after lift-off.
 
-Let us assume that the force from the engines is constant, and that the mass of the
-space shuttle does not change significantly over the first 20 s.
+Let us assume that the force from the engines is constant and that the mass of the
+space shuttle does not change significantly over the first 20 s. Continue to ignore air resistance for this calculation.
 * 3c (4pt) Find the velocity and position of the space shuttle after 20 s if you ignore air resistance.
 
 +++ {"editable": true}
@@ -171,7 +170,7 @@ tf = 4 #length of value to be analyzed
 dt = .001 # step sizes
 t = np.arange(0.0,tf,dt) # Creates an evenly spaced time array going from 0 to 3.999, with step sizes .001
 p = np.zeros((len(t), 2)) # Creates an empty array of [x,y] arrays (our vectors). Array size is same as the one for time.
-p[0] = [2.0,1.0] # This sets the inital position to be x = 2 and y = 1
+p[0] = [2.0,1.0] # This sets the initial position to be x = 2 and y = 1
 ```
 
 +++ {"editable": true}
@@ -228,11 +227,11 @@ Here we set up an array for $x$ and $y$ values.
 ```{code-cell} ipython3
 :editable: true
 
-for i in range(1,3999):
+for i in range(1, len(p)):
     p[i] = [i,2*i]
 # Checker cell to make sure your code is performing correctly
 c = 0
-for i in range(0,3999):
+for i in range(len(p)):
     if i == 0:
         if p[i,0] != 2.0:
             c += 1
@@ -307,7 +306,7 @@ fig.scatter(x,y,z)
 
 * 6a (8pt) How would you express $x(t)$, $y(t)$, $z(t)$ for this problem as a single vector, $\boldsymbol{r}(t)$?
 
-Then run the code and plot using the array $r$
+Define the position vector as `r = np.array([x, y, z])`, then run the code and plot using the array $r$.
 
 ```{code-cell} ipython3
 :editable: true
@@ -317,16 +316,16 @@ Then run the code and plot using the array $r$
 # fig.set_xlabel('x')
 # fig.set_ylabel('y')
 # fig.set_zlabel('z')
-# fig.scatter(r[0],r[1],r[2])
+fig.scatter(r[0],r[1],r[2])
 ```
 
 +++ {"editable": true}
 
-* 6b (8pt) What do you think the benefits and/or disadvantages are from expressing our three equations as a single array/vector? This can be both from a computational and physics stand point. Use the **Numpy** package to also print the maximum $x$, $y$ and $z$ components from $\boldsymbol{r}$.
+* 6b (8pt) What do you think the benefits and/or disadvantages are of expressing our three equations as a single array/vector? Discuss both computational and physical considerations. Use **NumPy** to print the maximum values of the $x$, $y$, and $z$ coordinates along the trajectory.
 
 Complete Exercise 4 above (Taylor exercise 1.35) before moving further. (Recall that the golf ball was hit due east at an angle $\theta$ with respect to the horizontal, and the coordinate directions are $x$ measured east, $y$ north, and $z$ vertically up.)
 
-* 6c (8pt) What is the analytical solution for our theoretical golf ball's position $\boldsymbol{r}(t)$ over time from Exercise 4?  Also what is the formula for the time $t_f$ when the golf ball hits the ground? Use this to develop a program with a function called for example Golfball that utilizes our analytical solutions. This program should take in an initial velocity and the angle $\theta$ that the golfball was hit with in degrees. It should also produce  a 3D graph of the motion. You need also to find the maximum values for $x$, $y$ and $z$.
+* 6c (8pt) What is the analytical solution for our theoretical golf ball's position $\boldsymbol{r}(t)$ over time from Exercise 4? Also find the time $t_f$ when the golf ball hits the ground. Use these results to develop a function, called `Golfball` for example, that takes an initial speed and the launch angle $\theta$ in degrees, produces a 3D graph of the motion, and finds the maximum values of $x$, $y$, and $z$ along the trajectory. State clearly how you determine each maximum.
 
 * 6d (8pt) Given initial values of $v_i = 90 m/s$, $\theta = 30^{\circ}$, what would our maximum x, y and z components be? 
 

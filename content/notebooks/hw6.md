@@ -48,25 +48,25 @@ This week's exercises focus on oscillators and how to approximate the solution t
 In both textbooks there are many nice worked out examples. 
 
 
-### Practicalities about  homeworks and projects
+### Practicalities about homeworks and projects
 
 1. You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. **Remember to write your name(s)**!
 
-2. Homeworks are available ten days  before the deadline. 
+2. Homeworks are available ten days before the deadline.
 
-3. How do I(we)  hand in?  You can hand in the paper and pencil exercises as a **single scanned PDF document**. For this homework this applies to exercises 1-5. Your jupyter notebook file should be converted to a **PDF** file, attached to the same PDF file as for the pencil and paper exercises.
+3. How do I/we hand in? You can submit the paper-and-pencil exercises as a **single scanned PDF document**. For this homework, this applies to exercises 1–5. Your Jupyter notebook should be converted to a **PDF** and attached to the same PDF document.
 
 +++
 
 ### Exercise 1 (10pt) Morse Potential as an SHO
 
-If the potential has a local minimum, we can often find SHO approximation for that potential near the local minimum. 
+If the potential has a local minimum, we can often find an SHO approximation for that potential near the local minimum.
 
 The [Morse potential](https://en.wikipedia.org/wiki/Morse_potential) is a convenient model for the potential energy of a diatomic molecule. The potential is a radial one and thus one-dimensional. It is given by,
 
 $$U(r) = A\left[ \left(e^{(R-r)/S}-1\right)^2-1\right]$$
 
-where the distance between the centers of the two atoms is $r$, and the constants $A$, $R$, and $S$ are all positive. Here $S<<R$.
+where the distance between the centers of the two atoms is $r$, and the constants $A$, $R$, and $S$ are all positive. Here $S\ll R$. Assume the moving coordinate has mass $m$.
 
 * 1a (2pt) Sketch (or plot) the potential as a function of $r$.
 * 1b (3pt) Find the equilibrium position of the potential, i.e. the position where the potential is at a minimum. We will call this $r_e$.
@@ -77,7 +77,7 @@ where the distance between the centers of the two atoms is $r$, and the constant
 
 ### Exercise 2 (10pt), Time Averaging and the SHO
 
-Time Averaging is a common tool to use with periodic systems. It also us to discuss what happens to different properties of the system over one period.
+Time averaging is a common tool for periodic systems. It allows us to discuss what happens to different properties of the system over one period.
 
 An SHO has a period $\tau$. We can find the time average of a variable $f(t)$ over one period, $\langle f \rangle$, by averaging over the period,
 
@@ -115,7 +115,7 @@ where $A$ is the amplitude, $\beta$ is the damping constant, $\omega_1 = \sqrt{\
 
 The motion decays with time, but we can still define a periodicity, $\tau_1$, which is the time between peaks in the motion.
 
-* 4a (4pt) Sketch (or plot) the motion of the oscillator as a function of time. Show that you can find $\tau_1 = 2\pi/\omega_1$ from looking at successive maxima.
+* 4a (4pt) Sketch (or plot) the motion of the oscillator as a function of time. Show that the oscillation period (the spacing of successive zero crossings, or the underlying cosine factor) is $\tau_1 = 2\pi/\omega_1$. Explain that the decaying envelope means the exact extrema of $x(t)$ are not perfectly separated by this interval.
 * 4b (3pt) Show that an equivalent definition of $\tau_1$ is twice the time between zero crossings of the motion.
 * 4c (3pt) If the damping $\beta$ is half the natural frequency ($\omega_0$), how does the amplitude of the motion decay in one period?
 
@@ -169,9 +169,9 @@ Your proposal need not be long, but it should be complete. Here are some additio
 We have built all the tools to study 1D unforced oscillators. Now you get to pick your own potential and study it. You can pick any 1D potential you like, but it should have a local minimum. Make sure it is not a driven oscillator (i.e., no explicit time dependence in the equations of motion). To earn full credit for this exercise, you must:
 
 * 6a (5pt) Present the potential and describe its origin, why it is interesting, where it comes from, etc. Educate us about it.
-* 6b (5pt) Sketch (or plot) the potential as a function of it's argument (and chosen variables) and find the equilibrium position of the potential, i.e. the position where the potential is at a minimum. 
+* 6b (5pt) Sketch (or plot) the potential as a function of its argument (and chosen variables) and find the equilibrium position of the potential, i.e. the position where the potential is at a minimum.
 * 6c (10pt) Rewrite the potential in terms of the displacement from equilibrium. Expand the potential to second order to find the effective spring constant, $k$, for the potential near the minimum. What is the frequency of small oscillations about the minimum?
-* 6d (10pt) Construct the equations of motion for the potential and solve them numerically. Choose initial conditions and parameters that give oscillatory motion. Note it doesn't have to be SHO (In fact, it probably won't be). Plot the position as a function of time. Make sure we can see the oscillations.
+* 6d (10pt) Construct the equations of motion for the potential and solve them numerically. Choose initial conditions and parameters that give oscillatory motion. It does not have to be an SHO; in fact, it probably will not be. Plot the position as a function of time. Make sure we can see the oscillations.
 * 6e (10pt) Plot the phase diagram of the trajectory (you don't have to produce a phase diagram, but just plot the trajectory in phase space). What does the phase diagram tell you about the motion?
 * 6f (10pt) Find the period of your motion. Here you might have to make some definitions of what periodicity means for your potential.
 
@@ -204,26 +204,3 @@ We have built all the tools to study 1D unforced oscillators. Now you get to pic
 
    $$ V(x) = -\frac{\mu}{2} x^2 + \frac{\lambda}{4} x^4 $$
    where $\mu$ and $\lambda$ are positive constants. This system exhibits bistability with two stable equilibria, leading to interesting nonlinear dynamics and potential oscillations between the wells under certain conditions.
-
-+++ {"editable": true}
-
-### Extra Credit - Integrating Classwork With Research
-
-This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
-In order to earn all points you must:
-
-1. Attend an MSU research talk (recommended research oriented Clubs is  provided below)
-
-2. Summarize the talk using at least 150 words
-
-3. Turn in the summary along with your Homework.
-
-Approved talks:
-Talks given by researchers through the following clubs:
-* Research and Idea Sharing Enterprise (RAISE)​: Meets Wednesday Nights Society for Physics Students (SPS)​: Meets Monday Nights
-
-* Astronomy Club​: Meets Monday Nights
-
-* Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
-
-+++

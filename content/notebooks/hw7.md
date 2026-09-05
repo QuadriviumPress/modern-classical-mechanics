@@ -36,7 +36,7 @@ plt.style.use('seaborn-v0_8-colorblind')
 
 ## Exercise 1 (10pt) Where does the energy go?
 
-The damped harmonic oscillator is described by the equation of motion is:
+The damped harmonic oscillator is described by the equation of motion:
 
 $$m\ddot{x} + b\dot{x} + kx = 0$$
 
@@ -46,9 +46,9 @@ The damping term ($F_{damp} = - b\dot{x}$) models the dissipative forces acting 
 
 $$E = \frac{1}{2}m\dot{x}^2 + \frac{1}{2}kx^2.$$
 
-* 1a (3pt). What is the energy per unit time dissipated by the damping force?
-* 1b (4pt). Take the time derivative of the total energy and show that it is equal (in magnitude) to the energy dissipated by the damping force.
-* 1c (3pt). What is the sign relationship between the energy dissipated by the damping force and the time derivative of the total energy?
+* 1a (3pt). What is the power delivered by the damping force? Distinguish this signed quantity from the positive rate at which mechanical energy is dissipated.
+* 1b (4pt). Take the time derivative of the total energy and show that it equals the signed power delivered by the damping force.
+* 1c (3pt). What is the sign relationship between the positive dissipation rate and the time derivative of the total mechanical energy?
 
 +++
 
@@ -74,7 +74,7 @@ where we have used the notation $\omega_1 = \sqrt{\omega_0^2 - \beta^2}$.
 
 ## Exercise 3 (20pt), Exploring the damped harmonic oscillator
 
-You can choose to solve this exercise using analytical, or graphical methods. Should you decide to use numerical methods, you should make sure to use a method that conserves energy. However, this exercise does not need to be solved numerically as closed form solutions exist.
+You can choose to solve this exercise using analytical or graphical methods. Should you decide to use numerical methods, use a method that accurately reproduces the expected energy decay. Total mechanical energy is not conserved for a damped oscillator. This exercise does not need to be solved numerically because closed-form solutions exist.
 
 The solution to the simple harmonic oscillator is given by,
 
@@ -93,7 +93,7 @@ An undamped oscillator has a period $T_0 = 1.000\mathrm{s}$, but then the dampin
 
 * 3a (3pt). What is the damping coefficient $\beta$?
 * 3b (3pt). By how much does the amplitude of the oscillation decrease after 10 periods?
-* 3c (3pt). What would be able to notice more easily, the change in period or the change in amplitude?
+* 3c (3pt). Which would you notice more easily: the change in period or the change in amplitude?
 
 ### Scenario 2
 
@@ -103,7 +103,7 @@ An undamped oscillator has a period $T_0 = 1.000\mathrm{s}$. With weak damping, 
 * 3e (3pt). What is the period of the damped oscillator?
 * 3f (3pt). By how much does the amplitude of the oscillation decrease after 10 periods?
 
-* 3g (2pt). What would be able to notice more easily, the change in period or the change in amplitude?
+* 3g (2pt). Which would you notice more easily: the change in period or the change in amplitude?
 
 +++
 
@@ -128,14 +128,14 @@ We solve this equation for sinusoidal driving forces, $f(t) = f_0\cos(\omega t)$
 We have written a numerical solver for the damped undriven oscillator; it's similar to the prior codes we've used. Your task is to modify the code to include a driving force. We have used the second order Runge-Kutta method to solve the equation of motion. You can use the code as a starting point for the damped driven oscillator. Notice we also call the code in the next cell.
 
 ```{code-cell} ipython3
-def ddho(y, t, omega_0, beta):
+def ddho(y, t, omega_0, beta, F0=0.0, omega=0.0, phase=0.0):
     """
     Function to compute derivatives based on the damped driven oscillator model.
-    Notice the driving force is included but zero.
+    The driving force is included through F0*cos(omega*t + phase).
     """
     x, v = y
     dxdt = v
-    dvdt = -2 * beta * v - omega_0**2 * x
+    dvdt = -2 * beta * v - omega_0**2 * x + F0 * np.cos(omega * t + phase)
     return np.array([dxdt, dvdt])
 
 
@@ -156,8 +156,8 @@ def rk2_step(y, t, dt, omega_0, beta, F0=1.0, omega=10, phase=0.0):
     Returns:
     - y_next: state at time step dt [position, velocity].
     """
-    k1 = ddho(y, t, omega_0, beta)
-    k2 = ddho(y + 0.5 * k1 * dt, t + 0.5 * dt, omega_0, beta)
+    k1 = ddho(y, t, omega_0, beta, F0, omega, phase)
+    k2 = ddho(y + 0.5 * k1 * dt, t + 0.5 * dt, omega_0, beta, F0, omega, phase)
     y_next = y + k2 * dt
     
     return y_next
@@ -170,15 +170,15 @@ dt = 0.01  # time step
 omega_0 = 10  # natural frequency
 beta = 0.1  # damping coefficient
 
-steps = int(T / dt)
+steps = int(T / dt) + 1
 t = np.linspace(0, T, steps)
 y = np.zeros((steps, 2))  # Array to hold position and velocity
 
 ## Initial conditions
-y[0] = [0.25, 0.0]  # x=1, v=0
+y[0] = [0.25, 0.0]  # x=0.25, v=0
 
 for i in range(steps - 1):
-    y[i + 1] = rk2_step(y[i], t[i], dt, omega_0, beta)
+    y[i + 1] = rk2_step(y[i], t[i], dt, omega_0, beta, F0=1.0, omega=10.0)
 
 oscillator = pd.DataFrame(y, columns=["Position", "Velocity"])
 oscillator["Time"] = t
@@ -202,29 +202,6 @@ The first annual report is often a minimal progress report. How much can you say
 But, you can say what you have done, what you are planning to do, what you have learned so far, and what changes you have to make. This is the purpose of this exercise.
 
 * 5a (5 pts). Review your project proposal. What have you been able to accomplish so far? What were you unable to do in the time you had? Be honest in your evaluation of your progress. You will not be penalized for not reaching your milestones. What does that mean you need to prioritize in the coming weeks? (at least 250 words)
-* 5b (5 pts). What problems did you encounter in doing you research? What questions came up and how did you resolve them? Are there any unresolved questions? (at least 250 words)
-* 5c (5 pts). Provide an artifact from your project. This could be a plot, a code snippet, a data set, or a figure. Explain what this artifact is and how it fits into your project. (at least 100-200 words)
-* 5d (5 pts). Update your project timeline and milestones. How will you adjust your timeline to account for the work you have done and the work you have left to do? (at least 100-200 words)
-
-+++ {"editable": true}
-
-## Extra Credit - Integrating Classwork With Research
-
-This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
-In order to earn all points you must:
-
-1. Attend an MSU research talk (recommended research oriented Clubs is  provided below)
-
-2. Summarize the talk using at least 150 words
-
-3. Turn in the summary along with your Homework.
-
-Approved talks:
-Talks given by researchers through the following clubs:
-* Research and Idea Sharing Enterprise (RAISE)​: Meets Wednesday Nights Society for Physics Students (SPS)​: Meets Monday Nights
-
-* Astronomy Club​: Meets Monday Nights
-
-* Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
-
-+++
+* 5b (5 pts). What problems did you encounter in doing your research? What questions came up and how did you resolve them? Are there any unresolved questions? (at least 250 words)
+* 5c (5 pts). Provide an artifact from your project. This could be a plot, a code snippet, a data set, or a figure. Explain what this artifact is and how it fits into your project. (100–200 words)
+* 5d (5 pts). Update your project timeline and milestones. How will you adjust your timeline to account for the work you have done and the work you have left to do? (100–200 words)

@@ -83,9 +83,9 @@ We will eventually learn how to solve for equations of motion for generalized co
 
 A bead follows the curved path above, you can imagine it is a wire or a track, and the bead is constrained to move along the path. The bead's position is described by its distance along the path, $s$ as measured from the origin $O$. The $\hat{s}$ direction is always along the path - that is, it's always tangent to the wire.
 
-* 3a (3pt) Let's start by writing the velocity $\mathbf{v}$ in terms of its Cartesian components (e.g., $dx/dt$) and find it's magnitude ($v$). How does this approach seem given the shape of the wire? Do you think we have chosen a good set of coordinates?
+* 3a (3pt) Let's start by writing the velocity $\mathbf{v}$ in terms of its Cartesian components (e.g., $dx/dt$) and find its magnitude ($v$). How does this approach seem given the shape of the wire? Do you think we have chosen a good set of coordinates?
 
-* 3b (4pt) Instead, consider the coordinate system $\langle \hat{s}, \hat{s}_{\perp}\rangle$. That is the the direction along the path and the direction perpendicular to it (assume we are solving this in a plane for the moment). Use this coordinate system to show that bead's speed is given by $v=\dot{s}$, that is there is no dependence of the speed on the $\hat{s}_{\perp}$ component of $\vec{v}$. How might this be a better choice?
+* 3b (4pt) Instead, consider the coordinate system $\langle \hat{s}, \hat{s}_{\perp}\rangle$. These are the directions along the path and perpendicular to it (assume we are solving this in a plane for the moment). Use this coordinate system to show that the bead's speed is given by $v=\dot{s}$, with no dependence on the $\hat{s}_{\perp}$ component of $\vec{v}$. How might this be a better choice?
 
 +++
 
@@ -94,9 +94,9 @@ A bead follows the curved path above, you can imagine it is a wire or a track, a
 
 +++
 
-There is a force due to the wire ($\mathbf{F}_w$) that ensures the bead stays on the path. It is not in the direction of the path (i.e., friction), only perpendicular to the wire. Assume all other forces are conservative (i.e., can be derived from a generic potential $-\nabla U$). 
+There is a force due to the wire ($\mathbf{F}_w$) that ensures the bead stays on the path. It is not in the direction of the path (unlike friction); it is perpendicular to the wire. Assume all other forces are conservative (i.e., can be derived from a generic potential $-\nabla U$).
 
-* 3d (4pt) Show that the tangential component of the net force due to the wire is $-\frac{dU}{ds}$.
+* 3d (4pt) Show that the tangential component of the conservative force is $-\frac{dU}{ds}$. Explain why the wire force has zero tangential component.
 
 This 1D concept extends to multiple dimensions and can help us understand the Lagrangian method of solving for the equations of motion.
 
@@ -107,7 +107,7 @@ We can calculate the projection for a generic potential in a particular Cartesia
 
 $$\nabla U(\vec{r}) \cdot \hat{x} = \langle \dfrac{dU(\vec{r})}{dx}, \dfrac{dU(\vec{r})}{dy}, \dfrac{dU(\vec{r})}{dz} \rangle \cdot \langle 1,0,0 \rangle = \dfrac{dU(\vec{r})}{dx}$$
 
-Ultimately, the projection is the what the potential changes with respect to the projection direction.
+Ultimately, the projection describes how the potential changes with respect to the chosen direction.
 ```
 
 +++ {"editable": true}
@@ -330,26 +330,3 @@ plt.legend();
 
 
 * 6f (15pt) Using your the integrator of your choosing, find numerical solutions for a given choice of initial conditions for each of the examples in exercise 5. Plot the phase diagram and the numerically computed trajectory on the phase diagram. See the example below for the simple harmonic oscillator. 
-
-+++ {"editable": true}
-
-## Extra Credit - Integrating Classwork With Research
-
-This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
-In order to earn all points you must:
-
-1. Attend an MSU research talk (recommended research oriented Clubs is  provided below)
-
-2. Summarize the talk using at least 150 words
-
-3. Turn in the summary along with your Homework.
-
-Approved talks:
-Talks given by researchers through the following clubs:
-* Research and Idea Sharing Enterprise (RAISE)​: Meets Wednesday Nights Society for Physics Students (SPS)​: Meets Monday Nights
-
-* Astronomy Club​: Meets Monday Nights
-
-* Facility For Rare Isotope Beam (FRIB) Seminars: ​Occur multiple times a week
-
-+++

@@ -43,13 +43,13 @@ There are several pedagogical aims we have in mind with these exercises:
 
 2. Analyze the results and ask yourself whether they make sense or not;
 
-3. Finding analytical solutions to problems if possible and compare these with numerical results. This teaches us also how to understand errors in numerical calculations;
+3. Find analytical solutions to problems when possible and compare them with numerical results. This also teaches us how to understand errors in numerical calculations;
 
 4. Being able to solve (in mechanics these are the most common types of equations) numerically ordinary differential equations and compare the solutions where possible with analytical solutions;
 
 5. Getting used to studying physical problems using all possible tools, from paper and pencil to numerical solutions;
 
-6. Then analyze the results and ask yourself whether they make sense or not.
+6. Analyze the results and ask yourself whether they make sense.
 
 The above steps outline important elements of our understanding of the
 scientific method. Furthermore, there are also explicit coding skills
@@ -78,9 +78,9 @@ And hopefully you can reuse many of the above solvers in other courses (our idea
 
 1. You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. **Remember to write your name(s)**!
 
-2. Homeworks are available ten days  before the deadline. 
+2. Homeworks are available ten days before the deadline.
 
-3. How do I(we)  hand in?  You can hand in the paper and pencil exercises as a **single scanned PDF document**. For this homework this applies to exercises 1-5. Your jupyter notebook file should be converted to a **PDF** file, attached to the same PDF file as for the pencil and paper exercises.
+3. How do I/we hand in? You can submit the paper-and-pencil exercises as a **single scanned PDF document**. For this homework, this applies to exercises 1–5. Your Jupyter notebook should be converted to a **PDF** and attached to the same PDF document.
 
 +++ {"editable": true}
 
@@ -134,7 +134,7 @@ $$v_y(t) = v_{ter}(1-e^{-t/\tau}).$$
 
 * 3a (4pt) At first, the object will be moving slowly. Show that we can approximate this expression in that interval. We should find that $v_y = gt$ -- the standard result for free fall in vacuum. Demonstrate this. 
 * 3b (3pt) What is the next term, $O(t^2)$, in the expansion? What is the physical meaning of this term?
-* 3c (4pt) The position of the object is given by: $y(t) = v_{ter}t + (v_{y0}-v_{ter})\tau(1-e^{-t/\tau})$. Show that this reduces to the standard result $y = \frac{1}{2}gt^2$ when $v_{y0} = 0$. What is the small parameter in your expansions in all cases?
+* 3c (4pt) The position of the object, measured positive downward, is given by: $y(t) = v_{ter}t + (v_{y0}-v_{ter})\tau(1-e^{-t/\tau})$. Show that this reduces to the standard result $y = \frac{1}{2}gt^2$ when $v_{y0} = 0$. What is the small parameter in your expansions in all cases?
 
 +++ {"editable": true}
 
@@ -180,7 +180,7 @@ $\vec{v}_0$ at time $t=t_0$. We assume the air resistance is proportional to the
 Due to the specific velocity dependence, we cannot find an analytical solution for motion in the $x$ and $y$ directions, see the discussion in Taylor after eq. (2.61).
 ```
 
-In order to find an analytical solution we need to assume that the object is falling in the $y$-direction (negative direction) only. 
+In order to find an analytical solution we need to assume that the object is falling only in the $y$-direction, with downward chosen as positive for this one-dimensional subproblem.
 
 The position of the ball as function of time is  $\vec{r}(t)$ where $t$ is time.
  The position is measured with respect to a coordinate system with origin at the floor.
@@ -212,7 +212,7 @@ time will be used to compare with the numerical results in exercise 6.
 
 * 5a (3pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the equation of motion for the falling ball. **Do not limit to 1D yet!**
 
-* 5b (4pt) Assume now that the object is falling only in the $y$-direction (negative direction). Integrate the equation of motion from an initial time $t_0$ to a final time $t$ and find the velocity. Assume it is dropped from rest to simplify the mathematics.  In Taylor equations (2.52) to (2.58) you will find a very good discussion of this.
+* 5b (4pt) Assume now that the object is falling only in the $y$-direction and take downward as positive for this subproblem. Integrate the equation of motion from an initial time $t_0$ to a final time $t$ and find the velocity. Assume it is dropped from rest to simplify the mathematics. In Taylor equations (2.52) to (2.58) you will find a very good discussion of this.
 
 * 5c (3pt) Find thereafter the position as function of time starting with an initial time $t_0$. Find the time it takes to hit the floor.  Here you will find it convenient to set the initial velocity in the $y$-direction to zero. Taylor equations (2.52)-(2.58) should contain all relevant information for solving this part as well.
 
@@ -283,7 +283,8 @@ If we ignore the $f''$ term and higher derivatives, we obtain
 $f(t+\Delta t) \approx f(t) + (\Delta t)f'(t)$.
 
 This approximation is the basis of Euler's method, and the Taylor
-expansion suggests that it will have errors of $O(\Delta t^2)$.  Thus, one
+expansion shows that the local truncation error is $O(\Delta t^2)$, while the
+global error over a fixed interval is generally $O(\Delta t)$. Thus, one
 would expect it to work better, the smaller the step size $h$ that you
 use. In our case the step size is $\Delta t$. 
 
@@ -302,29 +303,3 @@ In setting up our code we need to
 * 6b (20 pt) Write a code which implements Euler's method and compute numerically and plot the position and velocity as functions of time for various values of $\Delta t$. Comment your results.
 
 * 6c (10pt) Compare your numerically obtained positions and velocities with the analytical results from exercise 5. In order to do this, you need to take out the motion in the $x$-direction. Comment again your results.
-
-+++ {"editable": true}
-
-### Integrating Classwork With Research
-
-This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
-In order to earn all points you must:
-
-1. Attend an MSU research talk (recommended research oriented Clubs is  provided below)
-
-2. Summarize the talk using at least 150 words
-
-3. Turn in the summary along with your Homework (Email to <caball14@msu.edu>).
-
-Approved talks:
-Talks given by researchers through the following clubs:
-
-* Society for Physics Students (SPS)​: Meets Monday Nights (alternates with Astronomy Club)
-
-* Astronomy Club​: Meets Monday Nights (alternates with SPS)
-
-* Any [physics and astronomy seminar](https://pa.msu.edu/news-events-seminars/index.aspx) of interest to you
-
-If you have any questions, consult the instructor or course materials.
-
-+++

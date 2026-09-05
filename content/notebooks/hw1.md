@@ -20,11 +20,11 @@ Total points: **100**.
 
 +++ {"editable": true}
 
-**Practicalities about  homeworks and projects**
+**Practicalities about homeworks and projects**
 
 1. You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. **Remember to write your name(s)**!
 2. Homeworks are available approximately ten days before the deadline. You should anticipate this work.
-3. How do I(we)  hand in?  You can hand in the paper and pencil exercises as a **single scanned PDF document**. For this homework this applies to exercises 1-5. Your jupyter notebook file should be converted to a **PDF** file, attached to the same PDF file as for the pencil and paper exercises.
+3. How do I/we hand in? You can submit the paper-and-pencil exercises as a **single scanned PDF document**. For this homework, this applies to exercises 1–5. Your Jupyter notebook should be converted to a **PDF** and attached to the same PDF document.
 
 +++ {"editable": true}
 
@@ -40,14 +40,14 @@ As physicists we should feel comfortable with expressions that include $\exp{(\i
 * 1a (4pt): Perform Taylor expansions in powers of $2\pi f t$ of the functions $\cos{(2\pi f t)}$ and $\sin{(2\pi f t)}$. Show your work in producing those Taylor expansions.
 * 1b (3pt): Perform a Taylor expansion of $\exp{(i2\pi f t)}$. Show your work in producing those Taylor expansions.
 * 1c (2pt): Using parts (a) and (b) here, show that $\exp{(\imath2\pi f t)}=\cos{(2\pi f t)}+\imath\sin{(2\pi f t)}$.
-* 1d (2pt): Show that $\ln{(-1)} = \imath\pi$.
+* 1d (2pt): Using the principal branch of the complex logarithm, show that $\ln{(-1)} = \imath\pi$. State the more general multivalued result as well.
 * 1e (4pt): Develop another novel mathematical relationship based on the properties you've discovered in this problem. Explain how your result connects to any of the results parts a-d.
 
 +++ {"editable": true}
 
 ## Exercise 2 (15 pt), Vector algebra
 
-As we have quickly realized, forces and motion in three dimensions are best described using vectors. Here we perform some elementary vector algebra that we wil need to have as tacit knowledge for the rest of the course. These operations are not typically taken with specific numbers, but rather with vectors in general. When we need to, we use the notation $\boldsymbol{a}=(a_x,a_y,a_z)$ for vectors in three dimensions. To get us started the first two questions below include numerical values, but the third question expects you to use the general notation.
+As we have quickly realized, forces and motion in three dimensions are best described using vectors. Here we perform some elementary vector algebra that we will need to have as tacit knowledge for the rest of the course. These operations are not typically taken with specific numbers, but rather with vectors in general. When we need to, we use the notation $\boldsymbol{a}=(a_x,a_y,a_z)$ for vectors in three dimensions. To get us started the first two questions below include numerical values, but the third question expects you to use the general notation.
 
 * 2a (4pt) One of the many uses of the scalar product is to find the angle between two given vectors. Find the angle between the vectors $\boldsymbol{a}=(1,3,9)$ and $\boldsymbol{b}=(9,3,1)$ by evaluating their scalar product.
 
@@ -77,7 +77,7 @@ The notation that we use for vectors in fairly recently developed in mathematica
 
 ## Exercise 5 (10 pt), Area of triangle and law of sines
 
-The three vectors $\boldsymbol{a}$, $\boldsymbol{b}$, and $\boldsymbol{c}$ are the three sides of a triangle *ABC*. The angles $\alpha$, $\beta$, and $\gamma$ are the angles opposite the sides $\boldsymbol{a}$, $\boldsymbol{b}$, and $\boldsymbol{c}$, respectively. as shown below.
+The three vectors $\boldsymbol{a}$, $\boldsymbol{b}$, and $\boldsymbol{c}$ are the three sides of a triangle *ABC*. The angles $\alpha$, $\beta$, and $\gamma$ are the angles opposite the sides $\boldsymbol{a}$, $\boldsymbol{b}$, and $\boldsymbol{c}$, respectively, as shown below.
 
 ![triangle](../images/activities/1.15-triangle.png)
 
@@ -165,7 +165,7 @@ Compute and print the following, and double check with your own paper and pencil
 
 * 6b (2pt)  Calculate $\boldsymbol{V}_2-\boldsymbol{V}_1$.
 
-* 6c (2pt) Calculate the dot product $\boldsymbol{V}_1\boldsymbol{V}_2$.
+* 6c (2pt) Calculate the dot product $\boldsymbol{V}_1\cdot\boldsymbol{V}_2$.
 
 * 6d (2pt) Calculate the cross product $\boldsymbol{V}_1\times\boldsymbol{V}_2$.
 
@@ -282,6 +282,6 @@ plt.show()
 
 * 6f (6pt) Plot the position as function of time
 
-* 6g (10pt) Compute thereafter the mean velocity for every interval $i$ and the total velocity (from $i=0$ to the given interval $i$) for each interval and plot these two quantities as function of time. Comment your results.
+* 6g (10pt) Compute the mean velocity for every interval $i$ and the average velocity from the start ($i=0$) to each endpoint. Plot both quantities as functions of time and comment on your results.
 
-* 6h (10pt) Finally, compute and plot the mean acceleration for each interval and the total acceleration. Again, comment your results. Can you see whether he slowed down during the last meters?
+* 6h (10pt) Finally, compute and plot the mean acceleration for each interval and the average acceleration from the start to each endpoint. Again, comment on your results. Can you determine whether he slowed down during the final 10 m?

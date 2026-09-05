@@ -45,13 +45,13 @@ a look at the posted solution (jupyter-notebook) for homework 3 (**POSTED AFTER 
 need only to change the forces at play. The numerical problem this time is based
 on your code from homework 3 and we will try to make the motion of a falling object in two dimensions more realistic by allowing to bounce up again due to a normal force from the floor.
 
-### Practicalities about  homeworks and projects
+### Practicalities about homeworks and projects
 
 1. You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. **Remember to write your name(s)**!
 
-2. Homeworks are available ten days  before the deadline. 
+2. Homeworks are available ten days before the deadline.
 
-3. How do I(we)  hand in?  You can hand in the paper and pencil exercises as a **single scanned PDF document**. For this homework this applies to exercises 1-5. Your jupyter notebook file should be converted to a **PDF** file, attached to the same PDF file as for the pencil and paper exercises.
+3. How do I/we hand in? You can submit the paper-and-pencil exercises as a **single scanned PDF document**. For this homework, this applies to exercises 1–5. Your Jupyter notebook should be converted to a **PDF** and attached to the same PDF document.
 
 +++
 
@@ -65,7 +65,7 @@ In this space, the particle experiences a force:
 
 $$\vec{F} = \langle x^2, 2xy \rangle = x^2\hat{i} + 2xy \hat{j}$$
 
-* 1a (3pt) Calculate the work done by the along path $a$, which is a straight line from $(0,0)$ to $(1,0)$, and then to $(1,1)$. *Break the path into two segments and calculate the work done along each segment separately.*
+* 1a (3pt) Calculate the work done by the force along path $a$, which is a straight line from $(0,0)$ to $(1,0)$, and then to $(1,1)$. *Break the path into two segments and calculate the work done along each segment separately.*
 * 1b (3pt) Calculate the work done by the force along path $b$, which follows the function $y = x^2$ from $(0,0)$ to $(1,1)$.
 * 1c (4pt) Calculate the work done by the force along path $c$, which is given parametrically by $x = t^3$ and $y = t^2$ from $(0,0)$ to $(1,1)$.
 * 1d (5pt) Is this force conservative? Explain your answer in at least two ways.
@@ -77,8 +77,8 @@ $$\vec{F} = \langle x^2, 2xy \rangle = x^2\hat{i} + 2xy \hat{j}$$
 A small puck rests on a fixed sphere of radius $R$. The puck is given a tiny nudge and it slides down the sphere. Using conservation of energy, we can determine the point at which the puck leaves the sphere.
 
 * 2a (3pt) Setup the problem with a sketch. Explain the setup and include any assumptions that you need to make in order to solve the problem analytically. Identify the height as a function of the polar angle, $h(\theta)$. What is the maximum possible angle $\theta$ that the puck could reach before falling off? Why?
-* 2b (2pt) Use conservation of energy to find the speed of the puck as a function of it's height. Your answer should be in terms of the polar angle, $\theta$.
-* 2c (3pt) Use Newton's Second Law to find the normal force acting on the puck as a function of it's height. Your answer should be in terms of the polar angle, $\theta$. What is the condition for the puck to leave the sphere?
+* 2b (2pt) Use conservation of energy to find the speed of the puck as a function of its height. Your answer should be in terms of the polar angle, $\theta$.
+* 2c (3pt) Use Newton's second law to find the normal force acting on the puck as a function of its height. Your answer should be in terms of the polar angle, $\theta$. What is the condition for the puck to leave the sphere?
 * 2d (2pt) At what angle and height does the puck leave the sphere? 
 
 +++ {"editable": true}
@@ -94,10 +94,10 @@ $$
 We can think of this potential as the energy landscape of a particle in three dimensions. That is, you can imagine a particle moving around this potential like a ball rolling around a landscape. That analogy is not perfect, but it is a good way to help us think about stability and equilibrium.
 
 * 3a (2pt) Plot this potential or sketch a plot of it. You can use perspective plots, contour plots or any other plot you find useful.
-* 3b (2pt) What are some feature you notice with this potential? What happens when you change $A$ and $a$?
+* 3b (2pt) What are some features you notice in this potential? What happens when you change $A$ and $a$? Consider both signs of $A$, or state the sign you assume.
 * 3c (2pt) Imagine a particle moving in this potential, what are some expected trajectories?
 * 3d (2pt) Do there appear to be any equilibrium points? If so, are they stable or unstable?
-* 3a (2pt) Is the resulting force conservative? Why? 
+* 3e (2pt) Is the resulting force conservative? Why?
 
 +++ {"editable": true}
 
@@ -105,13 +105,13 @@ We can think of this potential as the energy landscape of a particle in three di
 
 A particle of mass $m$ has velocity $v=\alpha/x$, where $x$ is its displacement.
 
-* 5a (5pt) Find the force $F(x)$ responsible for the motion.
+* 4a (5pt) Find the force $F(x)$ responsible for the motion. State any assumptions about the domain and direction of motion.
 
 A particle is thereafter under the influence of a force $F=-kx+kx^3/\alpha^2$, where $k$ and $\alpha$ are constants and $k$ is positive.
 
-* 5b (5pt) Determine the potential $U(x)$  and discuss the motion. It can be convenient here to make a sketch/plot of the potential as function of $x$.
+* 4b (5pt) Determine the potential $U(x)$ and discuss the motion. It can be convenient here to make a sketch/plot of the potential as a function of $x$.
 
-* 5c (5pt)  What happens when the energy of the particle is $E=(1/4)k\alpha^2$? Hint: what is the maximum value of the potential energy?
+* 4c (5pt) What happens when the energy of the particle is $E=(1/4)k\alpha^2$? Hint: what is the maximum value of the potential energy?
 
 +++
 
@@ -169,7 +169,7 @@ spring. But the normal force is zero when there is no contact. Here we
 define a simple model that allows us to include such effects in our
 models.
 
-The normal force from the floor on the ball is represented by a spring force. This
+Assume that $y$ increases upward. The normal force from the floor on the ball is represented by a spring force. This
 is a strong simplification of the actual deformation process occurring at the contact
 between the ball and the floor due to the deformation of both the ball and the floor.
 
@@ -181,21 +181,21 @@ Our model for the normal force acting on the ball is then
 +++ {"editable": true}
 
 $$
-\vec{N} = -k (R-y(t)) \vec{e}_y.
+\vec{N} = k (R-y(t)) \vec{e}_y.
 $$
 
 +++ {"editable": true}
 
 The normal force must act upward when $y < R$,
-hence the sign must be negative.
+hence the sign is positive for an upward-pointing $\vec e_y$.
 However, we must also ensure that the normal force only acts when the ball is in
-contact with the floor, otherwise the normal force is zero. The full formation of the
+contact with the floor, otherwise the normal force is zero. The full form of the
 normal force is therefore
 
 +++ {"editable": true}
 
 $$
-\vec{N} = -k (R-y(t)) \vec{e}_y,
+\vec{N} = k (R-y(t)) \vec{e}_y,
 $$
 
 +++ {"editable": true}
@@ -206,29 +206,3 @@ In the numerical calculations you can choose $R=0.1$ m and the spring constant $
 * 6a (10pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball now with the normal force as well.
 
 * 6b (30pt) Choose a large enough final time so you can study the ball bouncing up and down several times. Add the normal force and compute the height of the ball as function of time with and without air resistance. Comment your results.
-
-+++ {"editable": true}
-
-### Integrating Classwork With Research
-
-This opportunity will allow you to earn up to 5 extra credit points on a Homework per week. These points can push you above 100% or help make up for missed exercises.
-In order to earn all points you must:
-
-1. Attend an MSU research talk (recommended research oriented Clubs is  provided below)
-
-2. Summarize the talk using at least 150 words
-
-3. Turn in the summary along with your Homework.
-
-Approved talks:
-Talks given by researchers through the following clubs:
-
-* Society for Physics Students (SPS)​: Meets Monday Nights (alternates with Astronomy Club)
-
-* Astronomy Club​: Meets Monday Nights (alternates with SPS)
-
-* Any [physics and astronomy seminar](https://pa.msu.edu/news-events-seminars/index.aspx) of interest to you
-
-If you have any questions, consult the instructor or course materials.
-
-+++
