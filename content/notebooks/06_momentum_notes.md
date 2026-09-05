@@ -296,17 +296,9 @@ And thus,
 $$\dfrac{d\vec{L}_{sys}}{dt} = 0.$$
 
 ```{code-cell}
----
-vscode:
-  languageId: plaintext
----
 
 ```
 
 ```{code-cell}
----
-vscode:
-  languageId: plaintext
----
 
 ```

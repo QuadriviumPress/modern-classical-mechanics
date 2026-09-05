@@ -114,11 +114,6 @@ For more information, consult the Python support materials linked in the course 
 Here are some of the basic packages we will be using this week
 
 ```{code-cell} ipython3
----
-editable: true
-jupyter:
-  outputs_hidden: false
----
 %matplotlib inline
 
 import numpy as np 
@@ -141,11 +136,6 @@ We will be working with vectors and matrices to get you familiar with them.
 4. Print both vectors to make sure your code is working properly.
 
 ```{code-cell} ipython3
----
-editable: true
-jupyter:
-  outputs_hidden: false
----
 V1 = np.array([1,2,3])
 V2 = np.array([4,5,6])
 print("V1: ", V1)
@@ -175,11 +165,6 @@ see <https://www.pluralsight.com/guides/overview-basic-numpy-operations>.
 The following code prints the first two exercises
 
 ```{code-cell} ipython3
----
-editable: true
-jupyter:
-  outputs_hidden: false
----
 print(V1-V2)
 print(V2-V1)
 ```
@@ -189,11 +174,6 @@ print(V2-V1)
 For the dot product of V1 and V2 below we can use the **dot** function of **numpy** as follows
 
 ```{code-cell} ipython3
----
-editable: true
-jupyter:
-  outputs_hidden: false
----
 print(V1.dot(V2))
 ```
 
@@ -206,11 +186,6 @@ language we can work with them through the package numpy (which we
 have already imported)
 
 ```{code-cell} ipython3
----
-editable: true
-jupyter:
-  outputs_hidden: false
----
 M1 = np.matrix([[1,2,3],
              [4,5,6],
              [7,8,9]])
@@ -227,11 +202,6 @@ M3 = np.matrix([[9,8,7],
 Matrices can be added in the same way vectors are added in python as shown here
 
 ```{code-cell} ipython3
----
-editable: true
-jupyter:
-  outputs_hidden: false
----
 print("M1+M3: ", M1+M3)
 ```
 
@@ -263,11 +233,6 @@ meters. You may find it useful to include results at time $t=0$ as well. The pos
 The following example code may help here
 
 ```{code-cell} ipython3
----
-editable: true
-jupyter:
-  outputs_hidden: false
----
 # we just initialize time and position
 x = np.array([10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0])
 t = np.array([1.85, 2.87, 3.78, 4.65, 5.50, 6.32, 7.14, 7.96, 8.79, 9.69])

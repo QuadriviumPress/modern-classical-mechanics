@@ -138,8 +138,6 @@ This week we will:
 This material will then serve as background for the numerical part of homework 3. The first part is a simple warm-up, with hints and suggestions you can use for the code to write below.
 
 ```{code-cell} ipython3
-:editable: true
-
 %matplotlib inline
 
 # As usual, here are some useful packages we will be using. Feel free to use more and experiment as you wish.
@@ -164,8 +162,6 @@ position to be $x=2$ and $y=1$. Take a look at the code and comments
 to get an understanding of what is happening. Feel free to play around with it.
 
 ```{code-cell} ipython3
-:editable: true
-
 tf = 4 #length of value to be analyzed
 dt = .001 # step sizes
 t = np.arange(0.0,tf,dt) # Creates an evenly spaced time array going from 0 to 3.999, with step sizes .001
@@ -181,27 +177,19 @@ iteration we are looking at, while the number after the  represents
 which listed number in the array iteration we are getting back.
 
 ```{code-cell} ipython3
-:editable: true
-
 print(p[0]) # Prints the first array
 print(p[0,:]) # Same as above, these commands are interchangeable
 ```
 
 ```{code-cell} ipython3
-:editable: true
-
 print(p[3999]) # Prints the 4000th array
 ```
 
 ```{code-cell} ipython3
-:editable: true
-
 print(p[0,0]) # Prints the first value of the first array
 ```
 
 ```{code-cell} ipython3
-:editable: true
-
 print(p[0,1]) # Prints the second value of first array
 print(p[:,0]) # Prints the first value of all the arrays
 ```
@@ -211,8 +199,6 @@ print(p[:,0]) # Prints the first value of all the arrays
 Then try running this cell. Notice how it gives an error since we did not implement a third dimension into our arrays
 
 ```{code-cell} ipython3
-:editable: true
-
 #print(p[:,2])
 ```
 
@@ -225,8 +211,6 @@ That is we have $p[0] = [2,1], p[1] = [1,2], p[2] = [2,4], p[3] = [3,6], ...$
 Here we set up an array for $x$ and $y$ values.
 
 ```{code-cell} ipython3
-:editable: true
-
 for i in range(1, len(p)):
     p[i] = [i,2*i]
 # Checker cell to make sure your code is performing correctly
@@ -275,8 +259,6 @@ work with radians, so we will also be using a function from Numpy that
 converts degrees to radians.
 
 ```{code-cell} ipython3
-:editable: true
-
 tf = 2.04  # The final time to be evaluated
 dt = 0.1  # The time step size
 t = np.arange(0,tf,dt) # The time array
@@ -292,8 +274,6 @@ z = 10*t-9.81/2*t**2# Put the z equation here
 Then we plot it
 
 ```{code-cell} ipython3
-:editable: true
-
 ## Once you have entered the proper equations in the cell above, run this cell to plot in 3D
 fig = plt.axes(projection='3d')
 fig.set_xlabel('x')
@@ -309,8 +289,6 @@ fig.scatter(x,y,z)
 Define the position vector as `r = np.array([x, y, z])`, then run the code and plot using the array $r$.
 
 ```{code-cell} ipython3
-:editable: true
-
 ## Run this code to plot using our r array 
 # fig = plt.axes(projection='3d')
 # fig.set_xlabel('x')

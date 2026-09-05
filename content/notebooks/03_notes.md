@@ -352,9 +352,5 @@ $$v(t) = v_{\text{term}}\tanh\left(\dfrac{gt}{v_{\text{term}}}\right)$$
 
 
 ```{code-cell}
----
-vscode:
-  languageId: plaintext
----
 
 ```

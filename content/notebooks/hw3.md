@@ -222,7 +222,7 @@ We will use the above analytical results in our numerical calculations in exerci
 
 ## Exercise 6 (40pt), Numerical elements, solving exercise 5 numerically
 
-**This exercise should be handed in as a jupyter-notebook** at D2L. Remember to write your name(s). 
+**This exercise should be handed in as a jupyter-notebook** through the course submission system. Remember to write your name(s).
 
 Last week we:
 1. Gained more practice with plotting in Python
@@ -237,8 +237,6 @@ This week we will:
 3. Add additional forces to our model
 
 ```{code-cell}
-:editable: true
-
 %matplotlib inline
 
 # let's start by importing useful packages we are familiar with

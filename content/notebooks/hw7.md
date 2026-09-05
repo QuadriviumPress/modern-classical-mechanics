@@ -24,8 +24,6 @@ doconce format html hw5.do.txt --no_mako -->
 Total points: 100
 
 ```{code-cell} ipython3
-:editable: true
-
 import numpy as np
 from math import *
 import matplotlib.pyplot as plt

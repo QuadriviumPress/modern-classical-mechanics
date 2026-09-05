@@ -339,10 +339,6 @@ $$\omega_2 = \sqrt{\omega_0^2 - 2\beta^2}$$
 We can a strong response when $\omega_0^2 \gg 2\beta^2$ or when $\omega_2 \approx \omega_0$.
 
 ```{code-cell} ipython3
----
-vscode:
-  languageId: plaintext
----
 
 ```
 
