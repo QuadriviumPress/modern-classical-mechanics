@@ -27,67 +27,67 @@ project:
         - file: content/resources.md
     - title: Week 1 — Introduction
       children:
-        - file: content/notebooks/01_start.ipynb
-        - file: content/notebooks/01_notes.ipynb
+        - file: content/notebooks/01_start.md
+        - file: content/notebooks/01_notes.md
     - title: Week 2 — Computing and mathematical preliminaries
       children:
-        - file: content/notebooks/02_start.ipynb
-        - file: content/notebooks/02_notes.ipynb
+        - file: content/notebooks/02_start.md
+        - file: content/notebooks/02_notes.md
     - title: Week 3 — Mathematical modeling
       children:
-        - file: content/notebooks/03_start.ipynb
-        - file: content/notebooks/03_notes.ipynb
+        - file: content/notebooks/03_start.md
+        - file: content/notebooks/03_notes.md
     - title: Week 4 — Equations of motion
       children:
-        - file: content/notebooks/04_start.ipynb
-        - file: content/notebooks/04_notes.ipynb
+        - file: content/notebooks/04_start.md
+        - file: content/notebooks/04_notes.md
     - title: Week 5 — Conservation laws
       children:
-        - file: content/notebooks/05_start.ipynb
-        - file: content/notebooks/05_notes.ipynb
+        - file: content/notebooks/05_start.md
+        - file: content/notebooks/05_notes.md
     - title: Week 6 — Stability, energy, and momentum
       children:
-        - file: content/notebooks/06_start.ipynb
-        - file: content/notebooks/06_notes.ipynb
-        - file: content/notebooks/06_momentum_notes.ipynb
+        - file: content/notebooks/06_start.md
+        - file: content/notebooks/06_notes.md
+        - file: content/notebooks/06_momentum_notes.md
     - title: Week 7 — Nonlinear dynamics
       children:
-        - file: content/notebooks/07_start.ipynb
-        - file: content/notebooks/07_notes.ipynb
+        - file: content/notebooks/07_start.md
+        - file: content/notebooks/07_notes.md
     - title: Week 8 — Oscillations
       children:
-        - file: content/notebooks/08_start.ipynb
-        - file: content/notebooks/08_notes.ipynb
+        - file: content/notebooks/08_start.md
+        - file: content/notebooks/08_notes.md
     - title: Week 9 — Driven oscillations and resonance
       children:
-        - file: content/notebooks/09_start.ipynb
-        - file: content/notebooks/09_notes.ipynb
+        - file: content/notebooks/09_start.md
+        - file: content/notebooks/09_notes.md
     - title: Week 10 — Chaotic dynamics
       children:
-        - file: content/notebooks/10_start.ipynb
-        - file: content/notebooks/10_notes.ipynb
+        - file: content/notebooks/10_start.md
+        - file: content/notebooks/10_notes.md
     - title: Week 11 — Calculus of variations
       children:
-        - file: content/notebooks/11_start.ipynb
-        - file: content/notebooks/11_notes.ipynb
+        - file: content/notebooks/11_start.md
+        - file: content/notebooks/11_notes.md
     - title: Week 12 — The principle of least action
       children:
-        - file: content/notebooks/12_start.ipynb
-        - file: content/notebooks/12_notes.ipynb
+        - file: content/notebooks/12_start.md
+        - file: content/notebooks/12_notes.md
     - title: Week 13 — Lagrangian mechanics
       children:
-        - file: content/notebooks/13_start.ipynb
-        - file: content/notebooks/13_notes.ipynb
+        - file: content/notebooks/13_start.md
+        - file: content/notebooks/13_notes.md
     - title: Homework
       children:
-        - file: content/notebooks/hw1.ipynb
-        - file: content/notebooks/hw2.ipynb
-        - file: content/notebooks/hw3.ipynb
-        - file: content/notebooks/hw4.ipynb
-        - file: content/notebooks/hw5.ipynb
-        - file: content/notebooks/hw6.ipynb
-        - file: content/notebooks/hw7.ipynb
-        - file: content/notebooks/hw8.ipynb
+        - file: content/notebooks/hw1.md
+        - file: content/notebooks/hw2.md
+        - file: content/notebooks/hw3.md
+        - file: content/notebooks/hw4.md
+        - file: content/notebooks/hw5.md
+        - file: content/notebooks/hw6.md
+        - file: content/notebooks/hw7.md
+        - file: content/notebooks/hw8.md
 site:
   template: book-theme
   title: Modern Classical Mechanics
