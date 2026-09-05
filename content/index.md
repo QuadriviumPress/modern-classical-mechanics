@@ -1,18 +1,23 @@
 # Welcome to Modern Classical Mechanics
 
-Modern Classical Mechanics attempts to be a modern, accessible, and interactive suite of open educational resources for teaching and learning in classical mechanics with a focus on project-based learning and computational approaches. 
+Modern Classical Mechanics is an open, computational, project-based course in classical mechanics. Rather than starting from lectures and closed-form solutions, each week pairs an activity notebook with formal notes so that students build equations of motion, simulate them numerically, and interpret the results themselves.
 
-This site is meant to serve three main purposes:
+## What's in the book
 
-1. **As a book-like resource** for students and educators, providing examples and explanations of classical mechanics concepts in a clear, accessible format. Here, the modern nature refers to using computing and project-based approaches to enhance understanding, rather than traditional lecture formats.
-2. **As a collection of activities** that can be used in the classroom or for self-study with links to relevant resources, simulations, and other materials.
-3. **As an open source project** that welcomes contributions from students, educators, and developers to improve and expand the resources available. By reproducing this kind of content in an accessible, web-based format, we aim to make it easier for anyone to learn and teach physics, regardless of their background or resources.
+The course runs 13 weeks, moving from foundations to the Lagrangian formulation:
+
+- **Weeks 1–4** — what classical mechanics is, computing as a modeling tool, the Euler method, and building equations of motion (including fluid drag).
+- **Weeks 5–6** — conservation of energy and momentum, stability, and equilibria.
+- **Weeks 7–10** — phase space and critical points, oscillators, driven oscillations and resonance, and chaotic dynamics.
+- **Weeks 11–13** — the calculus of variations, the principle of least action, and Lagrangian mechanics.
+
+Each week's **start** notebook is a hands-on activity — usually simulating a system in Python with `numpy`, `matplotlib`, and `scipy.integrate` before working out the theory — and each **notes** notebook develops the formalism, worked examples, and derivations, with Taylor's *Classical Mechanics* and Strogatz's *Nonlinear Dynamics and Chaos* as running references. Eight homework sets apply these tools to new problems. See the [Activities](activities.md) page for the full week-by-week list and [Resources](resources.md) for the texts and software behind it.
 
 ## How to Use This Site
 
-* **Students:** Use the resources, activities, and simulations to enhance your understanding of classical mechanics concepts. You can also contribute by suggesting improvements or adding new content.
-* **Educators:** Use the materials to supplement your teaching, create new activities, or adapt existing ones for your classroom. You can also contribute by sharing your own resources or providing feedback on the site.
-* **Developers:** Contribute to the project by improving the site's design, functionality, or accessibility. You can also help by adding new features or fixing bugs.
+* **Students:** Work through each week's activity notebook before its notes, run the code yourself, and use the homework sets to practice. Everything is a Jupyter notebook, so you can also download it and run it locally.
+* **Educators:** Reuse or remix any week's notebooks for your own course; the source Markdown cells are the thing to edit, and `myst.yml` controls the table of contents.
+* **Developers:** Help with the MyST build or site tooling — see [About](about.md) for the project's design principles.
 
 ## How to Contribute
 
@@ -21,4 +26,4 @@ We welcome contributions from anyone including students who want to help improve
 [![GitHub issues](https://img.shields.io/github/issues/QuadriviumPress/modern-classical-mechanics)](https://github.com/QuadriviumPress/modern-classical-mechanics/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/QuadriviumPress/modern-classical-mechanics)](https://github.com/QuadriviumPress/modern-classical-mechanics/pulls)
 
-Questions and suggestions are welcome through the project’s issue tracker or pull-request workflow.
+Questions and suggestions are welcome through the project's issue tracker or pull-request workflow.

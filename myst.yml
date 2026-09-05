@@ -26,7 +26,6 @@ project:
         - file: content/about.md
         - file: content/activities.md
         - file: content/resources.md
-        - file: content/accessibility.md
     - title: Week 1 — Introduction
       children:
         - file: content/notebooks/01_start.ipynb

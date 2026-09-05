@@ -1,6 +1,6 @@
 # About
 
-This site is intended to be a resource for teaching and learning modern classical mechanics. It is dedicated to providing accessible, interactive, and high-quality materials for students and educators. The current edition substantially revises earlier educational materials while acknowledging the students, educators, and contributors whose work helped inform them.
+Modern Classical Mechanics is a 13-week, computational, project-based course in classical mechanics, published as an open collection of Jupyter notebooks and built into a website with [MyST](https://mystmd.org/). Each week pairs a hands-on activity notebook with formal notes, moving from Newton's laws and numerical integration through conservation laws, nonlinear dynamics and chaos, to the calculus of variations and Lagrangian mechanics — see [Activities](activities.md) for the full list. The current edition substantially revises earlier educational materials while acknowledging the students, educators, and contributors whose work helped inform them.
 
 ## Pull Requests Welcome!
 
@@ -42,10 +42,6 @@ We abide the following design principles:
 1. Everything is open source and free to use, modify, and distribute.
 2. All materials will follow best guidelines for accessibility, ensuring that they are usable by everyone especially those with disabilities.
 3. Anyone can contribute to the project, whether by suggesting changes, adding new content, or improving existing materials. Pull requests are welcome!
-
-# Accessibility
-
-Accessibility is an ongoing part of this project. Read the [accessibility statement and contributor guide](accessibility.md) for current accommodations, known limitations, and ways to report a barrier.
 
 # Contributions
 
