@@ -6,8 +6,8 @@ This site is maintained by [Danny Caballero](https://dannycab.github.io/) and is
 
 We welcome contributions from anyone including students who want to help improve the site and its resources. Whether you're a student, educator, or developer, your input is valuable. 
 
-* [Create an issue](https://github.com/dannycab/modern-classical-mechanics/issues/new)
-* [Issue a pull request](https://github.com/dannycab/modern-classical-mechanics/pulls)
+* [Create an issue](https://github.com/QuadriviumPress/modern-classical-mechanics/issues/new)
+* [Issue a pull request](https://github.com/QuadriviumPress/modern-classical-mechanics/pulls)
 
 You don't need a GitHub account to create an issue, but you do need one to issue a pull request.
 
@@ -26,9 +26,12 @@ The [rising costs of textbooks](https://educationdata.org/average-cost-of-colleg
 
 The challenge of accessible materials is that they must be available to everyone in a format that is easy to use, modify, and distribute. This includes considerations for those with disabilities, different needs, and varying levels of access to technology.
 
-So, we have attempted to create a site and a build that are open, simple, and accessible. This also means that the format of the materials is available in many different forms automatically, including HTML, PDF, and Markdown, DOCX, LaTeX, and Jupyter Notebook formats.
+We have therefore made the source notebooks and the MyST web edition open,
+simple, and accessible. Readers can use the HTML site or download the original
+Jupyter notebooks, while contributors can edit the same sources that build the
+published book.
 
-Indeed, even the build process itself is open and accessible, allowing anyone to generate the site and its resources in the format they prefer. The entire site is available in a [public GitHub repository](https://github.com/dannycab/modern-classical-mechanics). It's also hosted there.
+Indeed, even the build process itself is open and accessible, allowing anyone to generate the site and its resources in the format they prefer. The entire site is available in a [public GitHub repository](https://github.com/QuadriviumPress/modern-classical-mechanics). It's also hosted there.
 
 *A note here:* Danny is not a Python developer; he has a full time job as a [physics and computational science professor](https://dannycab.github.io/)). The code is gonna be crap. 
 
@@ -75,7 +78,7 @@ We welcome contributions from anyone including students who want to help improve
 - Adding new activities or simulations
 - Improving the site's design or functionality
 
-You can contribute by creating an issue or issuing a pull request on the [GitHub repository](https://github.com/dannycab/modern-classical-mechanics).
+You can contribute by creating an issue or issuing a pull request on the [GitHub repository](https://github.com/QuadriviumPress/modern-classical-mechanics).
 
 ## Contributors
 

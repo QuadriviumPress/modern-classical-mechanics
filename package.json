@@ -1,0 +1,18 @@
+{
+  "name": "modern-classical-mechanics",
+  "private": true,
+  "packageManager": "npm@10.9.8",
+  "engines": {
+    "node": "22.x",
+    "npm": ">=10 <11"
+  },
+  "description": "MyST textbook on modern classical mechanics",
+  "scripts": {
+    "start": "myst start",
+    "build": "myst build --html",
+    "check": "myst build --html"
+  },
+  "devDependencies": {
+    "mystmd": "1.10.1"
+  }
+}

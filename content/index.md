@@ -16,10 +16,9 @@ This site is meant to serve three main purposes:
 
 ## How to Contribute
 
-We welcome contributions from anyone including students who want to help improve the site and its resources. The best way is to [create an issue](https://github.com/dannycab/modern-classical-mechanics/issues) or [issue a pull request](https://github.com/dannycab/modern-classical-mechanics/pulls) on the [GitHub repository](https://github.com/dannycab/modern-classical-mechanics). 
+We welcome contributions from anyone including students who want to help improve the site and its resources. The best way is to [create an issue](https://github.com/QuadriviumPress/modern-classical-mechanics/issues) or [issue a pull request](https://github.com/QuadriviumPress/modern-classical-mechanics/pulls) on the [GitHub repository](https://github.com/QuadriviumPress/modern-classical-mechanics).
 
-[![GitHub issues](https://img.shields.io/github/issues/dannycab/modern-classical-mechanics)](https://github.com/dannycab/modern-classical-mechanics/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/dannycab/modern-classical-mechanics)](https://github.com/dannycab/modern-classical-mechanics/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/QuadriviumPress/modern-classical-mechanics)](https://github.com/QuadriviumPress/modern-classical-mechanics/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/QuadriviumPress/modern-classical-mechanics)](https://github.com/QuadriviumPress/modern-classical-mechanics/pulls)
 
 You can also contact [Danny Caballero](https://dannycab.github.io/) directly if you have questions or suggestions.
-

@@ -1,89 +1,11 @@
-# Byte-compiled / optimized / DLL files
+node_modules/
+_build/
+.ipynb_checkpoints/
 __pycache__/
 *.py[cod]
-*$py.class
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Jupyter and notebook outputs
-.ipynb_checkpoints/
-*.nbconvert.ipynb
-*.out.ipynb
-
-# VSCode
-.vscode/
-
-# MacOS
-.DS_Store
-
-# Sphinx/Book/_build
-_build/
-docs/_build/
-
-# Virtual environments
 .venv/
 venv/
-
-# PDF, DOCX, and other build artifacts (do NOT ignore in docs/ or docs/sources/)
-*.pdf
-*.docx
-*.tex
+.DS_Store
 *.log
-*.aux
-*.out
-*.toc
-*.fdb_latexmk
-*.fls
-*.synctex.gz
-
-!docs/**/*.pdf
-!docs/**/*.docx
-!docs/**/*.md
-!docs/**/*.tex
-!docs/**/*.ipynb
-
-# Node
-node_modules/
-
-# Misc
 *.swp
 *.swo
-*.bak
-*.tmp
-
-# GitHub Actions
-.github/workflows/*.log
-
-# Ignore figures in chapters if built/copied
-chapters/figures/
-
-# Ignore Sphinx/Jupyter Book build artifacts in docs/
-docs/.buildinfo
-docs/.doctrees/
-docs/.DS_Store
-
-# Build and log directories
-_build/
-log/
-
-# ignore generated files
-_toc.yml

@@ -1,0 +1,108 @@
+version: 1
+project:
+  id: modern-classical-mechanics
+  title: Modern Classical Mechanics
+  short_title: Modern Classical Mechanics
+  subtitle: Computational and project-based approaches to classical mechanics
+  description: >-
+    An open collection of notes, activities, and computational resources for
+    learning and teaching classical mechanics.
+  authors:
+    - name: Danny Caballero
+      affiliations:
+        - institution: Michigan State University
+  license:
+    content: CC-BY-NC-4.0
+  open_access: true
+  github: QuadriviumPress/modern-classical-mechanics
+  keywords:
+    - classical mechanics
+    - computational physics
+    - nonlinear dynamics
+    - Lagrangian mechanics
+    - open textbook
+  settings:
+    output_matplotlib_strings: remove
+  toc:
+    - file: content/index.md
+    - title: Course information
+      children:
+        - file: content/about.md
+        - file: content/activities.md
+        - file: content/resources.md
+    - title: Week 1 — Introduction
+      children:
+        - file: content/notebooks/01_start.ipynb
+        - file: content/notebooks/01_notes.ipynb
+    - title: Week 2 — Computing and mathematical preliminaries
+      children:
+        - file: content/notebooks/02_start.ipynb
+        - file: content/notebooks/02_notes.ipynb
+    - title: Week 3 — Mathematical modeling
+      children:
+        - file: content/notebooks/03_start.ipynb
+        - file: content/notebooks/03_notes.ipynb
+    - title: Week 4 — Equations of motion
+      children:
+        - file: content/notebooks/04_start.ipynb
+        - file: content/notebooks/04_notes.ipynb
+    - title: Week 5 — Conservation laws
+      children:
+        - file: content/notebooks/05_start.ipynb
+        - file: content/notebooks/05_notes.ipynb
+    - title: Week 6 — Stability, energy, and momentum
+      children:
+        - file: content/notebooks/06_start.ipynb
+        - file: content/notebooks/06_notes.ipynb
+        - file: content/notebooks/06_momentum_notes.ipynb
+    - title: Week 7 — Nonlinear dynamics
+      children:
+        - file: content/notebooks/07_start.ipynb
+        - file: content/notebooks/07_notes.ipynb
+    - title: Week 8 — Oscillations
+      children:
+        - file: content/notebooks/08_start.ipynb
+        - file: content/notebooks/08_notes.ipynb
+    - title: Week 9 — Driven oscillations and resonance
+      children:
+        - file: content/notebooks/09_start.ipynb
+        - file: content/notebooks/09_notes.ipynb
+    - title: Week 10 — Chaotic dynamics
+      children:
+        - file: content/notebooks/10_start.ipynb
+        - file: content/notebooks/10_notes.ipynb
+    - title: Week 11 — Calculus of variations
+      children:
+        - file: content/notebooks/11_start.ipynb
+        - file: content/notebooks/11_notes.ipynb
+    - title: Week 12 — The principle of least action
+      children:
+        - file: content/notebooks/12_start.ipynb
+        - file: content/notebooks/12_notes.ipynb
+    - title: Week 13 — Lagrangian mechanics
+      children:
+        - file: content/notebooks/13_start.ipynb
+        - file: content/notebooks/13_notes.ipynb
+    - title: Homework
+      children:
+        - file: content/notebooks/hw1.ipynb
+        - file: content/notebooks/hw2.ipynb
+        - file: content/notebooks/hw3.ipynb
+        - file: content/notebooks/hw4.ipynb
+        - file: content/notebooks/hw5.ipynb
+        - file: content/notebooks/hw6.ipynb
+        - file: content/notebooks/hw7.ipynb
+        - file: content/notebooks/hw8.ipynb
+site:
+  template: book-theme
+  title: Modern Classical Mechanics
+  actions:
+    - title: GitHub
+      url: https://github.com/QuadriviumPress/modern-classical-mechanics
+  nav: []
+  options:
+    logo: content/images/logo.png
+    logo_alt: Modern Classical Mechanics
+    logo_text: Modern Classical Mechanics
+    logo_url: /
+    hide_authors: true
