@@ -28,4 +28,4 @@ Every activity and homework notebook runs on the standard scientific Python stac
 
 ---
 
-Have a resource that helped you understand a topic in this book? Add it here and open a pull request — see [About](about.md) for how contributions work.
+Have a resource that helped you understand a topic in this book? Add it here and open a pull request on the [GitHub repository](https://github.com/QuadriviumPress/modern-classical-mechanics/pulls).

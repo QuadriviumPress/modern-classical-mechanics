@@ -32,4 +32,4 @@ Activities live as Jupyter notebooks in [`content/notebooks/`](notebooks). To ad
 
 1. Add a new `.ipynb` file there, following the style of an existing `*_start.ipynb` notebook (a motivating question or system, then Python code that simulates or explores it).
 2. Register it in the `project.toc` list in [`myst.yml`](../myst.yml) so it appears in the site navigation.
-3. Open a pull request — see [About](about.md) for how contributions work.
+3. Open a pull request on the [GitHub repository](https://github.com/QuadriviumPress/modern-classical-mechanics/pulls).

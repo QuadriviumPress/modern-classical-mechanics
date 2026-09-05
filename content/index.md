@@ -17,7 +17,7 @@ Each week's **start** notebook is a hands-on activity — usually simulating a s
 
 * **Students:** Work through each week's activity notebook before its notes, run the code yourself, and use the homework sets to practice. Everything is a Jupyter notebook, so you can also download it and run it locally.
 * **Educators:** Reuse or remix any week's notebooks for your own course; the source Markdown cells are the thing to edit, and `myst.yml` controls the table of contents.
-* **Developers:** Help with the MyST build or site tooling — see [About](about.md) for the project's design principles.
+* **Developers:** Help with the MyST build or site tooling — see [How to Contribute](#how-to-contribute) below.
 
 ## How to Contribute
 

@@ -23,7 +23,6 @@ project:
     - file: content/index.md
     - title: Course information
       children:
-        - file: content/about.md
         - file: content/activities.md
         - file: content/resources.md
     - title: Week 1 — Introduction
