@@ -9,8 +9,8 @@
   "description": "MyST textbook on modern classical mechanics",
   "scripts": {
     "start": "myst start",
-    "build": "myst build --html --execute",
-    "check": "myst build --html --execute"
+    "build": "myst build --html --execute --strict",
+    "check": "myst build --html --execute --strict"
   },
   "devDependencies": {
     "mystmd": "1.10.1"
