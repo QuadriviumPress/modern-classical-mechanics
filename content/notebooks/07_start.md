@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 7 - Nonlinear Dynamics
+# Unit 7 - Nonlinear Dynamics
 
 We have now built enough tools to tackle some challenging physical systems that have nonlinear equations of motion. The broader field of study that deals with these systems is called [Nonlinear Dynamics](https://en.wikipedia.org/wiki/Nonlinear_system). Nonlinear dynamics or nonlinear science is the study of systems that are described by nonlinear equations. These systems are often chaotic, meaning they are highly sensitive to initial conditions. In many cases, these systems are treated using [dynamical systems theory](https://en.wikipedia.org/wiki/Dynamical_system).
 
@@ -25,7 +25,7 @@ Differential equations are the language of classical mechanics. They describe ho
 
 ### Differential equations, a tourist's guide (27 min)
 
-[![Differential Equations](../images/notes/week7/differential-equations-introduction.jpg)](https://www.youtube.com/watch?v=p_di4Zn4wz4)
+[![Differential Equations](../images/notes/unit7/differential-equations-introduction.jpg)](https://www.youtube.com/watch?v=p_di4Zn4wz4)
 
 Source: <https://www.youtube.com/watch?v=p_di4Zn4wz4>
 
@@ -41,7 +41,7 @@ We will go into the details of how to construct and develop phase portraits in c
 
 ### Drawing Phase Portraits for Nonlinear Systems (26 min)
 
-[![Drawing Phase Portraits for Nonlinear Systems](../images/notes/week7/nonlinear-system-phase-portraits.jpg)](https://www.youtube.com/watch?v=vBwyD4JJlSs)
+[![Drawing Phase Portraits for Nonlinear Systems](../images/notes/unit7/nonlinear-system-phase-portraits.jpg)](https://www.youtube.com/watch?v=vBwyD4JJlSs)
 
 Source: <https://www.youtube.com/watch?v=vBwyD4JJlSs>
 

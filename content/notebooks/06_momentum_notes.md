@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 6 - Notes: Linear and Angular Momentum
+# Unit 6 - Notes: Linear and Angular Momentum
 
 
 +++

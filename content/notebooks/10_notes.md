@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 10 - Activity: Modeling Chaotic Systems
+# Unit 10 - Activity: Modeling Chaotic Systems
 
 Chaotic systems are complex and unpredictable, often exhibiting sensitive dependence on initial conditions. This can make numerically simulating them challenging. We have used a variety of integrators and noticed that some are better than others for different problems. Here, we will use the built-in integrator from the `scipy` library to simulate our systems ([`solve_ivp`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html)).
 
@@ -278,7 +278,7 @@ Once you have simulated the Duffing oscillator, you can plot the results to visu
 
 This first set of plots should look similar to the one below.
 
-![Duffing](../images/notes/week10/first_duffing.png)
+![Duffing](../images/notes/unit10/first_duffing.png)
 
 ```{code-cell} ipython3
 ## Plot the time series and phase space
@@ -335,9 +335,9 @@ In the cells below, we scaffold some of the code to simulate the Lorenz attracto
 
 For the parameters, we will use the canonical values of $\sigma = 10$, $\rho = 28$, and $\beta = \frac{8}{3}$. Choose initial conditions of $x=1$, $y=1$, and $z=1$ and simulate for 50 time units. If you do, your solution will look like the one below.
 
-![Lorenz Time Series](../images/notes/week10/lorenz-1.png)
+![Lorenz Time Series](../images/notes/unit10/lorenz-1.png)
 
-![Lorenz Phase Space](../images/notes/week10/lorenz-2.png)
+![Lorenz Phase Space](../images/notes/unit10/lorenz-2.png)
 
 ```{code-cell} ipython3
 import numpy as np

@@ -16,7 +16,7 @@ presentation.
 
 - [`myst.yml`](myst.yml) — project metadata and table of contents
 - [`content/index.md`](content/index.md) — book landing page
-- [`content/notebooks/`](content/notebooks/) — weekly notes and homework
+- [`content/notebooks/`](content/notebooks/) — unit notes and homework
 - [`content/images/`](content/images/) — figures referenced by the notebooks
 - [`.github/workflows/`](.github/workflows/) — CI and GitHub Pages deployment
 
@@ -60,7 +60,7 @@ stays populated without every push paying for a TeX Live install.
 
 Edit the Markdown cells in the source notebooks directly. Images referenced
 from a notebook in `content/notebooks/` use paths such as
-`../images/notes/week1/figure.png`. Update the `project.toc` in `myst.yml` when
+`../images/notes/unit1/figure.png`. Update the `project.toc` in `myst.yml` when
 adding or removing pages.
 
 See the [MyST guide](https://mystmd.org/guide) for supported Markdown,

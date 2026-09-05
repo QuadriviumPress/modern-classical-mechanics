@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 9 - Driven Oscillators and Resonance
+# Unit 9 - Driven Oscillators and Resonance
 
 +++
 
@@ -23,7 +23,7 @@ Driven oscillators are a specific type of driven system, and we expect them to d
 
 Resonance is the phenomenon that caused the [collapse of the Tacoma Narrows Bridge](https://en.wikipedia.org/wiki/Tacoma_Narrows_Bridge_(1940)) in 1940. The video below describes the collapse and how the bridge was rebuilt to avoid the same problem. 
 
-[![Why the Tacoma Narrows Bridge Collapsed](../images/notes/week9/tacoma-narrows-bridge-collapse.jpg)](https://www.youtube.com/watch?v=mXTSnZgrfxM)
+[![Why the Tacoma Narrows Bridge Collapsed](../images/notes/unit9/tacoma-narrows-bridge-collapse.jpg)](https://www.youtube.com/watch?v=mXTSnZgrfxM)
 
 +++
 

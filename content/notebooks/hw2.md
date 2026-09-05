@@ -121,14 +121,14 @@ $$R_{\text{max}}=\dfrac{v_0^2}{g(1+\sin\phi)}$$
 
 **This exercise should be handed in as a jupyter-notebook** through the course submission system. Remember to write your name(s).
 
-Last week we:
+Previously, we:
 1. Analytically mapped 1D motion over some time
 
 2. Gained practice with functions
 
 3. Reviewed vectors and matrices in Python
 
-This week we will:
+In this homework, we will:
 1. Practice using Python syntax and variable manipulation
 
 2. Utilize analytical solutions to create more refined functions
@@ -238,8 +238,8 @@ else:
 You could also think of an alternative way of storing the above information. Feel free to explore how to store
 multidimensional objects. 
 
-Last week we studied Usain Bolt's 100m run and in class we studied a falling baseball. We made basic plots of the baseball
-moving in one dimension. This week we will be working with a three-dimensional variant. This will be useful for our next homeworks and numerical projects. 
+In the previous homework we studied Usain Bolt's 100m run and in class we studied a falling baseball. We made basic plots of the baseball
+moving in one dimension. Now we will be working with a three-dimensional variant. This will be useful for our next homeworks and numerical projects. 
 
 Assume we have a soccer ball moving in three dimensions with the following trajectory:
 
@@ -254,7 +254,7 @@ we write the equations into their respective labels. We fix a final time in the 
 
 Important Concept: Numpy comes with many mathematical packages, some
 of them being the trigonometric functions sine, cosine, tangent. We
-are going to utilize these this week. Additionally, these functions
+are going to utilize these here. Additionally, these functions
 work with radians, so we will also be using a function from Numpy that
 converts degrees to radians.
 

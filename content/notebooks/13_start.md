@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 13 - Lagrangian Mechanics
+# Unit 13 - Lagrangian Mechanics
 
 The Lagrangian formulation of mechanics allows us to describe the motion of a system in terms of its kinetic and potential energy, rather than its forces. This approach is particularly useful for systems with constraints or when dealing with generalized coordinates. There's a few general concepts that arise in Lagrangian mechanics that make it a powerful tool for analyzing mechanical systems.
 
@@ -49,6 +49,6 @@ An understanding of physics formulated through [Lagrangian Mechanics](https://en
 
 The video below provides an introduction to this equation and the Standard Model.
 
-[![Standard Model Lagrangian](../images/notes/week13/standard-model-lagrangian.jpg)](https://youtube.com/watch?v=PHiyQID7SBs)
+[![Standard Model Lagrangian](../images/notes/unit13/standard-model-lagrangian.jpg)](https://youtube.com/watch?v=PHiyQID7SBs)
 
 +++

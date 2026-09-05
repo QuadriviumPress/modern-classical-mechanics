@@ -11,9 +11,9 @@ kernelspec:
   name: python3
 ---
 
-# Week 4 - Notes: Equations of Motion
+# Unit 4 - Notes: Equations of Motion
 
-As you might have noticed in the last few weeks, our principal work is using models to develop equations of motion. Those equations of motion can then be analyzed, integrated, and plotted to understand the behavior of the system. This week, we will focus on the equations of motion for a few different systems. 
+As you might have noticed in the last few units, our principal work is using models to develop equations of motion. Those equations of motion can then be analyzed, integrated, and plotted to understand the behavior of the system. In this unit, we will focus on the equations of motion for a few different systems. 
 
 We will set up the equations of motion for a 2D quadratic drag system and show it's intractable analytically. Here is where our use of [Euler-Cromer integration] can get us out of trouble. We will also develop the analytical solution to the 2D drag case when the drag is linear, which will show us how to solve these problems and compare them things we know.We will then quickly introduce two additional systems that are very common "base models" for more complex systems: (1) the gravitational bound planet system (a proxy for other central force systems) and (2) the simple harmonic oscillator (a common proxy for many oscillatory systems).
 
@@ -32,7 +32,7 @@ where $D$ is the drag coefficient and $\vec{v}$ is the velocity vector. Note tha
 
 To start this analysis, we need to define a coordinate system. Below, we draw the particle at some random time with the velocity vector shown. The axes are typical: $x$ is horizontal and $y$ is vertical. The drag force is always opposite to the velocity vector. 
 
-![Coordinate System](../images/notes/week4/2d-falling-ball.png)
+![Coordinate System](../images/notes/unit4/2d-falling-ball.png)
 
 In this coordinate system, the properties of the particle are:
 
@@ -44,7 +44,7 @@ where $\hat{x}$ and $\hat{y}$ are the unit vectors in the $x$ and $y$ directions
 
 The free body diagram at the point in time shown above is shown below. You see the gravitational force pointing directly downward and the drag force pointing in the opposite direction of the velocity vector. We continue to apply our coordinate system to the forces.
 
-![Free Body Diagram](../images/notes/week4/2d-falling-ball-fbd.png)
+![Free Body Diagram](../images/notes/unit4/2d-falling-ball-fbd.png)
 
 ### Apply Newton's Second Law
 
@@ -144,7 +144,7 @@ where $\gamma$ is a proxy for the drag coefficient. The linear drag force is pro
 
 We have the same set up as before and same FBD.
 
-![Coordinate System](../images/notes/week4/2d-falling-ball.png)
+![Coordinate System](../images/notes/unit4/2d-falling-ball.png)
 
 And thus the same coordinate system. The properties of the particle are the same as above. 
 
@@ -276,11 +276,11 @@ where $G$ is the gravitational constant, $m_1$ and $m_2$ are the masses of the o
 
 But we need to be more clear about the forces and the vector relationships. Consider the figure below with the massive object at the origin and the satellite at some distance $r$ from the origin. What is the vector $\vec{r}$ that describes the location of the satellite?
 
-![Gravitational Bound System](../images/notes/week4/gravitational-orbit-vector-question.png)
+![Gravitational Bound System](../images/notes/unit4/gravitational-orbit-vector-question.png)
 
 If we move the sun from the origin a little, we can start to see what $\vec{r}$ is. The vector $\vec{r}$ is the vector from the sun to the satellite. See the figure below to see the sketch.
 
-![Gravitational Bound System](../images/notes/week4/earth-sun-relative-position-vector.png)
+![Gravitational Bound System](../images/notes/unit4/earth-sun-relative-position-vector.png)
 
 So if the location of the sun is $\vec{r}_{sun}$ and the Earth is $\vec{r}_{earth}$, then the vector $\vec{r}$ is:
 
@@ -296,7 +296,7 @@ where $M_{sun} = 2\times10^{30} \mathrm{kg}$ is the mass of the sun and $M_{eart
 
 In the figure below, we show the earth at some distance $r$ from the origin at an angle $\phi$ from the $x$-axis. This distance is about $1.5 \times 10^{11}\;\mathrm{m}$ or $1\;\mathrm{A.U.}$ ([astronomical unit](https://en.wikipedia.org/wiki/Astronomical_unit)). While not entirely obvious, the scale of these numbers allow us to assume the Sun is at the origin, and doesn't move. Although this is not a good assumption for the real solar system, the sun orbits the [barycenter](https://en.wikipedia.org/wiki/Barycenter) of the solar system, which is about 1 solar radii from the center of the sun.
 
-![Gravitational Bound System](../images/notes/week4/earth-sun-polar-coordinates.png)
+![Gravitational Bound System](../images/notes/unit4/earth-sun-polar-coordinates.png)
 
 Let's use the standard $x$ and $y$ axes to write the equations of motion. We can apply Newton's Second Law to the earth in the chosen coordinate system. 
 
@@ -384,7 +384,7 @@ $$F = -ks$$
 
 where $k$ is the spring constant and $s$ is the displacement from the equilibrium position, $x-L_0$. The quantity $L_0$ is the relaxed length of the spring. The figure below shows the typical horizontal spring system.
 
-![SHO](../images/notes/week3/sho_horizontal.png)
+![SHO](../images/notes/unit3/sho_horizontal.png)
 
 We can typically choose to measure the displacement from the equilibrium position, and write the force instead as:
 

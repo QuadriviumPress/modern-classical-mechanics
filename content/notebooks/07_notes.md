@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 7 - Notes: Critical Points; Phase Space; Trajectories
+# Unit 7 - Notes: Critical Points; Phase Space; Trajectories
 
 Thus far, we have developed an approach to solving differential equations for particular trajectories of the different classical systems that we have studied. Typically, we work to develop the equations of motion for a system using Newton's Second Law. Those equations typically have the form
 
@@ -33,7 +33,7 @@ It also seems pretty inefficient to have to solve the equations of motion for ev
 
 Finally, we often care less about particular trajectories and more about the general behavior of the system. For example, we might want to know if the system is stable, or if it will oscillate, or if it will spiral in or out. We seek to understand qualitatively different solutions to the equations of motion.
 
-In this week, we will take a step back and consider the general structure of the solutions to these equations. We will introduce the concept of a critical point, and we will discuss how the phase space of a system can be used to understand the behavior of the system.  This approach will help us broaden our understanding of the solutions to differential equations and the behavior of classical systems. It also gives us a new set of tools and ways of thinking about the systems that we have been studying.
+In this unit, we will take a step back and consider the general structure of the solutions to these equations. We will introduce the concept of a critical point, and we will discuss how the phase space of a system can be used to understand the behavior of the system.  This approach will help us broaden our understanding of the solutions to differential equations and the behavior of classical systems. It also gives us a new set of tools and ways of thinking about the systems that we have been studying.
 
 +++
 

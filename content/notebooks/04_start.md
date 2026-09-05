@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 4 - Why does fluid drag complicate things?
+# Unit 4 - Why does fluid drag complicate things?
 
 As an object moves through the fluid, the molecules of the fluid collide with the object and exert a force on it. This collision changes the momentum oof the object just a little bit. The collision does so in a random way, but the average effect of all those collisions is to exert a force on the object that is proportional to a function of the object's velocity, $F(v)$. In some cases those collisions occur such that they make an impact; other times they might approach the object more slowly and slide over it in a more frictional interaction. These two behaviors are both fluid drag, but they are different forms.
 
@@ -19,7 +19,7 @@ The first form ($F \sim v^2$) describes the behavior of things like a skydiver f
 
 This form of air resistance cannot describe the behavior of objects approaching the speed of sound in the fluid. Objects moving a speeds that high can produce [shock fronts](https://en.wikipedia.org/wiki/Shock_wave) that forces the fluid to go through abrupt changes in density, pressure, and temperature. Below is a figure of a shock front produced the nose of a jet flying at supersonic speeds.
 
-![A shock front from a supersonic jet](../images/notes/week4/shock_front.jpg)
+![A shock front from a supersonic jet](../images/notes/unit4/shock_front.jpg)
 
 The plot below compares how these two drag models grow with speed: the linear model grows steadily, while the quadratic model grows much faster at high speed, which is why it dominates for fast-moving, macroscopic objects.
 
@@ -97,7 +97,7 @@ Not all fluids are Newtonian, and some fluids have a viscosity that changes with
 
 Below is a video from [America's Test Kitchen](https://www.americastestkitchen.com/) that demonstrates the behavior of a non-Newtonian fluid. The fluid is made from cornstarch and water, and it's called [oobleck](https://en.wikipedia.org/wiki/Oobleck). 
 
-[![America's Test Kitchen Non-Newtonian Fluids](../images/notes/week4/non-newtonian-fluids.jpg)](https://youtube.com/watch?v=FrLh1GILomc)
+[![America's Test Kitchen Non-Newtonian Fluids](../images/notes/unit4/non-newtonian-fluids.jpg)](https://youtube.com/watch?v=FrLh1GILomc)
 
 Source: <https://www.youtube.com/watch?v=FrLh1GILomc>
 
@@ -113,7 +113,7 @@ A low Reynolds number flow is a flow where the viscous forces dominate the inert
 
 This video focuses on the biological aspects of the problem as the physics of low Reynolds numbers is important for understanding the motion of microorganisms. 
 
-[![Physics of Life - Life at Low Reynolds Number](../images/notes/week4/life-at-low-reynolds-number.jpg))](https://youtube.com/watch?v=gZk2bMaqs1E)
+[![Physics of Life - Life at Low Reynolds Number](../images/notes/unit4/life-at-low-reynolds-number.jpg))](https://youtube.com/watch?v=gZk2bMaqs1E)
 
 Source: <https://youtube.com/watch?v=gZk2bMaqs1E>
 
@@ -121,7 +121,7 @@ Source: <https://youtube.com/watch?v=gZk2bMaqs1E>
 
 This video is a classic from [G.I. Taylor](https://en.wikipedia.org/wiki/Geoffrey_Ingram_Taylor) who was a physicist interested in sharing the conceptual beauty of physics with the general public. He was also a pioneer in the field of fluid mechanics. In fact, Taylor's groundbreaking paper on the stability of fluid flows between two rotating cylinders set off studies into turbulence. The [Taylor-Couette flow](https://en.wikipedia.org/wiki/Taylor%E2%80%93Couette_flow) is a critical tool for [studies of turbulence](https://pubmed.ncbi.nlm.nih.gov/20365623/).
 
-[![G.I. Taylor's Low Reynolds Number Flows](../images/notes/week4/low-reynolds-number-flows.jpg)](https://youtube.com/watch?v=8Dst6V4CQME)
+[![G.I. Taylor's Low Reynolds Number Flows](../images/notes/unit4/low-reynolds-number-flows.jpg)](https://youtube.com/watch?v=8Dst6V4CQME)
 
 Source: <https://youtube.com/watch?v=8Dst6V4CQME>
 
@@ -135,7 +135,7 @@ In high Reynolds number flows, the inertial forces dominate the viscous forces. 
 
 The [von Kármán vortex street](https://en.wikipedia.org/wiki/Von_K%C3%A1rm%C3%A1n_vortex_street) is a pattern of alternating vortices that can form when a fluid flows past a "bluff" body, such as a cylinder or a sphere. The vortices are shed from the body in a regular pattern, creating a repeating pattern of alternating vortices. The von Kármán vortex street is an example of a high Reynolds number flow, and it can be used to study the behavior of turbulent flows. Below is a video of a von Kármán vortex street simulation.
 
-[![Von Karman's Vortex Street](../images/notes/week4/von-karman-vortex-street.jpg)](https://youtube.com/watch?v=f3LmjJ1N7YE)
+[![Von Karman's Vortex Street](../images/notes/unit4/von-karman-vortex-street.jpg)](https://youtube.com/watch?v=f3LmjJ1N7YE)
 
 Source: <https://youtube.com/watch?v=f3LmjJ1N7YE>
 
@@ -143,7 +143,7 @@ Source: <https://youtube.com/watch?v=f3LmjJ1N7YE>
 
 Turbulence is a major research area in science. We don't fully understand it. We are trying to determine what triggers it, how to control it, and how to predict if and when it will occur. The problem of turbulence is frequently multi-scale such that behavior at one time or length scale is not well explained or connected to another scale. Additionally, the mathematics of turbulence is very difficult. It makes for an interesting and challenging research area. Below is a video that explains the some of the physics of turbulence. The first 4 minutes or so are at least worth watching.
 
-[![Turbulence](../images/notes/week4/turbulence-explained.jpg)](https://youtube.com/watch?v=RkewD966Y90)
+[![Turbulence](../images/notes/unit4/turbulence-explained.jpg)](https://youtube.com/watch?v=RkewD966Y90)
 
 Source: <https://youtube.com/watch?v=RkewD966Y90>
 

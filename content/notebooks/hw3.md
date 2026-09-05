@@ -27,7 +27,7 @@ Total points: **100**.
 
 ## Introduction to homework 3
 
-This week's sets of classical pen and paper and computational
+This homework's sets of classical pen and paper and computational
 exercises deal with the motion of different objects under the
 influence of various forces. The relevant reading background is
 1. chapter 2 of Taylor (there are many good examples there) and
@@ -253,12 +253,12 @@ We will use the above analytical results in our numerical calculations in exerci
 
 **This exercise should be handed in as a jupyter-notebook** through the course submission system. Remember to write your name(s).
 
-Last week we:
+Previously, we:
 1. Gained more practice with plotting in Python
 
 2. Became familiar with arrays and representing vectors with such objects
 
-This week we will:
+In this homework, we will:
 1. Learn and utilize Euler's Method to find the position and the velocity
 
 2. Compare analytical and computational solutions 

@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 6 - Stability and Equilibria
+# Unit 6 - Stability and Equilibria
 
 We have shown that we can develop trajectories of different physical systems by solving the differential equations that describe them. This is a useful approach, but it often means we are focused on a single trajectory. This might be fine if all the trajectories are the same or roughly so, say like the 1D falling ball, or the simple harmonic oscillator. 
 
@@ -134,7 +134,7 @@ Above, we completed an analysis of the simplest system that we will work with. I
 
 This work we are doing to understand equations of motion, stability, and equilibrium points is foundational. Some of the most exciting physics we see today is rooted in understanding how systems move away from equilibrium, and how they respond to external driving. [Chaos theory](https://en.wikipedia.org/wiki/Chaos_theory) is a field that has grown out of understanding how systems can be very sensitive to initial conditions, and how they can exhibit complex behavior. 
 
-We will start to use these ideas from this week into next week as we build a set of additional tools like [phase space diagrams](https://en.wikipedia.org/wiki/Phase_space) and using asymptotic behavior to investigate and explain the behavior of physical systems. 
+We will start to use these ideas in this unit and the next as we build a set of additional tools like [phase space diagrams](https://en.wikipedia.org/wiki/Phase_space) and using asymptotic behavior to investigate and explain the behavior of physical systems. 
 
 To introduce some of those initial ideas here are two videos from different physics perspectives on the topic of chaos.
 
@@ -143,12 +143,12 @@ To introduce some of those initial ideas here are two videos from different phys
 
 In this video, Derek Muller uses the typical example of the Butterfly Effect to introduce the idea of chaos theory. The philosophical aspects of the butterfly effect are interesting, but not real in any physical sense. Instead, it's a metaphor for the idea that small changes in initial conditions can lead to large changes in the system. Muller contrasts our understanding of determinism with uncertainty; he introduces the concepts of sensitivity to initial conditions and discusses the idea of an attractor. 
 
-[![Chaos Theory](../images/notes/week6/butterfly-effect-and-chaotic-systems.jpg)](https://www.youtube.com/watch?v=fDek6cYijxI)
+[![Chaos Theory](../images/notes/unit6/butterfly-effect-and-chaotic-systems.jpg)](https://www.youtube.com/watch?v=fDek6cYijxI)
 
 ### University of Bristol - Chaos Theory and Randomness (8 minute video)
 
 In this video, two researchers from the University of Bristol ([Jens Marklof](https://people.maths.bris.ac.uk/~majm/) and [Henna Koivusalo](https://people.maths.bris.ac.uk/~te20281/)) discuss the idea of chaos theory from a more mathematical perspective— reminding us of the differences between randomness and chaos. The overlap between physicists and mathematicians in the study of chaos is significant. One important contribution is [Dynamical systems](https://en.wikipedia.org/wiki/Dynamical_system), which is a mathematical framework that is used to study these behaviors. The researchers who do this work are mathematicians, physicists, engineers, and computer scientists. They do experiments, but they also do a lot of mathematical modeling.
 
-[![Chaos Theory](../images/notes/week6/chaos-theory-and-randomness.jpg)](https://www.youtube.com/watch?v=5fRhasVmcUE)
+[![Chaos Theory](../images/notes/unit6/chaos-theory-and-randomness.jpg)](https://www.youtube.com/watch?v=5fRhasVmcUE)
 
 +++

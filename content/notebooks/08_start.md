@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 8 - Oscillations
+# Unit 8 - Oscillations
 
 +++
 
@@ -134,6 +134,6 @@ When oscillators couple (or influence each other), we begin to see behavior that
 
  The video below is a good introduction to the topic of synchronization and worth a watch. 
 
-[![The Surprising Secret of Synchronization](../images/notes/week8/surprising-secret-of-synchronization.jpg)](https://www.youtube.com/watch?v=t-_VPRCtiUg)
+[![The Surprising Secret of Synchronization](../images/notes/unit8/surprising-secret-of-synchronization.jpg)](https://www.youtube.com/watch?v=t-_VPRCtiUg)
 
 +++

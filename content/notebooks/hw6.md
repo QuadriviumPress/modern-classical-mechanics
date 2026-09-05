@@ -36,7 +36,7 @@ plt.style.use('seaborn-v0_8-colorblind')
 
 ## Introduction to Homework 6
 
-This week's exercises focus on oscillators and how to approximate the solution to the equations of motion using the SHO. The relevant reading background is:
+This homework's exercises focus on oscillators and how to approximate the solution to the equations of motion using the SHO. The relevant reading background is:
 1. chapter 5 of Taylor 
 
 2. chapter 6.6-6.8 of Boas
@@ -134,7 +134,7 @@ Your final project is your chance to bring all the tools we have developed to be
 
 For your final project, you may work alone, in pairs, or in groups of up to three people. The expectation for your work will be higher if you have more people in your group; your explorations will need to be more comprehensive and detailed, and your essay will be expected to be longer and more polished if you have more people in your group. You can also develop more interesting ways of presenting your work that demonstrate the creativity and depth of your explorations if you have more people in your group. If you have any questions, just ask.
 
-For this exercise, we want you to get started on planning your final project by sending us a brief proposal with a timeline. To help you, we have provided a schedule where you can see the checkpoints for your project, and when we will have a comprehensive work week. You should take advantage of the work week to make significant progress on your project; especially if there are technical aspects you are unsure about.
+For this exercise, we want you to get started on planning your final project by sending us a brief proposal with a timeline. To help you, we have provided a schedule where you can see the checkpoints for your project, and when we will have a comprehensive work period. You should take advantage of that work period to make significant progress on your project; especially if there are technical aspects you are unsure about.
 
 #### Project checkpoints
 
@@ -147,7 +147,7 @@ Your proposal should be a one to two page, single spaced, document that outlines
 1. The question you are interested in exploring. The motivation and interest to you and your group mates should be made clear. That is, motivate the question, why is it interesting?
 2. References that provide background for this work. This should include the sites, resources, and references you have consulted to get started.
 3. The approach you think you need to take to answer this question. Include the concepts and tools you plan to use to explore the question. That is, what have we developed in class that you will use to explore the question?
-4. The timeline for your project. This should include the checkpoints in the schedule above, and any additional milestones you think are important. Consider making a [Gantt chart](https://en.wikipedia.org/wiki/Gantt_chart) to help you plan your project. This is a useful tool for planning and tracking your progress. It's almost expected for proposals in science and engineering. Here, We suggest you take advantage of the work week to make significant progress on or to polish your project.
+4. The timeline for your project. This should include the checkpoints in the schedule above, and any additional milestones you think are important. Consider making a [Gantt chart](https://en.wikipedia.org/wiki/Gantt_chart) to help you plan your project. This is a useful tool for planning and tracking your progress. It's almost expected for proposals in science and engineering. Here, We suggest you take advantage of that work period to make significant progress on or to polish your project.
 
 #### Your writing
 

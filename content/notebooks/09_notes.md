@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 9 - Notes: Driven Oscillations
+# Unit 9 - Notes: Driven Oscillations
 
 We have seen that one-dimensional oscillators with only a confining potential-energy term can oscillate forever because energy is conserved. Their waveforms need not be sinusoidal, but bounded one-dimensional motions between turning points are periodic.
 
@@ -48,7 +48,7 @@ $$m\ddot{x} +b \dot{x} + k x = F(t)$$
 
 We can represent that setup in the picture below. The blue spring with spring constant $k$ is attached to a red mass $m$. There is a dashpot (damping) in green with damping coefficient $b=2m\beta$. The driving force $F(t)$ is shown in black and called "driver".
 
-![driven oscillator](../images/notes/week9/driven_oscillator.png)
+![driven oscillator](../images/notes/unit9/driven_oscillator.png)
 
 We write that differential equation as:
 
@@ -302,7 +302,7 @@ Let's allow $\beta$ to be small so that $4\beta^2 \omega^2$ is small. If we focu
 
 The second result is a [resonance](https://en.wikipedia.org/wiki/Resonance) effect. For zero damping, the amplitude is largest at the natural frequency $\omega_0$. For nonzero damping, the displacement amplitude is maximized at $\omega=\sqrt{\omega_0^2-2\beta^2}$ when this is real. Below is a sketch of the response of a driven damped harmonic oscillator.
 
-![Resonance Sketch](../images/notes/week9/resonance.png)
+![Resonance Sketch](../images/notes/unit9/resonance.png)
 
 ### Achieving Resonance
 

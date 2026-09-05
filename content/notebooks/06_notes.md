@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 6 - Notes: Stability and Energy
+# Unit 6 - Notes: Stability and Energy
 
 +++
 

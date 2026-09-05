@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 11 - Notes: The Euler-Lagrange Equation
+# Unit 11 - Notes: The Euler-Lagrange Equation
 
 As we will use it, the [Calculus of Variations](https://en.wikipedia.org/wiki/Calculus_of_variations) focuses on finding the conditions for extrema of quantities that can be expressed as an integral. This might be a very abstract concept, so we will start with a simple example.
 
@@ -305,7 +305,7 @@ Let's assume you are walking on the beach and need to get to a location in the w
 
 Consider the picture below where you can move at a speed $v_1$ on the shore and a speed $v_2$ in the water. We know that $v_1 > v_2$, so you can move faster on the shore than in the water. We aim to minimize the time it takes to reach the point $\langle x_2, y_2 \rangle$ in the water from point $\langle x_1, y_1 \rangle$ on the shore. We take the shoreline to be a line at $x = 0$. and the location we cross the shoreline is $\langle 0, y \rangle$.
 
-![Snell's Law Diagram](../images/notes/week11/snells_shore.png)
+![Snell's Law Diagram](../images/notes/unit11/snells_shore.png)
 
 Notice the angle that we approach the shoreline at, $\theta_1$, and the angle that we approach the target in the water, $\theta_2$.
 
@@ -384,13 +384,13 @@ plt.show()
 
 The [Brachistochrone problem](https://en.wikipedia.org/wiki/Brachistochrone_problem) is a classic problem in the Calculus of Variations. It asks the question: "What is the shape of the curve that a bead will follow under the influence of gravity to reach the bottom in the shortest time?"  Here's a great video from [Steven Strogatz](https://en.wikipedia.org/wiki/Steven_Strogatz) that explains the problem and its solution.
 
-[![Youtube Video on the Brachistochrone Problem](../images/notes/week11/brachistochrone-problem-video.jpg)](https://www.youtube.com/watch?v=Cld0p3a43fU)
+[![Youtube Video on the Brachistochrone Problem](../images/notes/unit11/brachistochrone-problem-video.jpg)](https://www.youtube.com/watch?v=Cld0p3a43fU)
 
 Source: <https://www.youtube.com/watch?v=Cld0p3a43fU>
 
 The setup is below, there's two points separated by a distance vertically and horizontally. What shape should we make a track so that a bead will slide down it in the shortest time?
 
-![The Brachistochrone Problem](../images/notes/week11/brachistochrone.png)
+![The Brachistochrone Problem](../images/notes/unit11/brachistochrone.png)
 
 +++
 

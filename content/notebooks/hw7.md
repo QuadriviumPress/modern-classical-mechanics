@@ -193,13 +193,13 @@ plt.legend();
 
 ## Exercise 5 (20pt), Project Check-in 1
 
-This is the first of three check-ins for your final project. Last week, you submitted a project proposal with milestones. This week, you will submit a progress report. This is common in science and engineering research. Funding agencies require an annual report to ensure the project is on track. While we are not funding you, we want this work to be a similar experience to a research project.
+This is the first of three check-ins for your final project. Previously, you submitted a project proposal with milestones. Now, you will submit a progress report. This is common in science and engineering research. Funding agencies require an annual report to ensure the project is on track. While we are not funding you, we want this work to be a similar experience to a research project.
 
 The first annual report is often a minimal progress report. How much can you say? You have only just started! 
 
 But, you can say what you have done, what you are planning to do, what you have learned so far, and what changes you have to make. This is the purpose of this exercise.
 
-* 5a (5 pts). Review your project proposal. What have you been able to accomplish so far? What were you unable to do in the time you had? Be honest in your evaluation of your progress. You will not be penalized for not reaching your milestones. What does that mean you need to prioritize in the coming weeks? (at least 250 words)
+* 5a (5 pts). Review your project proposal. What have you been able to accomplish so far? What were you unable to do in the time you had? Be honest in your evaluation of your progress. You will not be penalized for not reaching your milestones. What does that mean you need to prioritize going forward? (at least 250 words)
 * 5b (5 pts). What problems did you encounter in doing your research? What questions came up and how did you resolve them? Are there any unresolved questions? (at least 250 words)
 * 5c (5 pts). Provide an artifact from your project. This could be a plot, a code snippet, a data set, or a figure. Explain what this artifact is and how it fits into your project. (100–200 words)
 * 5d (5 pts). Update your project timeline and milestones. How will you adjust your timeline to account for the work you have done and the work you have left to do? (100–200 words)

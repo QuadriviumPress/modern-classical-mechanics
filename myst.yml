@@ -134,56 +134,56 @@ project:
       children:
         - file: content/activities.md
         - file: content/resources.md
-    - title: Week 1 — Introduction
+    - title: Unit 1 — Introduction
       children:
         - file: content/notebooks/01_start.md
         - file: content/notebooks/01_notes.md
-    - title: Week 2 — Computing and mathematical preliminaries
+    - title: Unit 2 — Computing and mathematical preliminaries
       children:
         - file: content/notebooks/02_start.md
         - file: content/notebooks/02_notes.md
-    - title: Week 3 — Mathematical modeling
+    - title: Unit 3 — Mathematical modeling
       children:
         - file: content/notebooks/03_start.md
         - file: content/notebooks/03_notes.md
-    - title: Week 4 — Equations of motion
+    - title: Unit 4 — Equations of motion
       children:
         - file: content/notebooks/04_start.md
         - file: content/notebooks/04_notes.md
-    - title: Week 5 — Conservation laws
+    - title: Unit 5 — Conservation laws
       children:
         - file: content/notebooks/05_start.md
         - file: content/notebooks/05_notes.md
-    - title: Week 6 — Stability, energy, and momentum
+    - title: Unit 6 — Stability, energy, and momentum
       children:
         - file: content/notebooks/06_start.md
         - file: content/notebooks/06_notes.md
         - file: content/notebooks/06_momentum_notes.md
-    - title: Week 7 — Nonlinear dynamics
+    - title: Unit 7 — Nonlinear dynamics
       children:
         - file: content/notebooks/07_start.md
         - file: content/notebooks/07_notes.md
-    - title: Week 8 — Oscillations
+    - title: Unit 8 — Oscillations
       children:
         - file: content/notebooks/08_start.md
         - file: content/notebooks/08_notes.md
-    - title: Week 9 — Driven oscillations and resonance
+    - title: Unit 9 — Driven oscillations and resonance
       children:
         - file: content/notebooks/09_start.md
         - file: content/notebooks/09_notes.md
-    - title: Week 10 — Chaotic dynamics
+    - title: Unit 10 — Chaotic dynamics
       children:
         - file: content/notebooks/10_start.md
         - file: content/notebooks/10_notes.md
-    - title: Week 11 — Calculus of variations
+    - title: Unit 11 — Calculus of variations
       children:
         - file: content/notebooks/11_start.md
         - file: content/notebooks/11_notes.md
-    - title: Week 12 — The principle of least action
+    - title: Unit 12 — The principle of least action
       children:
         - file: content/notebooks/12_start.md
         - file: content/notebooks/12_notes.md
-    - title: Week 13 — Lagrangian mechanics
+    - title: Unit 13 — Lagrangian mechanics
       children:
         - file: content/notebooks/13_start.md
         - file: content/notebooks/13_notes.md

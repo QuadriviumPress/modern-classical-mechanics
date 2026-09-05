@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 1 - Notes: Introduction to Classical Mechanics
+# Unit 1 - Notes: Introduction to Classical Mechanics
 
 ## How do we formulate Classical Mechanics?
 
@@ -48,7 +48,7 @@ Consider the box (mass, $m$) above on an inclined ramp (angle, $\theta$). The bo
 
 We start by drawing the [Free Body Diagram](https://en.wikipedia.org/wiki/Free_body_diagram) (FBD) of the box. 
 
-![Free Body Diagram of Box on a Inclined Ramp; the arrows label the direction of forces acting on the box](../images/notes/week1/box_fbd.png)
+![Free Body Diagram of Box on a Inclined Ramp; the arrows label the direction of forces acting on the box](../images/notes/unit1/box_fbd.png)
 
 The FBD is a diagram that shows all the forces acting on the object. In this case, the forces acting on the box are:
 - The force of gravity, $mg$, acting downwards.
@@ -132,7 +132,7 @@ Consider an object of mass $m$ falling, but it is subject to air resistance. The
 - The force of gravity/weight, $W=mg$, acting downwards.
 - The force due to air resistance, $F_{air}$, acting upwards.
 
-![Free Body Diagram of Falling Object; the arrows label the direction of forces acting on the object](../images/notes/week1/falling_object.png)
+![Free Body Diagram of Falling Object; the arrows label the direction of forces acting on the object](../images/notes/unit1/falling_object.png)
 
 Here we have chosen positive $y$ to be the downward direction. We want to predict the motion ($a$, $v$, $y$) of the object as a function of time. This is a very common problem for classical mechanics.
 

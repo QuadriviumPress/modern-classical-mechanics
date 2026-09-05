@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 12 - The Principle of Least Action
+# Unit 12 - The Principle of Least Action
 
 +++
 
@@ -27,7 +27,7 @@ This is where [Lagrangian Mechanics](https://en.wikipedia.org/wiki/Lagrangian_me
 
 The video below discusses the concept of the Principle of Least Action, which is the foundation of Lagrangian Mechanics.
 
-[![The Principle of Least Action](../images/notes/week12/principle-of-least-action.jpg)](https://youtube.com/watch?v=Q_CQDSlmboA)
+[![The Principle of Least Action](../images/notes/unit12/principle-of-least-action.jpg)](https://youtube.com/watch?v=Q_CQDSlmboA)
 
 Source: <https://youtube.com/watch?v=Q_CQDSlmboA>
 
@@ -45,7 +45,7 @@ The basic steps are:
 
 But we need practice applying these steps to get comfortable with the process. Parth G. has a lovely video below about the basics of Lagrangian Dynamics. We will do a lot of this in class and go over many examples. This video is a nice introduction to the concept.
 
-[![Introduction to Lagrangian Dynamics](../images/notes/week12/introduction-to-lagrangian-dynamics.jpg)](https://youtube.com/watch?v=KpLno70oYHE)
+[![Introduction to Lagrangian Dynamics](../images/notes/unit12/introduction-to-lagrangian-dynamics.jpg)](https://youtube.com/watch?v=KpLno70oYHE)
 
 Source: <https://youtube.com/watch?v=KpLno70oYHE>
 

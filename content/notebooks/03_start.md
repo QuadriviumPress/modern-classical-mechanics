@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 3 - What is Mathematical Modeling?
+# Unit 3 - What is Mathematical Modeling?
 
 Nature reveals itself to us through interactions. We can tell from observations that it is nature's interactions that lead to its evolution. How nature is changing and predicting how it will change in the future is the work of science. In this work, we observe nature and its interactions to make models of those observations. We aim to predict and explain our observations of nature through this building of models.
 
@@ -37,7 +37,7 @@ Modeling is the process of constructing a model. This process is often iterative
 
 Geoscientist [John Aiken](https://mnky9800n.github.io/) made this short video when he was a graduate student at Georgia Tech. John cut clips from a lecture [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman) gave. In this lecture, Feynman talks about the nature of models and the process of science.  John also interviewed different science researchers and teachers about their understanding of what a model is. 
 
-[![Thumbnail for a video about Feynman and scientific modeling](../images/notes/week3/feynman-scientific-modeling.jpg)](https://youtube.com/watch?v=dkTncoPqo5Y)
+[![Thumbnail for a video about Feynman and scientific modeling](../images/notes/unit3/feynman-scientific-modeling.jpg)](https://youtube.com/watch?v=dkTncoPqo5Y)
 
 Source: <https://www.youtube.com/watch?v=dkTncoPqo5Y>
 
@@ -49,7 +49,7 @@ Source: <https://www.youtube.com/watch?v=dkTncoPqo5Y>
 
 Feynman was a gifted communicator; his lectures are lively and conceptual. Here's the longer version of the lecture he gave on the nature of models and the process of science.
 
-[![Thumbnail for a Feynman lecture about the process of science](../images/notes/week3/feynman-process-of-science-lecture.jpg)](https://youtube.com/watch?v=EYPapE-3FRw)
+[![Thumbnail for a Feynman lecture about the process of science](../images/notes/unit3/feynman-process-of-science-lecture.jpg)](https://youtube.com/watch?v=EYPapE-3FRw)
 
 Source: <https://www.youtube.com/watch?v=EYPapE-3FRw>
 

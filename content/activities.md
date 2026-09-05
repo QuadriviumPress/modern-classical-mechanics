@@ -1,10 +1,10 @@
 # Activities
 
-Every week of the course opens with an activity notebook — a hands-on simulation or thought experiment, worked in Python, that motivates the formal notes that follow. These aren't optional extras; they're where most of the actual modeling happens. Below is the full set, grouped by topic, plus the homework sets that apply them.
+Every unit of the course opens with an activity notebook — a hands-on simulation or thought experiment, worked in Python, that motivates the formal notes that follow. These aren't optional extras; they're where most of the actual modeling happens. Below is the full set, grouped by topic, plus the homework sets that apply them.
 
-## Weekly activities
+## Unit activities
 
-| Week | Activity | What you'll do |
+| Unit | Activity | What you'll do |
 | --- | --- | --- |
 | 1 | [Overture: What is Classical Physics?](notebooks/01_start.md) | Survey where classical mechanics shows up in current research and industry. |
 | 2 | [Computing as a tool for science](notebooks/02_start.md) | Use the Euler method to discretize Newton's second law and step a trajectory forward numerically. |
@@ -20,11 +20,11 @@ Every week of the course opens with an activity notebook — a hands-on simulati
 | 12 | [The Principle of Least Action](notebooks/12_start.md) | Derive equations of motion from stationary action instead of forces. |
 | 13 | [Lagrangian Mechanics](notebooks/13_start.md) | Apply the Lagrangian formulation to a system with constraints. |
 
-Each activity has a matching **notes** notebook with the formal derivation — for example, [Week 10's notes](notebooks/10_notes.md) work through the same damped driven pendulum in more depth.
+Each activity has a matching **notes** notebook with the formal derivation — for example, [Unit 10's notes](notebooks/10_notes.md) work through the same damped driven pendulum in more depth.
 
 ## Homework
 
-Eight problem sets apply each week's tools to new systems: [Homework 1](notebooks/hw1.md), [2](notebooks/hw2.md), [3](notebooks/hw3.md), [4](notebooks/hw4.md), [5](notebooks/hw5.md), [6](notebooks/hw6.md), [7](notebooks/hw7.md), and [8](notebooks/hw8.md).
+Eight problem sets apply each unit's tools to new systems: [Homework 1](notebooks/hw1.md), [2](notebooks/hw2.md), [3](notebooks/hw3.md), [4](notebooks/hw4.md), [5](notebooks/hw5.md), [6](notebooks/hw6.md), [7](notebooks/hw7.md), and [8](notebooks/hw8.md).
 
 ## Adding an activity
 

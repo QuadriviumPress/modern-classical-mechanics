@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 2 - Notes: Mathematical Preliminaries
+# Unit 2 - Notes: Mathematical Preliminaries
 
 We need a few things to get us started with making models of classical phenomenon. A few of those topics might be familiar to you; things like vectors, and derivatives. But we'll also need to introduce some new concepts, like the concept of [Discretization](https://en.wikipedia.org/wiki/Discretization). In particular, we will introduce a powerful method for solving all forms of Differential Equations -- Euler-Cromer Integration. We start by introducing the concept of Euler Discretization, and then we'll move on to Euler-Cromer Integration later in the course.
 
@@ -143,7 +143,7 @@ As you have noticed, much of what we do in classical mechanics involves solving 
 
 The figure below shows a vector in two dimensions. 
 
-![Vector in Two Dimensions; the vector is defined by its magnitude, $A$, and its direction, $\theta$](../images/notes/week2/2dvector.png)
+![Vector in Two Dimensions; the vector is defined by its magnitude, $A$, and its direction, $\theta$](../images/notes/unit2/2dvector.png)
 
 The vector is defined by its magnitude, $A$, and its direction, $\theta$. The vector can be decomposed into two components, $A_x$ and $A_y$, in the $x$ and $y$ directions, respectively.
 
@@ -204,7 +204,7 @@ $$\vec{a} \cdot \vec{b} = |\vec{a}||\vec{b}|\cos(\phi).$$
 
 The figure below shows the relationship between the vectors and the angle.
 
-![Dot Product of Two Vectors; the dot product is the product of the magnitudes of the vectors and the cosine of the angle between them](../images/notes/week2/Dot-product.png)
+![Dot Product of Two Vectors; the dot product is the product of the magnitudes of the vectors and the cosine of the angle between them](../images/notes/unit2/Dot-product.png)
 
 Much like scalar multiplication, a dot produce is distributive:
 

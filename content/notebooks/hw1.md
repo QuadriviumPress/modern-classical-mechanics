@@ -111,7 +111,7 @@ emphasis on
 * create plots for motion in 1D space
 
 For more information, consult the Python support materials linked in the course resources.
-Here are some of the basic packages we will be using this week
+Here are some of the basic packages we will be using in this homework
 
 ```{code-cell} ipython3
 %matplotlib inline

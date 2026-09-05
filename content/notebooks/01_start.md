@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 1 - Overture: What is Classical Physics?
+# Unit 1 - Overture: What is Classical Physics?
 
 There are many different fields of physics; they are both distinct and overlapping. If we were to take a view of what kinds of physical systems that we wanted to investigate with different physics, we could organize them based on the system's size and speed of change:
 
@@ -22,7 +22,7 @@ There are many different fields of physics; they are both distinct and overlappi
 
 These are not hard and fast rules, and, in fact, we often bring physics from different spaces together to solve complex problems. For examples, the fields of [climate modeling](https://en.wikipedia.org/wiki/Climate_model), [non-linear dynamics](https://en.wikipedia.org/wiki/Nonlinear_system), [astrophysics](https://en.wikipedia.org/wiki/Astrophysics), and [particle physics](https://en.wikipedia.org/wiki/Particle_physics) use physical models and tools for each of the fields above. How we organize physics for ourselves depends on how we decide we want to look at it. However the first view where we organize the field by size and speed is a useful way to think about the different kinds of physics that we have developed thus far. The figure below shows how we might organize physics by size and speed.
 
-![Physics by size and speed](../images/notes/week1/modern-physics-fields.png)
+![Physics by size and speed](../images/notes/unit1/modern-physics-fields.png)
 
 *Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Modernphysicsfields.svg)*
 
@@ -70,7 +70,7 @@ While it might appear there's little room for using Classical Mechanics in resea
 [Researchers at Los Alamos National Lab](https://www.lanl.gov/org/ddste/aldsc/theoretical/fluid-dynamics-solid-mechanics/index.php) do a variety of research using fluid mechanics models.
 
 
-[![Thumbnail for a video about fluid mechanics at Los Alamos](../images/notes/week1/fluid-mechanics-at-los-alamos.jpg)](https://youtube.com/watch?v=myuD81326_o)
+[![Thumbnail for a video about fluid mechanics at Los Alamos](../images/notes/unit1/fluid-mechanics-at-los-alamos.jpg)](https://youtube.com/watch?v=myuD81326_o)
 
 Source: <https://www.youtube.com/watch?v=myuD81326_o>
 
@@ -80,7 +80,7 @@ Source: <https://www.youtube.com/watch?v=myuD81326_o>
 
 A [research lab at Georgia Tech](https://crablab.gatech.edu/) uses Classical Mechanics to model the motion of animals and then uses that information to build robots that can move like animals.
 
-[![Thumbnail for a video about snake-inspired robotics](../images/notes/week1/snake-inspired-robotics.jpg)](https://youtube.com/watch?v=Qme07fA3Fj4)
+[![Thumbnail for a video about snake-inspired robotics](../images/notes/unit1/snake-inspired-robotics.jpg)](https://youtube.com/watch?v=Qme07fA3Fj4)
 
 Source: <https://www.youtube.com/watch?v=Qme07fA3Fj4>
 

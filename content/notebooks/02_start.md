@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Week 2 - Computing as a tool for science
+# Unit 2 - Computing as a tool for science
 
 
 +++
@@ -63,7 +63,7 @@ The history of scientific computing is deeply intertwined with the evolution of 
 
 To get an introductory overview, the video below from Futurology is a helpful resource, but it is by no means comprehensive or critical.
 
-[![Thumbnail for a video about the origins of computing](../images/notes/week2/origins-of-computing.jpg)](https://youtube.com/watch?v=-M6lANfzFsM)
+[![Thumbnail for a video about the origins of computing](../images/notes/unit2/origins-of-computing.jpg)](https://youtube.com/watch?v=-M6lANfzFsM)
 
 Source: <https://www.youtube.com/watch?v=-M6lANfzFsM>
 
@@ -75,9 +75,9 @@ For deeper dives into these ideas, consider the following materials:
 
 | Resource | Description |
 |----------|-------------|
-| [George Dyson’s *Turing’s Cathedral*](https://www.penguinrandomhouse.com/books/44425/turings-cathedral-by-george-dyson/) ![Turing's Cathedral](../images/notes/week2/dyson.png) | Chronicles the origins of the modern computer, focusing on [John von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann) and his team at Princeton in the 1940s. This book delves into the intersection of mathematics, physics, and computation, highlighting the development of the first stored-program computers and their role in shaping the digital age. |
-| [James Gleick’s *The Information*](https://www.penguinrandomhouse.com/books/60765/the-information-by-james-gleick/) ![The Information](../images/notes/week2/gleick.png) | Explores the transformative impact of information theory on science, technology, and culture. From the invention of writing to the digital age, Gleick highlights key figures like Michigander [Claude Shannon](https://en.wikipedia.org/wiki/Claude_Shannon), who revolutionized communication with his groundbreaking mathematical theory of information. |
-| [Steven Levy’s *Hackers*](https://www.stevenlevy.com/hackers-heroes-of-the-computer-revolution) ![Hackers](../images/notes/week2/levy.png) | Chronicles the rise of hacker culture, from early computer pioneers to the creators of the personal computer revolution. Levy examines the "hacker ethic," emphasizing creativity, open access, and the joy of problem-solving, which shaped the tools and technologies we use today. |
+| [George Dyson’s *Turing’s Cathedral*](https://www.penguinrandomhouse.com/books/44425/turings-cathedral-by-george-dyson/) ![Turing's Cathedral](../images/notes/unit2/dyson.png) | Chronicles the origins of the modern computer, focusing on [John von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann) and his team at Princeton in the 1940s. This book delves into the intersection of mathematics, physics, and computation, highlighting the development of the first stored-program computers and their role in shaping the digital age. |
+| [James Gleick’s *The Information*](https://www.penguinrandomhouse.com/books/60765/the-information-by-james-gleick/) ![The Information](../images/notes/unit2/gleick.png) | Explores the transformative impact of information theory on science, technology, and culture. From the invention of writing to the digital age, Gleick highlights key figures like Michigander [Claude Shannon](https://en.wikipedia.org/wiki/Claude_Shannon), who revolutionized communication with his groundbreaking mathematical theory of information. |
+| [Steven Levy’s *Hackers*](https://www.stevenlevy.com/hackers-heroes-of-the-computer-revolution) ![Hackers](../images/notes/unit2/levy.png) | Chronicles the rise of hacker culture, from early computer pioneers to the creators of the personal computer revolution. Levy examines the "hacker ethic," emphasizing creativity, open access, and the joy of problem-solving, which shaped the tools and technologies we use today. |
 
 +++
 

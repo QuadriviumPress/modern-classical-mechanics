@@ -27,7 +27,7 @@ Total points: **100**.
 
 ## Introduction to Homework 4
 
-This week's sets of classical pen and paper and computational
+This homework's sets of classical pen and paper and computational
 exercises deal with some motion problems and conservation of energy. We also have a preparation exercise for the upcoming midterms and final project.
 
 The relevant reading background is
