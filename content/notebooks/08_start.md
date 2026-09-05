@@ -84,7 +84,7 @@ $$\ddot{x} - \mu(1-x^2)\dot{x} + x = 0$$
 
 * It can also be driven by an external force:
 
-$$\ddot{x} - \mu(1-x^2)\dot{x} + x - A \sin(\omega t)$$
+$$\ddot{x} - \mu(1-x^2)\dot{x} + x = A \sin(\omega t)$$
 
 Regardless of where a Van der Pol oscillator starts, its trajectory is drawn onto the same closed loop in phase space -- a [limit cycle](https://en.wikipedia.org/wiki/Limit_cycle). This is qualitatively different from the SHO's nested ellipses, where the size of the orbit depends on the initial energy.
 

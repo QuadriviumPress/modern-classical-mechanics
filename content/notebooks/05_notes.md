@@ -316,10 +316,10 @@ The expression under the square root must be nonnegative for an allowed trajecto
 
 But more importantly, we can derive a potential energy function for the lattice chain. We can write:
 
-$$U(x) = -\int F(x) dx = \dfrac{b}{2\pi}F_0 \cos \left(\dfrac{2\pi x}{b}\right) + C.$$
+$$U(x) = -\int F(x) dx = -\dfrac{b}{2\pi}F_0 \cos \left(\dfrac{2\pi x}{b}\right) + C.$$
 where $C$ is a constant. We can choose $C$ so that $U(0) = 0$; only the difference in potential energy matter. Then we have:
 
-$$U(x) = \dfrac{b}{2\pi}F_0 \left[\cos \left(\dfrac{2\pi x}{b}\right)-1\right].$$
+$$U(x) = \dfrac{b}{2\pi}F_0 \left[1-\cos \left(\dfrac{2\pi x}{b}\right)\right].$$
 
 The figure below shows the periodic force and the corresponding potential energy side by side; notice that the potential is minimized exactly where the force crosses zero going from positive to negative, consistent with $F=-dU/dx$.
 
@@ -333,7 +333,7 @@ F0, b = 1.0, 1.0
 x = np.linspace(0, 3 * b, 400)
 
 F = -F0 * np.sin(2 * np.pi * x / b)
-U = (b / (2 * np.pi)) * F0 * (np.cos(2 * np.pi * x / b) - 1)
+U = (b / (2 * np.pi)) * F0 * (1 - np.cos(2 * np.pi * x / b))
 
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(7, 7), sharex=True)
 ax1.plot(x / b, F)

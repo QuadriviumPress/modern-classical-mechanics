@@ -193,7 +193,8 @@ Notice that the normal force oscillates and dips lowest near the top of each swi
 If we consider small angles, i.e., $\sin(\phi) \approx \phi$, then the equation of motion for $\ddot{\phi}$ becomes:
 
 $$\ddot{\phi} \approx -\frac{g}{R} \phi.$$
-on (SHM) with angular frequency $\omega = \sqrt{\frac{g}{R}}$. Thus, for small angles, the motion of the skateboarder on the circular track will exhibit SHM. The solution to this equation will be:
+
+This is simple harmonic motion (SHM) with angular frequency $\omega = \sqrt{\frac{g}{R}}$. Thus, for small angles, the motion of the skateboarder on the circular track will exhibit SHM. The solution to this equation will be:
 
 $$\phi(t) = A \cos(\omega t) + B \sin(\omega t),$$
 
@@ -427,7 +428,7 @@ $$
 \frac{d}{dt} \left( \frac{\partial \mathcal{L}}{\partial \dot{\phi}} \right) - \frac{\partial \mathcal{L}}{\partial \phi} = 0
 $$
 
-$$-mgl \sin(\phi) + \frac{d}{dt} (ml^2 \dot{\phi}) = 0$$
+$$mgl \sin(\phi) + \frac{d}{dt} (ml^2 \dot{\phi}) = 0$$
 
 And thus the $\phi$ equation of motion becomes:
 

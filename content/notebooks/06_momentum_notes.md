@@ -178,7 +178,7 @@ And thus, it's easy to see:
 
 $$\Delta \vec{p}_{sys} = \vec{p}_{sys,f} - \vec{p}_{sys,i} = 0.$$
 
-If there are external forces, then we also have a prediction equation for how the energy will change in a small time step $\Delta t$:
+If there are external forces, then we also have a prediction equation for how the momentum will change in a small time step $\Delta t$:
 
 $$\Delta \vec{p}_{sys} = \vec{p}_{sys,f} - \vec{p}_{sys,i} = \sum_{i=1}^{N} \vec{F}_{ext,i}\Delta t,$$
 

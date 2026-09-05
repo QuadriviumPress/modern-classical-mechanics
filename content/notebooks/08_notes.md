@@ -159,7 +159,7 @@ $$zz^* = (a+ib)(a-ib) = a^2 + b^2$$
 
 The product of a complex number and its complex conjugate is always a real number. Moreover, we can define the magnitude of a complex number as:
 
-$$|z| = \sqrt{zz^*} = \sqrt{a^2 + b^2},m$$
+$$|z| = \sqrt{zz^*} = \sqrt{a^2 + b^2}$$
 
 which is also real! Given that $C_1$ and $C_2$ are complex conjugates ($C_2 = C_1^*$), we can write the general solution to the SHO as:
 

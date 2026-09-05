@@ -71,7 +71,7 @@ beta = 0.5         # Damping coefficient
 A = 1.0             # Amplitude of driving force
 omegaD = 2*np.pi  # Driving frequency
 t_span = (0, 100)   # Time span for the simulation
-y0 = [6, 0]     # Initial conditions: theta = pi, omega = 0; Note that solve_ivp takes a list of initial conditions
+y0 = [6, 0]     # Initial conditions: theta = 6 rad, omega = 0; Note that solve_ivp takes a list of initial conditions
 t_eval = np.linspace(t_span[0], t_span[1], 10000)  # Time points to evaluate; Note that solve_ivp takes a list of times to evaluate
 
 # Solve the ODEs using solve_ivp
@@ -222,10 +222,10 @@ For our simulation we will observe the effect of the driving strength $\gamma$ o
 
 | Parameter | Value |
 | --------- | ----- |
-| $\delta$  | 0.2   |
+| $\delta$  | 0.3   |
 | $\alpha$  | -1    |
 | $\beta$   | 1     |
-| $\gamma$  | 0.3   |
+| $\gamma$  | 0.2   |
 | $\omega$  | 1.2     |
 
 Choose the initial conditions and time span for the simulation:

@@ -124,9 +124,11 @@ $$m \mathbf{a} = \mathbf{F} = -\nabla U.$$
 
 In the case of the pendulum, we have:
 
-$$m L \ddot{\theta} = -\frac{dU}{d\theta},$$
+$$m L^2 \ddot{\theta} = -\frac{dU}{d\theta},$$
 
-$$m L \ddot{\theta} = -m g L \sin(\theta).$$
+$$m L^2 \ddot{\theta} = -m g L \sin(\theta),$$
+
+$$m L \ddot{\theta} = -m g \sin(\theta).$$
 
 +++
 

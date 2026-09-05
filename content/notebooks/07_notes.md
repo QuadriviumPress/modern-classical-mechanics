@@ -53,13 +53,13 @@ $$\int \frac{dx}{\sin x} = \int dt.$$
 
 The integral on the left-hand side is one that we can look up:
 
-$$\int \frac{dx}{\sin x} = \ln\left|\csc\left(x\right) + \cot\left(x\right)\right| + C.$$
+$$\int \frac{dx}{\sin x} = \ln\left|\csc\left(x\right) - \cot\left(x\right)\right| + C.$$
 
 Cool. So we have:
 
-$$t-t_0 = \ln\left|\csc\left(x\right) + \cot\left(x\right)\right| - \ln\left|\csc\left(x_0\right) + \cot\left(x_0\right)\right|,$$
+$$t-t_0 = \ln\left|\csc\left(x\right) - \cot\left(x\right)\right| - \ln\left|\csc\left(x_0\right) - \cot\left(x_0\right)\right|,$$
 
-$$t-t_0 = \ln\left|\frac{\csc\left(x\right) + \cot\left(x\right)}{\csc\left(x_0\right) + \cot\left(x_0\right)}\right|.$$
+$$t-t_0 = \ln\left|\frac{\csc\left(x\right) - \cot\left(x\right)}{\csc\left(x_0\right) - \cot\left(x_0\right)}\right|.$$
 
 Well how do solve for $x(t)$? That's not so easy. And a harder question is: what does the motion look like?
 
@@ -376,7 +376,7 @@ This is the equation of an ellipse. We can rewrite it as:
 
 $$1 = \dfrac{v^2}{2E/m} + \dfrac{x^2}{2E/k}.$$
 
-This ellipse is centered at the origin and has a semi-major axis of $\sqrt{2E/k}$ and a semi-minor axis of $\sqrt{2E/m}$. The energy of the system determines the size of the ellipse. The larger the energy, the larger the ellipse.
+This ellipse is centered at the origin, with a semi-axis of $\sqrt{2E/k}$ along $x$ and a semi-axis of $\sqrt{2E/m}$ along $v$ (which of the two is larger depends on the relative size of $k$ and $m$). The energy of the system determines the size of the ellipse. The larger the energy, the larger the ellipse.
 
 +++
 

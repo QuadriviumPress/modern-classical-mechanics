@@ -329,13 +329,13 @@ We can solve for $v(t)$:
 
 $$g - \dfrac{b}{m}v = e^{-\dfrac{b}{m}t - C}$$
 
-$$v(t) = \dfrac{mg}{b} - e^{-\dfrac{b}{m}t - C}$$
+$$v(t) = \dfrac{mg}{b} - \dfrac{m}{b}e^{-\dfrac{b}{m}t - C}$$
 
 We can solve for the constant $C$ by using the initial condition $v(0) = v_0$:
 
-$$v_0 = \dfrac{mg}{b} - e^{-C}$$
+$$v_0 = \dfrac{mg}{b} - \dfrac{m}{b}e^{-C}$$
 
-$$e^{-C} = \dfrac{mg}{b} - v_0$$
+$$\dfrac{m}{b}e^{-C} = \dfrac{mg}{b} - v_0$$
 
 $$v(t) = \dfrac{mg}{b} - \left(\dfrac{mg}{b} - v_0\right)e^{-\dfrac{b}{m}t}$$
 

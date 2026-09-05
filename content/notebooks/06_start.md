@@ -103,7 +103,7 @@ Regardless of the choice of physical model, the SHO equation is the same second 
 
 $$\frac{d^2 x}{dt^2} = -\omega^2 x$$
 
-For a given system, this results in a potential energy that is proportional to the square of the variable $x$ (the "stretch") and to the square of the frequency $\omega$. This potential energy is always positive, and it can have a non-zero minimum.
+For a given system, this results in a potential energy that is proportional to the square of the variable $x$ (the "stretch") and to the square of the frequency $\omega$. The quadratic term is always non-negative, though the overall potential can be shifted by an additive constant so its minimum value need not be zero.
 
 $$U(x) = \frac{1}{2} \xi \omega^2 x^2 + U_0$$
 

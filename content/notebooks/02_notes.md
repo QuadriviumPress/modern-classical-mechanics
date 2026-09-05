@@ -168,7 +168,7 @@ $$\vec{A} = A_x\hat{x} + A_y\hat{y}  = A_x\hat{i} + A_y\hat{j} = A_x\hat{e}_x + 
 
 The unit vectors, $\hat{x}$, $\hat{y}$, $\hat{i}$, $\hat{j}$, $\hat{e}_x$, and $\hat{e}_y$, are the basis vectors in the $x$ and $y$ directions. The unit vectors are used to define the vector components. 
 
-Interestingly, the angle of the vector is not needed to write the vector in Plane Polar Coordinates ($r$, $\theta$). The vector can be written as:
+Interestingly, any vector can be written purely in terms of its own magnitude and direction, regardless of coordinate system. The vector can be written as:
 
 $$\vec{A} = A\hat{A}$$
 
@@ -184,7 +184,7 @@ Such that,
 
 $$\vec{A} = A\hat{A} = A_x\hat{x} + A_y\hat{y}$$
 
-Cartesian unit vectors are fixed in space and time when in an inertial reference frame. However, the unit vectors in Plane Polar Coordinates are not fixed in space and time. They rotate with the vector. This is a common source of confusion when working with vectors in different coordinate systems, which we will come back to later.
+Cartesian unit vectors are fixed in space and time when in an inertial reference frame. However, the unit vectors in Plane Polar Coordinates ($\hat{r}$, $\hat{\theta}$) are not fixed in space and time -- unlike $\hat{A}$ above, they depend on the angle $\theta$ and rotate with the position of the particle. This is a common source of confusion when working with vectors in different coordinate systems, which we will come back to later.
 
 The magnitude of a unit vector is always one, $|\hat{A}| = 1$. And unit vectors are orthogonal to each other, $\hat{x} \cdot \hat{y} = 0$.
 

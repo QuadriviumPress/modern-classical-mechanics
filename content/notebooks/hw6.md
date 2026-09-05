@@ -113,7 +113,7 @@ where $A$ is the amplitude, $\beta$ is the damping constant, $\omega_1 = \sqrt{\
 
 The motion decays with time, but we can still define a periodicity, $\tau_1$, which is the time between peaks in the motion.
 
-* 4a (4pt) Sketch (or plot) the motion of the oscillator as a function of time. Show that the oscillation period (the spacing of successive zero crossings, or the underlying cosine factor) is $\tau_1 = 2\pi/\omega_1$. Explain that the decaying envelope means the exact extrema of $x(t)$ are not perfectly separated by this interval.
+* 4a (4pt) Sketch (or plot) the motion of the oscillator as a function of time. Show that the oscillation period (the period of the underlying cosine factor) is $\tau_1 = 2\pi/\omega_1$. Show that, despite the decaying envelope, successive same-type extrema (e.g., consecutive peaks) of $x(t)$ remain separated by exactly this interval -- this is why peak-to-peak timing gives an exact measurement of $\omega_1$.
 * 4b (3pt) Show that an equivalent definition of $\tau_1$ is twice the time between zero crossings of the motion.
 * 4c (3pt) If the damping $\beta$ is half the natural frequency ($\omega_0$), how does the amplitude of the motion decay in one period?
 

@@ -122,13 +122,13 @@ we must first solve the homogeneous equation, $\mathcal{D} x(t) = 0$.
 
 ## Homogeneous and Particular Solutions
 
-The damped driven oscillator is a linear differential equation. But that means that any solution to the equation where the driving force is zero is a solution to the equation where the driving force is non-zero. And, thus must be added to the solution of the non-homogeneous equation. 
+The damped driven oscillator is a linear differential equation. Because it is linear, any solution to the equation where the driving force is zero can be added to a particular solution of the equation where the driving force is non-zero, and the sum is still a solution of the non-homogeneous equation.
 
 Let's use the language of differential operators to express this. We want to solve:
 
 $$\mathcal{D} x(t) = f(t)$$
 
-where $\mathcal{D}$ is a linear differential operator. But any solution to the homogeneous equation, $\mathcal{D} x_h(t) = 0$, is a solution to the non-homogeneous equation. 
+where $\mathcal{D}$ is a linear differential operator. Any solution to the homogeneous equation, $\mathcal{D} x_h(t) = 0$, can be added to a particular solution of the non-homogeneous equation to produce another solution of the non-homogeneous equation. 
 
 We use the notation $x_h(t)$ to denote the solution to the homogeneous equation.
 
@@ -247,9 +247,9 @@ That is, the phase of the $e^{-i\delta}$ term and the phase of the complex numbe
 
 $$\tan(\delta) = \dfrac{2\beta \omega}{\omega_0^2 - \omega^2}$$
 
-$$\delta = \arctan\left(\dfrac{2\beta \omega}{\omega_0^2 - \omega^2}\right)$$
+$$\delta = \operatorname{atan2}\left(2\beta \omega,\ \omega_0^2 - \omega^2\right)$$
 
-Again, this number is fully determined without initial conditions.
+Note that we need the two-argument arctangent (choosing the quadrant from the signs of the numerator and denominator separately) rather than a plain $\arctan$ of the ratio: since $2\beta\omega \geq 0$ always, $\delta$ ranges over $(0,\pi)$, but a plain $\arctan$ only returns values in $(-\pi/2,\pi/2)$ and would give the wrong branch once $\omega > \omega_0$. Again, this number is fully determined without initial conditions.
 
 ### Back to the Particular Solution
 
@@ -312,7 +312,7 @@ $$\left(\omega_0^2 - \omega^2\right)^2 + 4\beta^2 \omega^2$$
 
 When that denominator is small, the amplitude will be large. There's two ways to make the denominator small.
 
-**Case 1:** Tune the $\omega_0$ (the natural frequency of the system) to be close to $\omega$ (the driving frequency). This is how a car radio works. You change the resistance of the radio circuit to change the natural frequency of the radio circuit. You can then tune the radio to a particular station that is broadcasting at a particular frequency. This gives an amplified signal,
+**Case 1:** Tune the $\omega_0$ (the natural frequency of the system) to be close to $\omega$ (the driving frequency). This is how a car radio works. You change the capacitance (e.g., with a variable tuning capacitor) of the radio's LC circuit to change its natural frequency, $\omega_0 = 1/\sqrt{LC}$. You can then tune the radio to a particular station that is broadcasting at a particular frequency. This gives an amplified signal,
 
 When $\omega_0 = \omega$, then the denominator is equal to $4\beta^2 \omega_0^2$. The amplitude is
 

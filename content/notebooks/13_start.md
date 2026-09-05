@@ -31,7 +31,7 @@ $$
 
 The derivative of the Lagrangian with respect to a generalized coordinate $q_i$ is given by:
 
-$$\dfrac{\partial \mathcal{L}}{\partial q_i} = \dfrac{\partial V}{\partial q_i} = F_{q_i}$$
+$$\dfrac{\partial \mathcal{L}}{\partial q_i} = -\dfrac{\partial V}{\partial q_i} = F_{q_i}$$
 
 where $F_{q_i}$ is the generalized force conjugate to the coordinate $q_i$.
 

@@ -133,7 +133,7 @@ $$T(\dot{y}_1, \dot{\phi}) = \dfrac{1}{2}(M+m)\dot{y}_1^2 + \dfrac{1}{4}M_p R^2 
 
 But the constraint is such that, 
 
-$$\dot{y}_1 = Rd\phi \rightarrow y_1 = R\phi +\underbrace{R\phi_0}_{\textrm{const.}}$$
+$$dy_1 = Rd\phi \rightarrow y_1 = R\phi +\underbrace{R\phi_0}_{\textrm{const.}}$$
 
 $$\dot{y}_1 = R\dot{\phi}$$
 
@@ -331,7 +331,7 @@ We need to write these equations in a form that is ready for numerical solution.
 $$\dot{\rho} = v$$
 $$\dot{\phi} = \omega$$
 $$\dot{v} = -\dfrac{c^2\rho v^2 - \rho\omega^2 + gc\rho}{1+c^2\rho^2}$$
-$$\dot{\omega} = - \dfrac{2 v\omega}{\rho^2}$$
+$$\dot{\omega} = - \dfrac{2 v\omega}{\rho}$$
 
 Let's integrate these equations numerically, launching the bead at $\rho_0=1$ with $\dot\rho_0=0$ and a nonzero angular velocity $\dot\phi_0=1.2$. We plot $\rho(t)$ to see the radial oscillation, and reconstruct the 3D path $(x,y,z)$ to see the bead trace out its orbit on the bowl.
 
