@@ -85,6 +85,52 @@ $$f_2(v_y)dv_y = g_2(t)dt$$
 
 These lead to independent equations of motion. We can use separation of variables to try to solve them. This is not possible in all cases, so functions are still not integrable analytically. But we cannot even form these partials, so an analytical solution is not possible in this case.
 
+Since we cannot integrate these equations by hand, we turn to the Euler-Cromer method to predict the trajectory numerically. The plot below compares a projectile launched with and without quadratic drag; drag shortens the range and steepens the descent.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+
+plt.style.use('seaborn-v0_8-colorblind')
+
+m = 1.0
+D = 0.15
+g = 9.8
+dt = 0.001
+
+def simulate(drag):
+    x, y = 0.0, 0.0
+    vx, vy = 20.0, 15.0
+    xs, ys = [x], [y]
+    while y >= 0:
+        speed = np.sqrt(vx**2 + vy**2)
+        if drag:
+            ax = -(D / m) * speed * vx
+            ay = -(D / m) * speed * vy - g
+        else:
+            ax, ay = 0.0, -g
+        vx += ax * dt
+        vy += ay * dt
+        x += vx * dt
+        y += vy * dt
+        xs.append(x)
+        ys.append(y)
+    return np.array(xs), np.array(ys)
+
+x_drag, y_drag = simulate(drag=True)
+x_free, y_free = simulate(drag=False)
+
+fig, ax = plt.subplots(figsize=(7, 5))
+ax.plot(x_free, y_free, label='No drag')
+ax.plot(x_drag, y_drag, label='Quadratic drag')
+ax.set_xlabel('$x$ (m)')
+ax.set_ylabel('$y$ (m)')
+ax.set_title('Euler-Cromer Trajectory with Quadratic Drag')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
+```
 
 +++
 
@@ -173,7 +219,34 @@ $$\left(\dfrac{g}{\gamma} + v_y\right) = \left(\dfrac{g}{\gamma} + v_{0,y}\right
 
 $$v_y(t) = \dfrac{g}{\gamma}\left(e^{-\gamma t} - 1\right) + v_{0,y} e^{-\gamma t}$$
 
-In the $y$ direction, the story appears more complex.
+In the $y$ direction, the story appears more complex. The plot below shows both components: $v_x$ decays exponentially to zero, while $v_y$ decays toward the (negative) terminal velocity instead of zero, since gravity keeps acting even after the drag and weight balance.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+
+plt.style.use('seaborn-v0_8-colorblind')
+
+g = 9.8
+gamma = 0.5
+vx0, vy0 = 8.0, 0.0
+t = np.linspace(0, 6, 400)
+
+vx = vx0 * np.exp(-gamma * t)
+vy = (g / gamma) * (np.exp(-gamma * t) - 1) + vy0 * np.exp(-gamma * t)
+
+fig, ax = plt.subplots(figsize=(7, 5))
+ax.plot(t, vx, label='$v_x(t)$')
+ax.plot(t, vy, label='$v_y(t)$')
+ax.axhline(-g / gamma, color='C2', ls='--', label='Terminal $v_y$')
+ax.set_xlabel('Time, $t$')
+ax.set_ylabel('Velocity component')
+ax.set_title('Linear Drag: Velocity Components vs. Time')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
+```
 
 ### Trajectories
 
@@ -250,6 +323,52 @@ We have three potential ways to solve these EOMs:
 1) Direct Integration: We can integrate the equations of motion directly. This is possible in some cases where the equations are simple enough; think about the falling ball without air resistance, or the linear 1D drag case.
 2) Decouple and Solve: We try to solve the coupled differential equations by decoupling them. This is possible in some cases, but not all. We can frequently decouple the equations by writing them in terms of the velocity, or by making a change of position variables.
 3) Numerical Integration: We use numerical methods to predict the motion in small time steps. This is the most common method for solving complex systems.
+
+Let's see numerical integration in action. Starting the Earth at 1 A.U. with a speed close to (but not exactly) circular orbital speed produces the elliptical orbit shown below.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+
+plt.style.use('seaborn-v0_8-colorblind')
+
+G = 6.674e-11
+M_sun = 2e30
+AU = 1.5e11
+
+x, y = AU, 0.0
+vx, vy = 0.0, 2.98e4
+
+dt = 3600.0
+n_steps = 9000
+
+xs, ys = [x], [y]
+for _ in range(n_steps):
+    r = np.sqrt(x**2 + y**2)
+    ax = -G * M_sun * x / r**3
+    ay = -G * M_sun * y / r**3
+    vx += ax * dt
+    vy += ay * dt
+    x += vx * dt
+    y += vy * dt
+    xs.append(x)
+    ys.append(y)
+
+xs = np.array(xs) / AU
+ys = np.array(ys) / AU
+
+fig, ax = plt.subplots(figsize=(6, 6))
+ax.plot(xs, ys)
+ax.plot(0, 0, 'C1o', markersize=12, label='Sun')
+ax.set_xlabel('$x$ (AU)')
+ax.set_ylabel('$y$ (AU)')
+ax.set_title("Numerically Integrated Earth-Sun Orbit")
+ax.set_aspect('equal')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
+```
 
 +++
 

@@ -338,10 +338,45 @@ $$\omega_2 = \sqrt{\omega_0^2 - 2\beta^2}$$
 
 We can a strong response when $\omega_0^2 \gg 2\beta^2$ or when $\omega_2 \approx \omega_0$.
 
-```{code-cell} ipython3
+Let's compute the amplitude and phase response for a range of driving frequencies $\omega$ and several damping strengths $\beta$, so we can see the sketch above turned into an actual curve.
 
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-v0_8-colorblind')
+
+f0 = 1.0
+omega0 = 1.0
+omega = np.linspace(0.01, 2.5, 500)
+betas = [0.05, 0.1, 0.2, 0.4]
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 4.5))
+
+for beta in betas:
+    A = f0/np.sqrt((omega0**2 - omega**2)**2 + 4*beta**2*omega**2)
+    delta = np.arctan2(2*beta*omega, omega0**2 - omega**2)
+    ax1.plot(omega/omega0, A, label=fr'$\beta={beta}$')
+    ax2.plot(omega/omega0, delta, label=fr'$\beta={beta}$')
+
+ax1.axvline(1, color='k', lw=1, ls=':')
+ax1.set_xlabel(r'$\omega/\omega_0$')
+ax1.set_ylabel(r'Amplitude $A$')
+ax1.set_title('Resonance: Amplitude Response')
+ax1.legend()
+ax1.grid()
+
+ax2.axvline(1, color='k', lw=1, ls=':')
+ax2.axhline(np.pi/2, color='k', lw=1, ls=':')
+ax2.set_xlabel(r'$\omega/\omega_0$')
+ax2.set_ylabel(r'Phase lag $\delta$ (rad)')
+ax2.set_title('Resonance: Phase Response')
+ax2.legend()
+ax2.grid()
+
+plt.tight_layout()
+plt.show()
 ```
 
-
+As damping $\beta$ decreases, the resonance peak grows taller and narrower, and shifts closer to $\omega=\omega_0$ (consistent with $\omega_2=\sqrt{\omega_0^2-2\beta^2}$). The phase lag $\delta$ always passes through $\pi/2$ exactly at $\omega=\omega_0$, transitioning from in-phase ($\delta\approx0$) at low driving frequency to out-of-phase ($\delta\approx\pi$) at high driving frequency, with the transition becoming sharper as damping decreases.
 
 +++

@@ -186,6 +186,40 @@ so that,
 
 $$\vec{p}_{sys,f} = \vec{p}_{sys,i} + \vec{F}_{ext}\Delta t.$$
 
+Let's see this play out in a closed system: two carts collide elastically on a track with no external horizontal forces. Each cart's own momentum changes at the collision, but the system's total momentum (dashed) is identical before and after.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+
+plt.style.use('seaborn-v0_8-colorblind')
+
+m1, m2 = 2.0, 1.0
+v1i, v2i = 3.0, -1.0
+
+v1f = ((m1 - m2) * v1i + 2 * m2 * v2i) / (m1 + m2)
+v2f = ((m2 - m1) * v2i + 2 * m1 * v1i) / (m1 + m2)
+
+t_before = np.linspace(-1, 0, 100)
+t_after = np.linspace(0, 1, 100)
+
+fig, ax = plt.subplots(figsize=(7, 5))
+ax.plot(t_before, m1 * v1i * np.ones_like(t_before), 'C0', label='$p_1$')
+ax.plot(t_after, m1 * v1f * np.ones_like(t_after), 'C0')
+ax.plot(t_before, m2 * v2i * np.ones_like(t_before), 'C1', label='$p_2$')
+ax.plot(t_after, m2 * v2f * np.ones_like(t_after), 'C1')
+ax.plot(t_before, (m1 * v1i + m2 * v2i) * np.ones_like(t_before), 'k--', label='$p_{sys}$')
+ax.plot(t_after, (m1 * v1f + m2 * v2f) * np.ones_like(t_after), 'k--')
+ax.axvline(0, color='gray', lw=1)
+ax.set_xlabel('Time (collision at $t=0$)')
+ax.set_ylabel('Momentum')
+ax.set_title('Momentum Conservation in a 1D Elastic Collision')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
 +++
 
 ## Angular Momentum
@@ -295,10 +329,87 @@ And thus,
 
 $$\dfrac{d\vec{L}_{sys}}{dt} = 0.$$
 
-```{code-cell}
+Gravity is exactly this kind of central force, so a planet orbiting a star should conserve angular momentum throughout its orbit. This has a lovely geometric interpretation, known as Kepler's second law: the position vector sweeps out equal areas in equal times, so the planet moves fastest near the star (perihelion) and slowest far away (aphelion).
 
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+plt.style.use('seaborn-v0_8-colorblind')
+
+GM = 1.0
+e = 0.5
+
+# Elliptical orbit with perihelion distance r0 and the speed there set by e
+r0 = 1 - e
+v_peri = np.sqrt(GM * (1 + e) / (1 - e))
+
+def orbit(t, state):
+    x, y, vx, vy = state
+    r = np.sqrt(x**2 + y**2)
+    ax = -GM * x / r**3
+    ay = -GM * y / r**3
+    return [vx, vy, ax, ay]
+
+T_period = 2 * np.pi * (r0 / (1 - e))**1.5 / np.sqrt(GM)
+sol = solve_ivp(orbit, [0, T_period], [r0, 0, 0, v_peri],
+                 t_eval=np.linspace(0, T_period, 2000), rtol=1e-9, atol=1e-9)
+
+x, y = sol.y[0], sol.y[1]
+
+fig, ax = plt.subplots(figsize=(6, 6))
+ax.plot(x, y, 'C0')
+ax.plot(0, 0, 'C1o', markersize=10, label='Force center')
+n1 = 60
+n2 = 260
+ax.fill(np.r_[0, x[:n1], 0], np.r_[0, y[:n1], 0], color='C2', alpha=0.4, label='Equal areas')
+ax.fill(np.r_[0, x[n2:n2 + n1], 0], np.r_[0, y[n2:n2 + n1], 0], color='C3', alpha=0.4)
+ax.set_xlabel('$x$')
+ax.set_ylabel('$y$')
+ax.set_title("Kepler's Second Law: Equal Areas in Equal Times")
+ax.set_aspect('equal')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
 ```
 
-```{code-cell}
+We can check this numerically by computing the specific angular momentum $\ell = |\vec{r}\times\vec{v}|$ along the orbit. Even though the planet's speed and distance from the star both change dramatically, $\ell$ stays constant.
 
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+plt.style.use('seaborn-v0_8-colorblind')
+
+GM = 1.0
+e = 0.5
+r0 = 1 - e
+v_peri = np.sqrt(GM * (1 + e) / (1 - e))
+
+def orbit(t, state):
+    x, y, vx, vy = state
+    r = np.sqrt(x**2 + y**2)
+    ax = -GM * x / r**3
+    ay = -GM * y / r**3
+    return [vx, vy, ax, ay]
+
+T_period = 2 * np.pi * (r0 / (1 - e))**1.5 / np.sqrt(GM)
+sol = solve_ivp(orbit, [0, T_period], [r0, 0, 0, v_peri],
+                 t_eval=np.linspace(0, T_period, 2000), rtol=1e-9, atol=1e-9)
+
+x, y, vx, vy = sol.y
+L = x * vy - y * vx
+
+fig, ax = plt.subplots(figsize=(7, 5))
+ax.plot(sol.t, L)
+ax.set_xlabel('Time')
+ax.set_ylabel(r'Specific angular momentum, $\ell = |\vec{r}\times\vec{v}|$')
+ax.set_title('Angular Momentum is Conserved Along the Orbit')
+ax.set_ylim(0, 2 * L.mean())
+ax.grid(True)
+plt.tight_layout()
+plt.show()
 ```

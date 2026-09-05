@@ -76,6 +76,36 @@ $$\vec{F} = \langle x^2, 2xy \rangle = x^2\hat{i} + 2xy \hat{j}$$
 
 A small puck rests on a fixed sphere of radius $R$. The puck is given a tiny nudge and it slides down the sphere. Using conservation of energy, we can determine the point at which the puck leaves the sphere.
 
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-v0_8-colorblind')
+
+R = 1.0
+theta = np.radians(35)  # an arbitrary illustrative angle, not the answer
+
+fig, ax = plt.subplots(figsize=(5, 5))
+phi = np.linspace(0, 2 * np.pi, 200)
+ax.plot(R * np.cos(phi), R * np.sin(phi), 'C0')
+
+px, py = R * np.sin(theta), R * np.cos(theta)
+ax.plot(px, py, 'C1o', markersize=10, label='Puck')
+ax.plot([0, px], [0, py], 'k--', lw=1)
+ax.plot([0, 0], [0, R], 'k:', lw=1)
+ax.annotate(r'$\theta$', xy=(0.15, 0.75), fontsize=13)
+ax.plot(0, 0, 'ks', markersize=5)
+
+ax.set_xlim(-1.3, 1.3)
+ax.set_ylim(-1.3, 1.3)
+ax.set_aspect('equal')
+ax.set_title('Puck sliding on a sphere (setup sketch)')
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
 * 2a (3pt) Setup the problem with a sketch. Explain the setup and include any assumptions that you need to make in order to solve the problem analytically. Identify the height as a function of the polar angle, $h(\theta)$. What is the maximum possible angle $\theta$ that the puck could reach before falling off? Why?
 * 2b (2pt) Use conservation of energy to find the speed of the puck as a function of its height. Your answer should be in terms of the polar angle, $\theta$.
 * 2c (3pt) Use Newton's second law to find the normal force acting on the puck as a function of its height. Your answer should be in terms of the polar angle, $\theta$. What is the condition for the puck to leave the sphere?
@@ -200,6 +230,28 @@ $$
 
 when $y(t) < R$ and zero when $y(t) \ge R$.
 In the numerical calculations you can choose $R=0.1$ m and the spring constant $k=1000$ N/m.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-v0_8-colorblind')
+
+R = 0.1
+k = 1000.0
+y = np.linspace(0, 0.2, 400)
+N = np.where(y < R, k * (R - y), 0.0)
+
+fig, ax = plt.subplots(figsize=(6, 4.5))
+ax.plot(y, N, 'C0')
+ax.axvline(R, color='k', ls='--', lw=1, label=f'$y=R={R}$ m')
+ax.set_xlabel('Height of ball center, $y$ (m)')
+ax.set_ylabel('Normal force magnitude, $N$ (N)')
+ax.set_title('Spring Model of Floor Normal Force vs. Height')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
+```
 
 * 6a (10pt) Identify the forces acting on the ball and set up a diagram with the forces acting on the ball. Find the acceleration of the falling ball now with the normal force as well.
 

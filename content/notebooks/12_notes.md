@@ -144,6 +144,50 @@ $$F_{ramp} = mg \cos(\phi(t)) + mR \dot{\phi}^2(t).$$
 
 Note that this force is a [force of constraint](https://en.wikipedia.org/wiki/Constraint_force) because it is not an external force acting on the skateboarder but rather a force that arises from the constraint of the circular track. These forces are important in mechanics and can be analyzed using Lagrangian mechanics as well. They are not typically conservative forces and do not have a potential energy associated with them. 
 
+Let's solve $\ddot{\phi} = -\frac{g}{R}\sin(\phi)$ numerically, starting the skateboarder at $\phi_0 = 1.2$ rad with $\dot\phi_0=0$, and use the result to plot $\phi(t)$ alongside the resulting normal force $F_{ramp}(t)$.
+
+```{code-cell} ipython3
+:tags: [hide-input]
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+plt.style.use('seaborn-v0_8-colorblind')
+
+g = 9.8
+R = 2.0
+m = 1.0
+
+def skateboard(t, y):
+    phi, omega = y
+    return [omega, -(g / R) * np.sin(phi)]
+
+phi0 = 1.2
+t_span = (0, 10)
+t_eval = np.linspace(*t_span, 2000)
+sol = solve_ivp(skateboard, t_span, [phi0, 0.0], t_eval=t_eval)
+
+phi = sol.y[0]
+omega = sol.y[1]
+F_ramp = m * g * np.cos(phi) + m * R * omega**2
+
+fig, axes = plt.subplots(2, 1, figsize=(8, 6), sharex=True)
+axes[0].plot(sol.t, phi, 'C0')
+axes[0].set_ylabel(r'$\phi$ (rad)')
+axes[0].set_title('Skateboarder on a Circular Track')
+axes[0].grid(True)
+
+axes[1].plot(sol.t, F_ramp, 'C1')
+axes[1].set_xlabel('Time (s)')
+axes[1].set_ylabel(r'$F_{ramp}$ (N)')
+axes[1].grid(True)
+
+plt.tight_layout()
+plt.show()
+```
+
+Notice that the normal force oscillates and dips lowest near the top of each swing (where $\phi$ is largest and $\dot\phi$ is smallest), exactly as we'd expect from the radial equation above.
+
 #### Simple Harmonic Motion
 
 If we consider small angles, i.e., $\sin(\phi) \approx \phi$, then the equation of motion for $\ddot{\phi}$ becomes:
@@ -396,5 +440,42 @@ $$\ddot{\phi} = - \frac{g}{l} \sin(\phi).$$
 As we have seen, for small $\phi$, this reduces to simple harmonic motion:
 
 $$\ddot{\phi} \approx -\frac{g}{l} \phi \quad \text{for small } \phi.$$
+
+We can check how good this small-angle approximation is by numerically solving the full nonlinear equation of motion for several starting amplitudes and plotting the resulting trajectories in the phase plane, $\phi$ vs. $\dot\phi$.
+
+```{code-cell} ipython3
+:tags: [hide-input]
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+plt.style.use('seaborn-v0_8-colorblind')
+
+g = 9.8
+l = 1.0
+omega0 = np.sqrt(g / l)
+
+def pendulum(t, y):
+    phi, phidot = y
+    return [phidot, -omega0**2 * np.sin(phi)]
+
+t_span = (0, 20)
+t_eval = np.linspace(*t_span, 4000)
+
+fig, ax = plt.subplots(figsize=(7, 6))
+for phi0, color in zip([0.3, 1.0, 2.0, 3.0], ['C0', 'C1', 'C2', 'C3']):
+    sol = solve_ivp(pendulum, t_span, [phi0, 0.0], t_eval=t_eval)
+    ax.plot(sol.y[0], sol.y[1], color=color, label=fr'$\phi_0={phi0}$ rad')
+
+ax.set_xlabel(r'$\phi$')
+ax.set_ylabel(r'$\dot\phi$')
+ax.set_title('Pendulum Phase Portrait for Increasing Amplitude')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
+For small $\phi_0$ (blue curve), the orbit is nearly a perfect ellipse, the signature of SHM. As $\phi_0$ grows, the orbits become progressively more egg-shaped and flattened near $\phi = \pm\pi$, showing exactly where the small-angle approximation $\sin\phi\approx\phi$ starts to break down.
 
 +++

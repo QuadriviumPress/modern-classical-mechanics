@@ -509,6 +509,48 @@ $$\dot{v} = -\sin x - \gamma v.$$
 $$\dot{x} = v,$$
 $$\dot{v} = -x - \gamma v.$$
 
-When we plot this phase portrait we will find a new type of motion and a new type of critical point -- an attractor. This is a point in phase space that all trajectories will eventually approach. We leave that plot as an exercise.
+When we plot this phase portrait we will find a new type of motion and a new type of critical point -- an attractor. This is a point in phase space that all trajectories will eventually approach.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+plt.style.use('seaborn-v0_8-colorblind')
+
+def damped_pendulum(t, state, gamma):
+    x, v = state
+    return [v, -np.sin(x) - gamma*v]
+
+gamma = 0.3
+
+x = np.linspace(-2*np.pi, 2*np.pi, 25)
+v = np.linspace(-3, 3, 25)
+X, V = np.meshgrid(x, v)
+Xdot = V
+Vdot = -np.sin(X) - gamma*V
+
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.streamplot(X, V, Xdot, Vdot, color='0.6', density=1.2)
+
+for x0, v0 in [(-4, 2.5), (3, -2), (0.5, 2.8)]:
+    sol = solve_ivp(damped_pendulum, [0, 30], [x0, v0], args=(gamma,), dense_output=True, max_step=0.05)
+    ax.plot(sol.y[0], sol.y[1], 'C0', lw=1.5)
+
+ax.plot([-2*np.pi, 0, 2*np.pi], [0, 0, 0], 'C1o', markersize=12, label='Stable attractors')
+ax.plot([-np.pi, np.pi], [0, 0], 'C2o', markersize=12, markerfacecolor='none',
+        markeredgewidth=3, label='Unstable (saddle) points')
+
+ax.axhline(0, color='black', linewidth=1)
+ax.axvline(0, color='black', linewidth=1)
+ax.set_xlabel(r'$x$')
+ax.set_ylabel(r'$\dot{x}$', rotation=0)
+ax.set_title(r'Damped Pendulum Phase Portrait ($\gamma=0.3$)')
+ax.legend(loc='upper right')
+ax.grid()
+plt.tight_layout()
+plt.show()
+```
+
+The streamlines spiral inward toward the stable fixed points ($x = 2n\pi$) -- these are the attractors -- while the saddle points at $x=(2n+1)\pi$ still repel nearby trajectories along one direction. Unlike the undamped pendulum, energy is no longer conserved, so trajectories cross between the nested ellipses we saw before, spiraling down toward rest instead of orbiting forever.
 
 +++

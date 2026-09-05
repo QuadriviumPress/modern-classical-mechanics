@@ -115,6 +115,31 @@ In this problem we are changing the coordinates to explore a different aspect of
 
 Let's figure out the motion of a particle constrained to the inside of a paraboloid. The potential energy of the bead is given by $U = mgz$, where $m$ is the mass of the bead and $g$ is the acceleration due to gravity. The coordinates are $(x,y,z)$ in the Cartesian coordinate system, with $z$ upward.
 
+The constraint surface itself (for an arbitrary choice of $\alpha$) looks like this:
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-v0_8-colorblind')
+
+alpha = 1.0
+rho = np.linspace(0, 1.5, 40)
+phi = np.linspace(0, 2*np.pi, 60)
+Rho, Phi = np.meshgrid(rho, phi)
+X, Y = Rho*np.cos(Phi), Rho*np.sin(Phi)
+Z = 0.5*alpha*(X**2 + Y**2)
+
+fig = plt.figure(figsize=(6, 5))
+ax = fig.add_subplot(projection='3d')
+ax.plot_surface(X, Y, Z, cmap='viridis', alpha=0.85, linewidth=0)
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('z')
+ax.set_title(r'Constraint Surface: $z=\frac{1}{2}\alpha(x^2+y^2)$')
+plt.tight_layout()
+plt.show()
+```
+
 1. (5 pt) Write down the Lagrangian for the system in terms of $x$, $y$, and $z$ and their associated velocities $\mathcal{L}(x, y, z, \dot{x}, \dot{y}, \dot{z})$. Find the 3 equations of motion.
 
 +++

@@ -23,6 +23,29 @@ Another useful formulation of Classical Mechanics uses discrete points in time t
 
 We posit discrete time, like snapshots of the motion where a given measure of time $t_i$ exists in a discrete set of times between $t_0$ and $t_f$. That is, $t_i \in \{t_0, t_1, t_2, \ldots, t_f\}$. We conceive of the motion as discrete like the points in the figure below.
 
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-v0_8-colorblind')
+
+t_continuous = np.linspace(0, 2, 300)
+y_continuous = 1 + 3*t_continuous - 4.9*t_continuous**2
+
+t_discrete = np.linspace(0, 2, 9)
+y_discrete = 1 + 3*t_discrete - 4.9*t_discrete**2
+
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.plot(t_continuous, y_continuous, 'C0-', lw=2, label='Continuous motion, $y(t)$')
+ax.plot(t_discrete, y_discrete, 'ko', markersize=7, label='Discrete samples, $y_i$ at $t_i$')
+ax.set_xlabel('Time, $t$')
+ax.set_ylabel('Position, $y$')
+ax.set_title('Discretizing a Continuous Trajectory')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
 In this case, the points are equally spaced in time, such that $t_{i+1} - t_i = \Delta t$. This gives a simple table of the motion of the object at each time step:
 
 | time | position |
@@ -221,6 +244,35 @@ $$|\vec{b} \times \vec{a}| = |\vec{a}||\vec{b}|\sin(\phi)$$
 And thus both magnitudes are the same, however, the directions are opposite. 
 
 $$\vec{a} \times \vec{b} = -\vec{b} \times \vec{a}$$
+
+The right-hand rule is easiest to see with two perpendicular unit vectors. The figure below shows $\hat{x} \times \hat{y}$, which points along $\hat{z}$.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-v0_8-colorblind')
+
+a = np.array([1, 0, 0])
+b = np.array([0, 1, 0])
+c = np.cross(a, b)
+
+fig = plt.figure(figsize=(6, 6))
+ax = fig.add_subplot(111, projection='3d')
+origin = [0, 0, 0]
+ax.quiver(*origin, *a, color='C0', label=r'$\vec{a}$', linewidth=2)
+ax.quiver(*origin, *b, color='C1', label=r'$\vec{b}$', linewidth=2)
+ax.quiver(*origin, *c, color='C2', label=r'$\vec{a}\times\vec{b}$', linewidth=2)
+ax.set_xlim([0, 1.2])
+ax.set_ylim([0, 1.2])
+ax.set_zlim([0, 1.2])
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('z')
+ax.set_title('Right-Hand Rule for the Cross Product')
+ax.legend()
+plt.tight_layout()
+plt.show()
+```
 
 +++
 

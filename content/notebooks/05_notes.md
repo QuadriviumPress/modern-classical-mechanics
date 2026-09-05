@@ -246,6 +246,39 @@ What we have discovered is that the total energy of the spring-mass system is:
 
 $$E_{tot} = T + U_s = \dfrac{1}{2}mv^2 + \dfrac{1}{2}kx^2 = \text{constant}.$$
 
+The plot below tracks $T$, $U_s$, and their sum over a couple of oscillation periods. Notice that kinetic and potential energy trade off with each other, but the total (dashed) stays flat.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+
+plt.style.use('seaborn-v0_8-colorblind')
+
+m, k = 1.0, 4.0
+omega = np.sqrt(k / m)
+x0, v0 = 1.0, 0.0
+
+t = np.linspace(0, 2 * 2 * np.pi / omega, 400)
+x = x0 * np.cos(omega * t)
+v = -x0 * omega * np.sin(omega * t)
+
+T = 0.5 * m * v**2
+U = 0.5 * k * x**2
+E = T + U
+
+fig, ax = plt.subplots(figsize=(7, 5))
+ax.plot(t, T, label='Kinetic energy, $T$')
+ax.plot(t, U, label='Potential energy, $U_s$')
+ax.plot(t, E, 'k--', label='Total energy, $E$')
+ax.set_xlabel('Time, $t$')
+ax.set_ylabel('Energy')
+ax.set_title('Energy Exchange in the Spring-Mass SHO')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
 You have likely seen this previously in your study of the SHO. It is a very important result. But it is also the case that we don't always have a potential energy function.
 
 We need to have a [conservative force](https://en.wikipedia.org/wiki/Conservative_force) to have a potential energy function. A conservative force is one where the work done by the force is independent of the path taken. Above, we assumed that in our calculations because the force was only dependent on the position of the object. That is a key feature of a conservative force.
@@ -287,6 +320,36 @@ $$U(x) = -\int F(x) dx = \dfrac{b}{2\pi}F_0 \cos \left(\dfrac{2\pi x}{b}\right) 
 where $C$ is a constant. We can choose $C$ so that $U(0) = 0$; only the difference in potential energy matter. Then we have:
 
 $$U(x) = \dfrac{b}{2\pi}F_0 \left[\cos \left(\dfrac{2\pi x}{b}\right)-1\right].$$
+
+The figure below shows the periodic force and the corresponding potential energy side by side; notice that the potential is minimized exactly where the force crosses zero going from positive to negative, consistent with $F=-dU/dx$.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+
+plt.style.use('seaborn-v0_8-colorblind')
+
+F0, b = 1.0, 1.0
+x = np.linspace(0, 3 * b, 400)
+
+F = -F0 * np.sin(2 * np.pi * x / b)
+U = (b / (2 * np.pi)) * F0 * (np.cos(2 * np.pi * x / b) - 1)
+
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(7, 7), sharex=True)
+ax1.plot(x / b, F)
+ax1.axhline(0, color='k', lw=1)
+ax1.set_ylabel('Force, $F(x)$')
+ax1.set_title('Lattice Chain Force and Potential Energy')
+ax1.grid(True)
+
+ax2.plot(x / b, U, color='C1')
+ax2.set_xlabel('Position, $x/b$')
+ax2.set_ylabel('Potential energy, $U(x)$')
+ax2.grid(True)
+
+plt.tight_layout()
+plt.show()
+```
 
 This is just **another** conservative force.
 

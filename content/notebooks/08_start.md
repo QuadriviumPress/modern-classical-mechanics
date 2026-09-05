@@ -47,7 +47,30 @@ While the SHO is a well known and well-studied system, many systems are not simp
 
 $$U(\theta) = mgL(1 - \cos(\theta)).$$
 
-The general motion of a pendulum is thus not simple harmonic motion, but it can be approximated as simple harmonic motion for small angles. 
+The general motion of a pendulum is thus not simple harmonic motion, but it can be approximated as simple harmonic motion for small angles.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-v0_8-colorblind')
+
+theta = np.linspace(-3, 3, 400)
+U_exact = 1 - np.cos(theta)
+U_approx = 0.5*theta**2
+
+fig, ax = plt.subplots(figsize=(7, 5))
+ax.plot(theta, U_exact, label=r'$U(\theta) = mgL(1-\cos\theta)$')
+ax.plot(theta, U_approx, '--', label=r'Harmonic approximation $\frac{1}{2}mgL\,\theta^2$')
+ax.set_xlabel(r'$\theta$ (rad)')
+ax.set_ylabel(r'$U/mgL$')
+ax.set_title('Pendulum Potential vs. Harmonic Approximation')
+ax.legend()
+ax.grid()
+plt.tight_layout()
+plt.show()
+```
+
+The two curves agree closely near $\theta=0$ but diverge noticeably once the amplitude grows beyond about a radian -- this is exactly the regime where the SHO approximation breaks down and the pendulum's motion becomes genuinely nonlinear.
 
 There are other examples:
 
@@ -62,6 +85,34 @@ $$\ddot{x} - \mu(1-x^2)\dot{x} + x = 0$$
 * It can also be driven by an external force:
 
 $$\ddot{x} - \mu(1-x^2)\dot{x} + x - A \sin(\omega t)$$
+
+Regardless of where a Van der Pol oscillator starts, its trajectory is drawn onto the same closed loop in phase space -- a [limit cycle](https://en.wikipedia.org/wiki/Limit_cycle). This is qualitatively different from the SHO's nested ellipses, where the size of the orbit depends on the initial energy.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+plt.style.use('seaborn-v0_8-colorblind')
+
+mu = 2.0
+
+def van_der_pol(t, state):
+    x, v = state
+    return [v, mu*(1 - x**2)*v - x]
+
+fig, ax = plt.subplots(figsize=(7, 6))
+for x0, v0 in [(0.1, 0.0), (3.0, 0.0), (-2.5, 2.0)]:
+    sol = solve_ivp(van_der_pol, [0, 40], [x0, v0], max_step=0.02)
+    ax.plot(sol.y[0], sol.y[1], lw=1.2)
+    ax.plot(x0, v0, 'ko', markersize=5)
+
+ax.set_xlabel(r'$x$')
+ax.set_ylabel(r'$\dot{x}$', rotation=0)
+ax.set_title(r'Van der Pol Oscillator: Trajectories Approach a Limit Cycle ($\mu=2$)')
+ax.grid()
+plt.tight_layout()
+plt.show()
+```
 
 All of the tools we develop to investigate the SHO can be ported to these systems.
 

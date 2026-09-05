@@ -93,6 +93,30 @@ $$\theta_{rubber} = \tan^{-1}(0.8) \approx 39^\circ$$
 
 It seems quite reasonable that rubber would have a higher angle of inclination before sliding than steel.
 ```
+
+The relationship $\theta = \tan^{-1}(\mu_s)$ holds for any coefficient of static friction. The plot below shows how the critical sliding angle grows with $\mu_s$, with the steel and rubber examples marked.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-v0_8-colorblind')
+
+mu_s = np.linspace(0, 1.2, 200)
+theta_deg = np.degrees(np.arctan(mu_s))
+
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.plot(mu_s, theta_deg, 'C0-', lw=2)
+ax.plot(0.16, np.degrees(np.arctan(0.16)), 'ko', label='Steel ($\\mu_s=0.16$)')
+ax.plot(0.8, np.degrees(np.arctan(0.8)), 'ks', label='Rubber ($\\mu_s=0.8$)')
+ax.set_xlabel(r'Coefficient of static friction, $\mu_s$')
+ax.set_ylabel(r'Critical angle, $\theta$ (degrees)')
+ax.set_title('Ramp Angle at Which Sliding Begins')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
 ```{tip}
 A few things to note about this problem:
 1. This was a static problem, such that $\vec{F}_{net} = 0$.
@@ -145,6 +169,31 @@ $$F(v) \approx F'(0)v + \frac{F''(0)}{2!}v^2$$
 We call the first term the **linear drag** term and the second term the **quadratic drag** term. The linear drag term is proportional to the velocity of the object, and the quadratic drag term is proportional to the square of the velocity of the object. We also typically replace the evaluated derivatives with constants, $b$ and $c$ -- because they are constants that depend on the object and the fluid it is moving through. And thus,
 
 For a signed one-dimensional velocity, the resistive force must oppose the motion. A common model is $F_{air}=b v+c|v|v$ when positive $y$ is downward; if $F_{air}$ denotes only the upward resistance magnitude, the simpler $bv+cv^2$ applies for $v\ge 0$.
+
+The plot below shows a representative nonlinear drag force alongside its Taylor approximations. Keeping only the linear term matches well near $v=0$, but adding the quadratic term extends the range over which the approximation stays accurate.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-v0_8-colorblind')
+
+v = np.linspace(0, 15, 200)
+F_true = 0.4 * v + 0.15 * v**2 + 0.02 * v**3
+F_linear = 0.4 * v
+F_quadratic = 0.4 * v + 0.15 * v**2
+
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.plot(v, F_true, 'k-', lw=2, label='"True" drag force $F(v)$')
+ax.plot(v, F_linear, '--', label='Linear term only')
+ax.plot(v, F_quadratic, '-.', label='Linear + quadratic terms')
+ax.set_xlabel('Speed, $v$ (m/s)')
+ax.set_ylabel('Drag force, $F_{air}$ (N)')
+ax.set_title('Taylor Approximation of a Nonlinear Drag Force')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
+```
 
 +++
 

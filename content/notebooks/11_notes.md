@@ -245,6 +245,58 @@ $$y(x) = mx + b$$
 
 where $b$ is a constant of integration. This is the equation of a straight line!
 
+We can check this numerically: take the straight-line path $y(x)$ and add a family of perturbations $\alpha\eta(x)$ that vanish at the endpoints, then compute the length of each candidate path. The plot below confirms that the length is smallest exactly when $\alpha=0$, i.e., for the straight line itself.
+
+```{code-cell} ipython3
+:tags: [hide-input]
+
+import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-v0_8-colorblind')
+
+x1, x2 = 0.0, 4.0
+y1, y2 = 1.0, 3.0
+
+def straight(x):
+    return y1 + (y2 - y1) * (x - x1) / (x2 - x1)
+
+def eta(x):
+    return np.sin(np.pi * (x - x1) / (x2 - x1))
+
+x = np.linspace(x1, x2, 400)
+
+def path_length(alpha):
+    y = straight(x) + alpha * eta(x)
+    dydx = np.gradient(y, x)
+    return np.trapezoid(np.sqrt(1 + dydx**2), x)
+
+alphas = np.linspace(-1.5, 1.5, 61)
+lengths = [path_length(a) for a in alphas]
+
+fig, axes = plt.subplots(1, 2, figsize=(11, 4.5))
+
+for a, color in zip([-1.0, -0.5, 0.0, 0.5, 1.0], ['C0', 'C1', 'C2', 'C3', 'C4']):
+    y = straight(x) + a * eta(x)
+    axes[0].plot(x, y, color=color, label=fr'$\alpha={a}$', lw=2 if a == 0 else 1)
+axes[0].set_xlabel('x')
+axes[0].set_ylabel('y')
+axes[0].set_title(r'Candidate Paths $Y(x) = y(x) + \alpha\eta(x)$')
+axes[0].legend(fontsize=8)
+axes[0].grid(True)
+
+axes[1].plot(alphas, lengths, 'C0-')
+axes[1].axvline(0, color='k', lw=1, linestyle='--')
+axes[1].plot(0, path_length(0), 'C1o', markersize=8, label=r'Straight line ($\alpha=0$)')
+axes[1].set_xlabel(r'$\alpha$')
+axes[1].set_ylabel(r'Path Length $l(\alpha)$')
+axes[1].set_title('Path Length vs. Perturbation Strength')
+axes[1].legend()
+axes[1].grid(True)
+
+plt.tight_layout()
+plt.show()
+```
+
 +++
 
 ## Example: Snell's Law
@@ -292,6 +344,38 @@ $$\dfrac{\sin(\theta_1)}{v_1} - \dfrac{\sin(\theta_2)}{v_2} = 0$$
 This is [**Snell's Law**](https://en.wikipedia.org/wiki/Snell%27s_law)! It tells us that the ratio of the sine of the angles to the velocities is constant. This is a classic result in optics, but it also applies to this problem of finding the shortest path in a plane.
 
 $$\dfrac{\sin(\theta_1)}{v_1} = \dfrac{\sin(\theta_2)}{v_2}$$
+```
+
+We can verify this directly by computing the total travel time $T$ for every possible crossing point $y$ and checking that the minimum indeed lands where Snell's Law is satisfied.
+
+```{code-cell} ipython3
+:tags: [hide-input]
+
+import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-v0_8-colorblind')
+
+x1, y1 = 3.0, 4.0   # point on the beach
+x2, y2 = 4.0, -2.0  # point in the water
+v1, v2 = 5.0, 2.0   # speed on the beach and in the water
+
+y = np.linspace(y2 - 2, y1 + 2, 400)
+d1 = np.sqrt(x1**2 + (y - y1)**2)
+d2 = np.sqrt(x2**2 + (y2 - y)**2)
+T = d1 / v1 + d2 / v2
+
+y_min = y[np.argmin(T)]
+
+fig, ax = plt.subplots(figsize=(7, 4.5))
+ax.plot(y, T, 'C0-')
+ax.plot(y_min, T.min(), 'C1o', markersize=8, label=fr'Minimum at $y={y_min:.2f}$')
+ax.set_xlabel('Crossing Point $y$')
+ax.set_ylabel('Total Travel Time $T$')
+ax.set_title('Travel Time vs. Shoreline Crossing Point')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
 ```
 
 +++

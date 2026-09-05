@@ -263,6 +263,44 @@ In three-dimensions, this method is simply written in a vector form:
 $$\vec{v}(t+\Delta t) = \vec{v}(t) + \dfrac{\vec{F}(t)}{m} \Delta t$$
 $$\vec{r}(t+\Delta t) = \vec{r}(t) + \vec{v}(t+\Delta t) \Delta t$$
 
+Let's check that the Euler-Cromer step actually reproduces motion we already know how to solve analytically. For the simple falling ball with no drag, we can compare the discrete steps against the exact kinematic equation, $y(t) = y_0 + v_0 t + \frac{1}{2}gt^2$.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-v0_8-colorblind')
+
+g = 9.8
+y0, v0 = 0.0, 0.0
+dt = 0.05
+t_max = 2.0
+
+n_steps = int(t_max/dt)
+t = np.zeros(n_steps+1)
+y = np.zeros(n_steps+1)
+v = np.zeros(n_steps+1)
+y[0], v[0] = y0, v0
+
+for i in range(n_steps):
+    v[i+1] = v[i] + g*dt
+    y[i+1] = y[i] + v[i+1]*dt
+    t[i+1] = t[i] + dt
+
+t_analytic = np.linspace(0, t_max, 200)
+y_analytic = y0 + v0*t_analytic + 0.5*g*t_analytic**2
+
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.plot(t_analytic, y_analytic, 'k-', lw=2, label='Analytic: $y_0+v_0t+\\frac{1}{2}gt^2$')
+ax.plot(t, y, 'C1o', markersize=5, label='Euler-Cromer, $\\Delta t=0.05$ s')
+ax.set_xlabel('Time, $t$ (s)')
+ax.set_ylabel('Position, $y$ (m)')
+ax.set_title('Euler-Cromer Integration vs. the Analytic Solution')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
 +++
 
 ## Analytical Solutions to the Air-Resistance Problem
@@ -350,7 +388,29 @@ And thus, we find the velocity as a function of time:
 
 $$v(t) = v_{\text{term}}\tanh\left(\dfrac{gt}{v_{\text{term}}}\right)$$
 
+The plot below compares how a falling object approaches the same terminal velocity under linear drag (exponential approach) versus quadratic drag ($\tanh$ approach).
 
-```{code-cell}
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-v0_8-colorblind')
 
+g = 9.8
+v_term = 40.0
+
+t = np.linspace(0, 15, 300)
+v_linear = v_term*(1 - np.exp(-g*t/v_term))
+v_quadratic = v_term*np.tanh(g*t/v_term)
+
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.plot(t, v_linear, label='Linear drag: $v_{term}(1-e^{-gt/v_{term}})$')
+ax.plot(t, v_quadratic, label=r'Quadratic drag: $v_{term}\tanh(gt/v_{term})$')
+ax.axhline(v_term, color='k', ls='--', lw=1, label='Terminal velocity')
+ax.set_xlabel('Time, $t$ (s)')
+ax.set_ylabel('Speed, $v$ (m/s)')
+ax.set_title('Approach to Terminal Velocity: Linear vs. Quadratic Drag')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
 ```

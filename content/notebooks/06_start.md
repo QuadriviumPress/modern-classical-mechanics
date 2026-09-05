@@ -40,6 +40,28 @@ There's a reason for that.
 
 It provides the simplest example of a system that exhibits periodic motion. It also is a system with one of the simplest energy landscapes -- a parabola; and it has a global stable equilibrium point at the bottom of the potential well.
 
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+
+plt.style.use('seaborn-v0_8-colorblind')
+
+xi, omega = 1.0, 2.0
+x = np.linspace(-2, 2, 400)
+U = 0.5 * xi * omega**2 * x**2
+
+fig, ax = plt.subplots(figsize=(7, 5))
+ax.plot(x, U)
+ax.plot(0, 0, 'C2*', markersize=20, label='Stable equilibrium')
+ax.set_xlabel('$x$')
+ax.set_ylabel('$U(x)$')
+ax.set_title('The Parabolic Potential Well of the SHO')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
 There are many systems that we can transform into a simple harmonic oscillator. And it is not because the world is full of springs and masses. It is because the simple harmonic oscillator is a good model for many systems near their local equilibrium points. In fact, as you will see, it is the leading (non-constant) term in every Taylor expansion of a 1D potential energy function near a local minimum.
 
 ### Another SHO Example - A Pendulum

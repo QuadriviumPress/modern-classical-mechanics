@@ -197,6 +197,35 @@ $$\ddot{\phi} = -\dfrac{g}{R}\dfrac{(M-m)}{(M+m+\frac{1}{2}M_p)}$$
 
 which is a constant acceleration.
 
+Comparing this to the massless-pulley result $\ddot{y}_1 = -\frac{(M-m)}{(M+m)}g$ from before, we see the pulley's moment of inertia acts like extra inertia in the denominator, slowing the whole system down. The plot below shows the distance the heavier mass $M$ has descended after time $t$ for a few choices of pulley mass $M_p$.
+
+```{code-cell} ipython3
+:tags: [hide-input]
+
+import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-v0_8-colorblind')
+
+g = 9.8
+M, m = 2.0, 1.0
+t = np.linspace(0, 2, 200)
+
+fig, ax = plt.subplots(figsize=(7, 5))
+for Mp, color in zip([0, 1, 3, 6], ['C0', 'C1', 'C2', 'C3']):
+    a = (M - m) / (M + m + 0.5 * Mp) * g
+    y1 = 0.5 * a * t**2
+    label = 'Massless pulley' if Mp == 0 else fr'$M_p={Mp}$ kg'
+    ax.plot(t, y1, color=color, label=label)
+
+ax.set_xlabel('Time (s)')
+ax.set_ylabel(r'Distance descended by $M$ (m)')
+ax.set_title('Effect of Pulley Inertia on the Atwood Machine')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
 +++
 
 ## Example: Bead in a Parabolic Bowl
@@ -303,5 +332,58 @@ $$\dot{\rho} = v$$
 $$\dot{\phi} = \omega$$
 $$\dot{v} = -\dfrac{c^2\rho v^2 - \rho\omega^2 + gc\rho}{1+c^2\rho^2}$$
 $$\dot{\omega} = - \dfrac{2 v\omega}{\rho^2}$$
+
+Let's integrate these equations numerically, launching the bead at $\rho_0=1$ with $\dot\rho_0=0$ and a nonzero angular velocity $\dot\phi_0=1.2$. We plot $\rho(t)$ to see the radial oscillation, and reconstruct the 3D path $(x,y,z)$ to see the bead trace out its orbit on the bowl.
+
+```{code-cell} ipython3
+:tags: [hide-input]
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+plt.style.use('seaborn-v0_8-colorblind')
+
+g = 9.8
+c = 1.0
+
+def bead(t, state):
+    rho, phi, v, omega = state
+    drho = v
+    dphi = omega
+    dv = -(c**2 * rho * v**2 - rho * omega**2 + g * c * rho) / (1 + c**2 * rho**2)
+    domega = -2 * v * omega / rho
+    return [drho, dphi, dv, domega]
+
+rho0, omega0 = 1.0, 1.2
+state0 = [rho0, 0.0, 0.0, omega0]
+t_span = (0, 15)
+t_eval = np.linspace(*t_span, 3000)
+sol = solve_ivp(bead, t_span, state0, t_eval=t_eval)
+
+rho, phi, v, omega = sol.y
+z = 0.5 * c * rho**2
+x = rho * np.cos(phi)
+y = rho * np.sin(phi)
+
+fig = plt.figure(figsize=(11, 5))
+ax1 = fig.add_subplot(1, 2, 1)
+ax1.plot(sol.t, rho, 'C0')
+ax1.set_xlabel('Time (s)')
+ax1.set_ylabel(r'$\rho$ (m)')
+ax1.set_title(r'Radial Motion $\rho(t)$')
+ax1.grid(True)
+
+ax2 = fig.add_subplot(1, 2, 2, projection='3d')
+ax2.plot(x, y, z, 'C1')
+ax2.set_xlabel('x')
+ax2.set_ylabel('y')
+ax2.set_zlabel('z')
+ax2.set_title('Bead Trajectory on the Paraboloid')
+
+plt.tight_layout()
+plt.show()
+```
+
+The bead's radius oscillates steadily between a minimum and maximum value rather than settling down, because there is nothing to dissipate energy in this frictionless system, while conservation of $L_z = m\rho^2\dot\phi$ forces $\dot\phi$ to speed up whenever $\rho$ shrinks, tracing out the looping path on the bowl's surface shown at right.
 
 +++

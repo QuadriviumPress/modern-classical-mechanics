@@ -120,6 +120,35 @@ $$f_{lin} = 3\pi \eta D v \qquad f_{quad} = \kappa \rho A v^2$$
 
 where $D$ is the "length scale" of the object (e.g., the diameter of the sphere), $\eta$ is the viscosity of the fluid, $\rho$ is the density of the fluid, $A$ is the cross-sectional area of the object, and $\kappa$ is a constant of order unity (larger for flat and blunt bodies; smaller for streamlined bodies).
 
+The two force laws scale differently with speed, as illustrated below for arbitrary parameter values.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-v0_8-colorblind')
+
+v = np.linspace(0, 5, 200)
+D = 0.5  # illustrative length scale [m]
+eta = 1.8e-5  # air viscosity [Pa s]
+rho = 1.2  # air density [kg/m^3]
+kappa = 0.25
+A = np.pi * (D / 2) ** 2
+
+f_lin = 3 * np.pi * eta * D * v
+f_quad = kappa * rho * A * v ** 2
+
+fig, ax = plt.subplots(figsize=(6, 4.5))
+ax.plot(v, f_lin, label='Linear drag, $f_{lin} = 3\\pi \\eta D v$')
+ax.plot(v, f_quad, label='Quadratic drag, $f_{quad} = \\kappa \\rho A v^2$')
+ax.set_xlabel('Speed $v$ (m/s)')
+ax.set_ylabel('Drag force (N)')
+ax.set_title('Linear vs. Quadratic Drag Force (illustrative)')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
 * 2a (5pt) The Reynolds number is defined as $Re = \rho v D / \eta$. What is the physical meaning of this number? For a spherical object, show that the ratio of the quadratic drag force to the linear drag force is given by $f_{quad}/f_{lin} = Re/48$. Use this to explain the physical meaning of the Reynolds number. **Note: you may assume that $\kappa = 0.25$ for a sphere.**
 * 2b (2pt) Explain a situation where there would be a low Reynolds number. What about a high Reynolds number? Estimate the Reynolds number for a falling rain drop, a parachutist, a car, and a plane.
 * 2c (3pt) Find another [dimensionless number from fluid mechanics](https://en.wikipedia.org/wiki/Dimensionless_numbers_in_fluid_mechanics) and explain its physical meaning. Make sure you consider high and low values of the number you find.

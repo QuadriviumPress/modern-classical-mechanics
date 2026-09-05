@@ -202,3 +202,69 @@ We have built all the tools to study 1D unforced oscillators. Now you get to pic
 
    $$ V(x) = -\frac{\mu}{2} x^2 + \frac{\lambda}{4} x^4 $$
    where $\mu$ and $\lambda$ are positive constants. This system exhibits bistability with two stable equilibria, leading to interesting nonlinear dynamics and potential oscillations between the wells under certain conditions.
+
+Each of the potentials above has a local minimum where the small-oscillation (SHO) approximation applies; the plots below use arbitrary illustrative parameter values, not a solution to any part of this problem.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-v0_8-colorblind')
+
+fig, axs = plt.subplots(2, 3, figsize=(13, 8))
+
+# Simple pendulum
+theta = np.linspace(-2*np.pi, 2*np.pi, 400)
+m, g, h = 1.0, 9.81, 1.0
+V = m*g*h*(1 - np.cos(theta))
+axs[0, 0].plot(theta, V)
+axs[0, 0].set_title('Pendulum: $V=mgh(1-\\cos\\theta)$')
+axs[0, 0].set_xlabel(r'$\theta$ (rad)')
+axs[0, 0].set_ylabel('V')
+
+# Nonlinear spring (hardening vs softening)
+x = np.linspace(-2, 2, 400)
+k = 1.0
+for beta, label in [(0.5, 'hardening, $\\beta>0$'), (-0.5, 'softening, $\\beta<0$')]:
+    V = 0.5*k*x**2 + (beta/3)*x**3
+    axs[0, 1].plot(x, V, label=label)
+axs[0, 1].set_title(r'Nonlinear spring: $V=\frac{k}{2}x^2+\frac{\beta}{3}x^3$')
+axs[0, 1].set_xlabel('x')
+axs[0, 1].legend(fontsize=8)
+
+# Lennard-Jones
+r = np.linspace(0.85, 3, 400)
+eps, sigma = 1.0, 1.0
+V = 4*eps*((sigma/r)**12 - (sigma/r)**6)
+axs[0, 2].plot(r, V)
+axs[0, 2].set_ylim(-1.5, 2)
+axs[0, 2].set_title('Lennard-Jones potential')
+axs[0, 2].set_xlabel('r')
+
+# Morse
+x = np.linspace(-1, 4, 400)
+De, a = 1.0, 1.0
+V = De*(1 - np.exp(-a*x))**2
+axs[1, 0].plot(x, V)
+axs[1, 0].set_ylim(0, 3)
+axs[1, 0].set_title('Morse potential')
+axs[1, 0].set_xlabel(r'$x-x_0$')
+
+# Double well
+x = np.linspace(-2.5, 2.5, 400)
+mu, lam = 1.0, 1.0
+V = -0.5*mu*x**2 + 0.25*lam*x**4
+axs[1, 1].plot(x, V)
+axs[1, 1].set_title(r'Double well: $V=-\frac{\mu}{2}x^2+\frac{\lambda}{4}x^4$')
+axs[1, 1].set_xlabel('x')
+
+axs[1, 2].axis('off')
+
+for ax in axs.flat:
+    if ax.axison:
+        ax.set_ylabel('V')
+        ax.grid(True)
+
+fig.suptitle('Example 1D Potentials with a Local Minimum (illustrative parameters)')
+plt.tight_layout()
+plt.show()
+```

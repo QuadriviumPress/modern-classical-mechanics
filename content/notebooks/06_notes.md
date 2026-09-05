@@ -190,6 +190,46 @@ $$\frac{d^2U(\theta = \pm\pi)}{d\theta^2} = -m g L < 0.$$
 
 Thus, we have confirmed that the bottom of the swing is a stable equilibrium point, while the top of the swing is an unstable equilibrium point.
 
+We can see this same story in the pendulum's phase portrait, which plots $\dot\theta$ against $\theta$ for many trajectories at once. Trajectories that stay near $\theta=0$ form closed loops (libration) around the stable equilibrium, while trajectories with enough energy sweep past $\theta=\pm\pi$ and keep going (rotation) -- the unstable equilibrium never traps a nearby orbit.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+plt.style.use('seaborn-v0_8-colorblind')
+
+g_over_L = 9.8
+
+def pendulum(t, state):
+    theta, omega = state
+    return [omega, -g_over_L * np.sin(theta)]
+
+fig, ax = plt.subplots(figsize=(7, 6))
+
+for theta0 in [0.5, 1.5, 2.5, 3.05]:
+    sol = solve_ivp(pendulum, [0, 6], [theta0, 0], t_eval=np.linspace(0, 6, 600))
+    ax.plot(sol.y[0], sol.y[1], color='C0')
+    ax.plot(-sol.y[0], -sol.y[1], color='C0')
+
+for omega0 in [5.5, 7.0]:
+    sol = solve_ivp(pendulum, [0, 6], [-np.pi, omega0], t_eval=np.linspace(0, 6, 600))
+    ax.plot(sol.y[0], sol.y[1], color='C1')
+    ax.plot(sol.y[0], -sol.y[1], color='C1')
+
+ax.plot(0, 0, 'C2*', markersize=18, label='Stable ($\\theta=0$)')
+ax.plot([-np.pi, np.pi], [0, 0], 'C3*', markersize=18, label='Unstable ($\\theta=\\pm\\pi$)')
+
+ax.set_xlabel(r'$\theta$')
+ax.set_ylabel(r'$\dot{\theta}$')
+ax.set_title('Pendulum Phase Portrait: Libration vs. Rotation')
+ax.set_xlim(-2 * np.pi, 2 * np.pi)
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
 +++
 
 ## Our new toolkit

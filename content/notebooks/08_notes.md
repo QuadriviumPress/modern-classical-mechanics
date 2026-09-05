@@ -490,3 +490,37 @@ plt.grid()
 plt.tight_layout()
 plt.show()
 ```
+
+### Comparing the Three Regimes
+
+It's helpful to see all three regimes side by side, starting from the same initial conditions ($x_0=1$, $v_0=0$) with the same natural frequency $\omega_0$. Critical damping returns to equilibrium the fastest without oscillating; overdamping returns to equilibrium more slowly (without oscillating), and underdamping oscillates while decaying.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+plt.style.use('seaborn-v0_8-colorblind')
+
+omega0 = 2.0
+
+def oscillator(t, state, beta):
+    x, v = state
+    return [v, -2*beta*v - omega0**2*x]
+
+t_eval = np.linspace(0, 8, 800)
+labels = {0.2: 'Underdamped', omega0: 'Critically damped', 4.0: 'Overdamped'}
+
+fig, ax = plt.subplots(figsize=(9, 5))
+for beta, label in labels.items():
+    sol = solve_ivp(oscillator, [0, 8], [1.0, 0.0], args=(beta,), t_eval=t_eval)
+    ax.plot(sol.t, sol.y[0], label=f'{label} (' + r'$\beta=$' + f'{beta})')
+
+ax.axhline(0, color='k', lw=1)
+ax.set_xlabel('Time')
+ax.set_ylabel('Displacement')
+ax.set_title(r'Comparing the Three Damping Regimes ($\omega_0=2$)')
+ax.legend()
+ax.grid()
+plt.tight_layout()
+plt.show()
+```

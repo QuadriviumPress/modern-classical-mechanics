@@ -21,6 +21,33 @@ This form of air resistance cannot describe the behavior of objects approaching 
 
 ![A shock front from a supersonic jet](../images/notes/week4/shock_front.jpg)
 
+The plot below compares how these two drag models grow with speed: the linear model grows steadily, while the quadratic model grows much faster at high speed, which is why it dominates for fast-moving, macroscopic objects.
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+
+plt.style.use('seaborn-v0_8-colorblind')
+
+v = np.linspace(0, 5, 200)
+b = 1.0
+c = 0.4
+
+F_linear = b * v
+F_quadratic = c * v**2
+
+fig, ax = plt.subplots(figsize=(7, 5))
+ax.plot(v, F_linear, label=r'Linear drag, $F \sim v$')
+ax.plot(v, F_quadratic, label=r'Quadratic drag, $F \sim v^2$')
+ax.set_xlabel('Speed, $v$')
+ax.set_ylabel('Drag force magnitude, $F$')
+ax.set_title('Two Common Models of Fluid Drag')
+ax.legend()
+ax.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
 The second form ($F \sim v$) describes the flow of a viscous fluid around a solid object. You might think of this as pulling an object through some viscous oil, honey, or even molasses. The movement of the fluid around the object exerts a force and slows the motion of the object.  In water, this form can explain the motion of some of the smallest creatures on Earth, like the [water bear](https://en.wikipedia.org/wiki/Tardigrade), an amoeba, or a paramecium. 
 
 What is interesting here is that these creatures have had to adapt to this form of fluid drag. [Edward Purcell](https://en.wikipedia.org/wiki/Edward_M._Purcell) wrote a paper in 1977 called "Life at Low Reynolds Number" that describes the motion of these creatures. He demonstrates that the physics in this regime requires creature to have adapted forms of locomotion that can take advantage of that environment.
