@@ -12,7 +12,7 @@ matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.patches import Arc, Circle, Rectangle, Wedge
+from matplotlib.patches import Arc, Circle, Polygon, Rectangle, Wedge
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -434,6 +434,182 @@ def unraveled_string():
     save(fig, "week13/string-unraveled.png")
 
 
+def inclined_ramp_free_body():
+    fig, ax = plt.subplots(figsize=(6.2, 4.0))
+    angle = np.deg2rad(28)
+    ramp_start, ramp_end = np.array([0.4, 0.45]), np.array([5.9, 0.45])
+    ramp_top = ramp_start + np.array([4.8 * np.cos(angle), 4.8 * np.sin(angle)])
+    ax.add_patch(Polygon([ramp_start, ramp_end, ramp_top], closed=True, facecolor="#f3f3f3", edgecolor=BLACK, lw=1.5))
+    center = ramp_start + np.array([2.55 * np.cos(angle), 2.55 * np.sin(angle)]) + np.array([-0.22 * np.sin(angle), 0.22 * np.cos(angle)])
+    side = 0.75
+    tangent, normal = np.array([np.cos(angle), np.sin(angle)]), np.array([-np.sin(angle), np.cos(angle)])
+    corners = [center + sign_t * side / 2 * tangent + sign_n * side / 2 * normal for sign_t, sign_n in [(-1, -1), (1, -1), (1, 1), (-1, 1)]]
+    ax.add_patch(Polygon(corners, closed=True, facecolor="#55a7d9", edgecolor=BLACK, lw=1.2))
+    ax.text(*center, r"$m$", fontsize=14, ha="center", va="center")
+    arrow(ax, center, center + 1.05 * normal, label=r"$N$", label_offset=(-0.22, 0.1))
+    arrow(ax, center, center - 1.15 * tangent, label=r"$f_s$", label_offset=(-0.05, 0.18))
+    arrow(ax, center, center + np.array([0, -1.35]), label=r"$m\vec g$", label_offset=(0.42, -0.05))
+    axis_origin = ramp_start + 0.72 * tangent + 0.08 * normal
+    arrow(ax, axis_origin, axis_origin + 0.95 * tangent, label=r"$\hat x$", label_offset=(0, -0.2))
+    arrow(ax, axis_origin, axis_origin + 0.95 * normal, label=r"$\hat y$", label_offset=(-0.2, 0.05))
+    ax.add_patch(Arc(ramp_start, 1.1, 1.1, theta1=0, theta2=np.degrees(angle), lw=1.1))
+    ax.text(1.0, 0.58, r"$\theta$", fontsize=13)
+    ax.set(xlim=(-0.1, 6.2), ylim=(-1.05, 3.55), aspect="equal")
+    ax.axis("off")
+    save(fig, "week1/box_fbd.png")
+
+
+def falling_object_drag():
+    fig, ax = plt.subplots(figsize=(4.2, 4.2))
+    ball = np.array([0.0, 1.8])
+    ax.add_patch(Circle(ball, 0.32, facecolor="#55a7d9", edgecolor=BLACK, lw=1.2))
+    arrow(ax, ball + np.array([0, 0.34]), ball + np.array([0, 1.45]), color=RED, label=r"$F_{\rm air}$", label_offset=(0.6, 0))
+    arrow(ax, ball - np.array([0, 0.34]), ball - np.array([0, 1.45]), color=BLACK, label=r"$W=m g$", label_offset=(-0.56, 0))
+    arrow(ax, (1.25, 2.75), (1.25, 0.25), label=r"$+y$", label_offset=(0.35, 0))
+    ax.text(0, 2.35, r"$m$", fontsize=14, ha="center")
+    ax.text(0, -0.18, "free-body diagram", fontsize=12, ha="center")
+    ax.set(xlim=(-1.7, 2.0), ylim=(-0.5, 3.25), aspect="equal")
+    ax.axis("off")
+    save(fig, "week1/falling_object.png")
+
+
+def modeling_framework():
+    fig, ax = plt.subplots(figsize=(7.4, 4.4))
+    boxes = {
+        "Observations": (0.2, 2.7, "#e9e9e9"),
+        "Physics framework": (2.65, 2.7, "#d7eafa"),
+        "Model": (5.1, 2.7, "#f8d2cf"),
+        "Analysis": (5.1, 1.0, "#f9e4bd"),
+        "Predictions": (2.65, 1.0, "#d9eed5"),
+    }
+    for label, (x, y, color) in boxes.items():
+        ax.add_patch(Rectangle((x, y), 1.85, 0.72, facecolor=color, edgecolor=BLACK, lw=1.1))
+        ax.text(x + 0.925, y + 0.36, label, fontsize=12, ha="center", va="center", wrap=True)
+    arrow(ax, (2.05, 3.06), (2.62, 3.06))
+    arrow(ax, (4.5, 3.06), (5.07, 3.06))
+    arrow(ax, (6.03, 2.68), (6.03, 1.75))
+    arrow(ax, (5.07, 1.36), (4.5, 1.36))
+    arrow(ax, (2.65, 1.36), (2.05, 2.72), connectionstyle="arc3,rad=0.28")
+    ax.text(3.62, 3.58, "assumptions and idealizations", color=BLUE, fontsize=11, ha="center")
+    ax.text(6.28, 2.1, "equations of motion", color="#b0581b", fontsize=11, rotation=90, va="center")
+    ax.text(3.65, 0.52, "compare with observations", color="#3b8a3e", fontsize=11, ha="center")
+    ax.set(xlim=(0, 7.2), ylim=(0.15, 4.0))
+    ax.axis("off")
+    save(fig, "week3/physics-modeling-framework.png")
+
+
+def falling_ball_air_resistance():
+    fig, ax = plt.subplots(figsize=(4.2, 3.8))
+    ball = np.array([0.0, 1.75])
+    ax.add_patch(Circle(ball, 0.27, facecolor=RED, edgecolor=BLACK, lw=1.1))
+    arrow(ax, ball + np.array([0, 0.3]), ball + np.array([0, 1.15]), color=BLUE, label=r"$\vec F_{\rm air}=-b\vec v$", label_offset=(0.78, 0))
+    arrow(ax, ball - np.array([0, 0.3]), ball - np.array([0, 1.15]), label=r"$\vec W=m\vec g$", label_offset=(-0.7, 0))
+    arrow(ax, (1.45, 2.7), (1.45, 0.35), label=r"$+y$", label_offset=(0.32, 0))
+    ax.text(0.45, 2.0, r"$v$", color=BLUE, fontsize=14)
+    ax.set(xlim=(-1.75, 2.05), ylim=(-0.1, 3.1), aspect="equal")
+    ax.axis("off")
+    save(fig, "week3/1d-ball-fbd-air.png")
+
+
+def orbit_vector_question():
+    fig, ax = plt.subplots(figsize=(5.6, 4.0))
+    ax.set_aspect("equal")
+    theta = np.linspace(0, 2 * np.pi, 300)
+    ax.plot(2.4 * np.cos(theta), 1.35 * np.sin(theta), color="0.55", lw=1.1, ls="--")
+    ax.add_patch(Circle((0, 0), 0.24, color="#f5b642"))
+    earth = np.array([1.75, 0.9])
+    ax.add_patch(Circle(earth, 0.13, color=BLUE))
+    arrow(ax, (0, 0), earth, color=RED, label=r"$\vec r$", label_offset=(0, 0.2))
+    arrow(ax, earth, (0.55, 0.28), color=RED, label=r"$\vec F_{\rm grav}$", label_offset=(-0.1, -0.25))
+    ax.text(-0.35, -0.35, "Sun", fontsize=12)
+    ax.text(*(earth + np.array([0.15, 0.15])), "Earth", fontsize=12)
+    ax.set(xlim=(-2.8, 2.8), ylim=(-1.8, 1.8))
+    ax.axis("off")
+    save(fig, "week4/gravitational-orbit-vector-question.png")
+
+
+def relative_position_vector():
+    fig, ax = plt.subplots(figsize=(6.0, 4.0))
+    ax.set_aspect("equal")
+    sun, earth = np.array([-1.15, -0.45]), np.array([2.0, 1.1])
+    ax.add_patch(Circle(sun, 0.22, color="#f5b642"))
+    ax.add_patch(Circle(earth, 0.13, color=BLUE))
+    arrow(ax, (0, 0), sun, color="#b0581b", label=r"$\vec r_{\rm sun}$", label_offset=(-0.1, -0.28))
+    arrow(ax, (0, 0), earth, color=BLUE, label=r"$\vec r_{\rm earth}$", label_offset=(0.2, 0.2))
+    arrow(ax, sun, earth, color=RED, label=r"$\vec r=\vec r_{\rm earth}-\vec r_{\rm sun}$", label_offset=(0, 0.28))
+    ax.plot(0, 0, "ko", ms=3)
+    ax.text(*(sun + np.array([-0.15, -0.38])), "Sun", fontsize=12)
+    ax.text(*(earth + np.array([0.1, 0.16])), "Earth", fontsize=12)
+    ax.set(xlim=(-2.1, 2.9), ylim=(-1.35, 2.05))
+    ax.axis("off")
+    save(fig, "week4/earth-sun-relative-position-vector.png")
+
+
+def orbit_polar_coordinates():
+    fig, ax = plt.subplots(figsize=(5.8, 4.2))
+    ax.set_aspect("equal")
+    arrow(ax, (0, 0), (3.9, 0), label=r"$x$", label_offset=(0.03, -0.28))
+    arrow(ax, (0, 0), (0, 3.3), label=r"$y$", label_offset=(-0.28, 0.03))
+    earth = np.array([2.85, 1.8])
+    ax.add_patch(Circle((0, 0), 0.23, color="#f5b642"))
+    ax.add_patch(Circle(earth, 0.13, color=BLUE))
+    arrow(ax, (0, 0), earth, color=RED, label=r"$\vec r$", label_offset=(-0.12, 0.18))
+    arrow(ax, earth, earth - 0.9 * earth / np.linalg.norm(earth), color=RED, label=r"$\vec F_{\rm grav}$", label_offset=(0.55, 0.05))
+    phi = np.degrees(np.arctan2(earth[1], earth[0]))
+    ax.add_patch(Arc((0, 0), 1.35, 1.35, theta1=0, theta2=phi, lw=1.1))
+    ax.text(0.9, 0.32, r"$\phi$", fontsize=14)
+    ax.text(-0.3, -0.4, "Sun", fontsize=12)
+    ax.text(*(earth + np.array([0.12, 0.14])), "Earth", fontsize=12)
+    ax.set(xlim=(-0.65, 4.3), ylim=(-0.6, 3.7))
+    ax.axis("off")
+    save(fig, "week4/earth-sun-polar-coordinates.png")
+
+
+def skateboard_free_body():
+    fig, ax = plt.subplots(figsize=(4.6, 4.5))
+    theta = np.linspace(np.deg2rad(-75), np.deg2rad(15), 200)
+    radius = 3.1
+    ax.plot(radius * np.cos(theta), radius * np.sin(theta), color=BLACK, lw=2)
+    angle = np.deg2rad(-40)
+    point = radius * np.array([np.cos(angle), np.sin(angle)])
+    ax.add_patch(Circle(point, 0.19, facecolor=RED, edgecolor=BLACK, lw=1))
+    radial = point / np.linalg.norm(point)
+    arrow(ax, point, point - 1.1 * radial, color="#3b8a3e", label=r"$\vec F_{\rm ramp}$", label_offset=(-0.35, 0.1))
+    arrow(ax, point, point + np.array([0, -1.1]), label=r"$m\vec g$", label_offset=(0.38, -0.02))
+    arrow(ax, (0, 0), point, color=RED, label=r"$\vec r$", label_offset=(-0.15, 0.18))
+    ax.add_patch(Arc((0, 0), 1.2, 1.2, theta1=-40, theta2=0, lw=1.1))
+    ax.text(0.72, -0.28, r"$\phi$", fontsize=14)
+    ax.set(xlim=(-0.55, 3.5), ylim=(-3.25, 0.8), aspect="equal")
+    ax.axis("off")
+    save(fig, "week12/skateboard-free-body.png")
+
+
+def parabolic_bowl():
+    fig = plt.figure(figsize=(5.6, 4.7))
+    ax = fig.add_subplot(projection="3d")
+    rho = np.linspace(0, 2.0, 60)
+    phi = np.linspace(0, 2 * np.pi, 80)
+    rho, phi = np.meshgrid(rho, phi)
+    x, y = rho * np.cos(phi), rho * np.sin(phi)
+    z = 0.34 * rho**2
+    ax.plot_wireframe(x, y, z, rstride=4, cstride=4, color=BLUE, linewidth=0.65)
+    bead = np.array([1.15, 0.65, 0.34 * (1.15**2 + 0.65**2)])
+    ax.scatter(*bead, color=RED, s=45, depthshade=False)
+    ax.quiver(0, 0, 0, 2.25, 0, 0, color=BLACK, arrow_length_ratio=0.08)
+    ax.quiver(0, 0, 0, 0, 2.25, 0, color=BLACK, arrow_length_ratio=0.08)
+    ax.quiver(0, 0, 0, 0, 0, 1.75, color=BLACK, arrow_length_ratio=0.08)
+    ax.plot([0, bead[0]], [0, bead[1]], [0, 0], "--", color="0.35", lw=1)
+    ax.text(2.35, 0, 0, r"$x$", fontsize=13)
+    ax.text(0, 2.35, 0, r"$y$", fontsize=13)
+    ax.text(0, 0, 1.85, r"$z$", fontsize=13)
+    ax.text(*(bead + np.array([0.12, 0.08, 0.1])), r"$m$", fontsize=13)
+    ax.set(xlim=(-2.1, 2.1), ylim=(-2.1, 2.1), zlim=(0, 1.8))
+    ax.set_axis_off()
+    ax.view_init(elev=27, azim=-52)
+    fig.tight_layout()
+    save(fig, "week13/paraboloid.png")
+
+
 if __name__ == "__main__":
     vector_components()
     dot_product()
@@ -454,3 +630,12 @@ if __name__ == "__main__":
     plane_pendulum()
     atwood_machine()
     unraveled_string()
+    inclined_ramp_free_body()
+    falling_object_drag()
+    modeling_framework()
+    falling_ball_air_resistance()
+    orbit_vector_question()
+    relative_position_vector()
+    orbit_polar_coordinates()
+    skateboard_free_body()
+    parabolic_bowl()
