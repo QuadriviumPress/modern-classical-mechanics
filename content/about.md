@@ -1,6 +1,6 @@
 # About
 
-This site is maintained by [Danny Caballero](https://dannycab.github.io/) and is intended to be a resource for teaching and learning modern classical mechanics. It is dedicated to providing accessible, interactive, and high-quality materials for students and educators. If not for the students I've been privileged to teach and learn from over the years and my colleagues who inspire my teaching this would not have been started.
+This site is intended to be a resource for teaching and learning modern classical mechanics. It is dedicated to providing accessible, interactive, and high-quality materials for students and educators. The current edition substantially revises earlier educational materials while acknowledging the students, educators, and contributors whose work helped inform them.
 
 ## Pull Requests Welcome!
 
@@ -33,7 +33,7 @@ published book.
 
 Indeed, even the build process itself is open and accessible, allowing anyone to generate the site and its resources in the format they prefer. The entire site is available in a [public GitHub repository](https://github.com/QuadriviumPress/modern-classical-mechanics). It's also hosted there.
 
-*A note here:* Danny is not a Python developer; he has a full time job as a [physics and computational science professor](https://dannycab.github.io/)). The code is gonna be crap. 
+The code and materials are works in progress; suggestions and improvements are welcome.
 
 ## Design Principles
 
@@ -82,10 +82,4 @@ You can contribute by creating an issue or issuing a pull request on the [GitHub
 
 ## Contributors
 
-Over the years, the following people have contributed to this project and its resources:
-
-- Morten Hjorth-Jensen (MSU/UiO)
-- Rachel Henderson (MSU)
-- Vashti Sawtelle (MSU)
-- Steve Pollock (CU-Boulder)
-- Alia Valentine (MSU)
+Earlier versions of this project benefited from contributions by students, educators, and collaborators. This edition has been substantially revised and should not be attributed to those contributors as authors of the present work.

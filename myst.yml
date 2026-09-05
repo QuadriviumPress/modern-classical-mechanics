@@ -7,10 +7,6 @@ project:
   description: >-
     An open collection of notes, activities, and computational resources for
     learning and teaching classical mechanics.
-  authors:
-    - name: Danny Caballero
-      affiliations:
-        - institution: Michigan State University
   license:
     content: CC-BY-NC-4.0
   open_access: true

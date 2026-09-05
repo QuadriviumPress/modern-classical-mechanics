@@ -21,4 +21,4 @@ We welcome contributions from anyone including students who want to help improve
 [![GitHub issues](https://img.shields.io/github/issues/QuadriviumPress/modern-classical-mechanics)](https://github.com/QuadriviumPress/modern-classical-mechanics/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/QuadriviumPress/modern-classical-mechanics)](https://github.com/QuadriviumPress/modern-classical-mechanics/pulls)
 
-You can also contact [Danny Caballero](https://dannycab.github.io/) directly if you have questions or suggestions.
+Questions and suggestions are welcome through the project’s issue tracker or pull-request workflow.

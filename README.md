@@ -1,7 +1,11 @@
 # Modern Classical Mechanics
 
 An open collection of notes, activities, and computational resources for
-learning and teaching classical mechanics, maintained by Danny Caballero.
+learning and teaching classical mechanics.
+
+## Acknowledgment
+
+This project acknowledges the earlier work of Danny Caballero and other contributors. The present edition has been substantially revised and should not be interpreted as authored or endorsed by them.
 
 The book is built with [MyST Markdown](https://mystmd.org/) from Jupyter
 notebooks and Markdown pages. The notebooks remain the source of truth; MyST
