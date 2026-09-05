@@ -19,7 +19,7 @@ Each week's **start** notebook is a hands-on activity — usually simulating a s
 * **Educators:** Reuse or remix any week's notebooks for your own course; the source Markdown cells are the thing to edit, and `myst.yml` controls the table of contents.
 * **Developers:** Help with the MyST build or site tooling — see [How to Contribute](#how-to-contribute) below.
 
-## How to Contribute
+## How to Contribute {#how-to-contribute}
 
 We welcome contributions from anyone including students who want to help improve the site and its resources. The best way is to [create an issue](https://github.com/QuadriviumPress/modern-classical-mechanics/issues) or [issue a pull request](https://github.com/QuadriviumPress/modern-classical-mechanics/pulls) on the [GitHub repository](https://github.com/QuadriviumPress/modern-classical-mechanics).
 
