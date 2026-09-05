@@ -119,7 +119,7 @@ $$R_{\text{max}}=\dfrac{v_0^2}{g(1+\sin\phi)}$$
 
 ### Exercise 6 (40pt), Numerical elements, moving to more than one dimension
 
-**This exercise should be handed in as a jupyter-notebook** at D2L. Remember to write your name(s). 
+**This exercise should be handed in as a jupyter-notebook** through the course submission system. Remember to write your name(s).
 
 Last week we:
 1. Analytically mapped 1D motion over some time
