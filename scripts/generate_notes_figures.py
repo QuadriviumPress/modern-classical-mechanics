@@ -447,7 +447,7 @@ def inclined_ramp_free_body():
     ax.add_patch(Polygon(corners, closed=True, facecolor="#55a7d9", edgecolor=BLACK, lw=1.2))
     ax.text(*center, r"$m$", fontsize=14, ha="center", va="center")
     arrow(ax, center, center + 1.05 * normal, label=r"$N$", label_offset=(-0.22, 0.1))
-    arrow(ax, center, center - 1.15 * tangent, label=r"$f_s$", label_offset=(-0.05, 0.18))
+    arrow(ax, center, center + 1.15 * tangent, label=r"$f_s$", label_offset=(-0.05, 0.18))
     arrow(ax, center, center + np.array([0, -1.35]), label=r"$m\vec g$", label_offset=(0.42, -0.05))
     axis_origin = ramp_start + 0.72 * tangent + 0.08 * normal
     arrow(ax, axis_origin, axis_origin + 0.95 * tangent, label=r"$\hat x$", label_offset=(0, -0.2))
