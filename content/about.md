@@ -43,31 +43,9 @@ We abide the following design principles:
 2. All materials will follow best guidelines for accessibility, ensuring that they are usable by everyone especially those with disabilities.
 3. Anyone can contribute to the project, whether by suggesting changes, adding new content, or improving existing materials. Pull requests are welcome!
 
-# Accessibility Timeline
+# Accessibility
 
-## Accessibility
-
-We intend these resources to be accessible to everyone and available in a variety of formats. This work involves ongoing efforts to ensure that all materials meet accessibility standards and are usable by people with disabilities. That is a work in progress, and we will continue to improve the site and its resources over time. Below is the todo list of our accessibility efforts:
-
-## Building Accessible Resources
-
-- [X] Build with open source tools that are readily accessible
-- [ ] Provide documentation and resources for others to contribute
-
-## Web Accessibility Standards
-
-- [ ] Ensure all images have appropriate alt text
-- [ ] Implement ARIA roles and properties correctly
-- [ ] Use semantic HTML to improve screen reader compatibility
-- [ ] Ensure all links have descriptive text
-- [ ] Provide transcripts for all audio and video content
-- [ ] Build keyboard navigation for all interactive elements
-
-## Accessibility Testing
-
-- [ ] Ensure color contrast meets WCAG standards
-- [ ] Test site with screen readers and other assistive technologies
-- [ ] Ensure all interactive elements are keyboard accessible
+Accessibility is an ongoing part of this project. Read the [accessibility statement and contributor guide](accessibility.md) for current accommodations, known limitations, and ways to report a barrier.
 
 # Contributions
 
