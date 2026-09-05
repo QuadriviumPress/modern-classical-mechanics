@@ -131,7 +131,7 @@ Let's figure out the motion of a particle stuck inside a paraboloid. The potenti
 
 ## Exercise 6 (20pt), Project Check-in 3
 
-This is the last of three check-ins for your final project. This week, you should be preparing to finish your computational essay. Following the posted [rubric](../resources/computational-essay-rubric.md) for the computational essay, you should reflect on your progress and update your project. This is a chance to evaluate where you are in the process of completing your computational essay.
+This is the last of three check-ins for your final project. This week, you should be preparing to finish your computational essay. Following the posted rubric for the computational essay, you should reflect on your progress and update your project. This is a chance to evaluate where you are in the process of completing your computational essay.
 
 * 5a (5 pts). Review your project in the context of the rubric. What have you been able to accomplish so far? What were you unable to do in the time you had? Be honest in your evaluation of your progress. What do you have left to do? (at least 250 words)
 * 5b (5 pts). What problems did you encounter in doing you work? What questions came up and how did you resolve them? Are there any unresolved questions? (at least 250 words)

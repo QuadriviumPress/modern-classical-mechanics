@@ -24,9 +24,7 @@ Total points: **100**.
 
 1. You can work in groups (optimal groups are often 2-3 people) or by yourself. If you work as a group you can hand in one answer only if you wish. **Remember to write your name(s)**!
 2. Homeworks are available approximately ten days before the deadline. You should anticipate this work.
-3. How do I(we)  hand in?  You can hand in the paper and pencil exercises as a **single scanned PDF document**. For this homework this applies to exercises 1-5. Your jupyter notebook file should be converted to a **PDF** file, attached to the same PDF file as for the pencil and paper exercises. All files should be uploaded to Gradescope. 
-
-**[Instructions for submitting to Gradescope](../resources/gradescope-submissions.md).**
+3. How do I(we)  hand in?  You can hand in the paper and pencil exercises as a **single scanned PDF document**. For this homework this applies to exercises 1-5. Your jupyter notebook file should be converted to a **PDF** file, attached to the same PDF file as for the pencil and paper exercises.
 
 +++ {"editable": true}
 
@@ -100,7 +98,7 @@ Our first numerical attempt will involve reading data from file or just setting 
 [![Usain Bolt's world record 100m during the olympic games in Beijing in
 2008](../images/activities/usain-bolt-2008-olympics-100-meter.jpg)](https://youtube.com/watch?v=93dC0o2aHto)
 
-- Direct Link: [https://youtube.com/watch?v=93dC0o2aHto](https:curl//youtube.com/watch?v=93dC0o2aHto)
+- Direct Link: [https://youtube.com/watch?v=93dC0o2aHto](https://youtube.com/watch?v=93dC0o2aHto)
 
 The data show the time used in units of 10m (see below). Before we however
 venture into this, we need to repeat some basic Python syntax with an

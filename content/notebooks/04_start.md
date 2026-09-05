@@ -23,7 +23,7 @@ This form of air resistance cannot describe the behavior of objects approaching 
 
 The second form ($F \sim v$) describes the flow of a viscous fluid around a solid object. You might think of this as pulling an object through some viscous oil, honey, or even molasses. The movement of the fluid around the object exerts a force and slows the motion of the object.  In water, this form can explain the motion of some of the smallest creatures on Earth, like the [water bear](https://en.wikipedia.org/wiki/Tardigrade), an amoeba, or a paramecium. 
 
-What is interesting here is that these creatures have had to adapt to this form of fluid drag. [Edward Purcell](https://en.wikipedia.org/wiki/Edward_M._Purcell) wrote a paper in 1977 called [Life at Low Reynolds Number](../../docs/papers/purcell_AJP_1977.pdf) that describes the motion of these creatures. He demonstrates that the physics in this regime requires creature to have adapted forms of locomotion that can take advantage of that environment.
+What is interesting here is that these creatures have had to adapt to this form of fluid drag. [Edward Purcell](https://en.wikipedia.org/wiki/Edward_M._Purcell) wrote a paper in 1977 called "Life at Low Reynolds Number" that describes the motion of these creatures. He demonstrates that the physics in this regime requires creature to have adapted forms of locomotion that can take advantage of that environment.
 
 
 
@@ -92,7 +92,7 @@ Source: <https://youtube.com/watch?v=gZk2bMaqs1E>
 
 #### G.I. Taylor's Low Reynolds Number Flows (32 minute video)
 
-This video is a classic from [G.I. Taylor](https://en.wikipedia.org/wiki/Geoffrey_Ingram_Taylor) who was a physicist interested in sharing the conceptual beauty of physics with the general public. He was also a pioneer in the field of fluid mechanics. In fact, Taylor's [groundbreaking paper](../../docs/papers/taylor_1922.pdf) on the stability of fluid flows between two rotating cylinders set off studies into turbulence. The [Taylor-Couette flow](https://en.wikipedia.org/wiki/Taylor%E2%80%93Couette_flow) is a critical tool for [studies of turbulence](https://pubmed.ncbi.nlm.nih.gov/20365623/).
+This video is a classic from [G.I. Taylor](https://en.wikipedia.org/wiki/Geoffrey_Ingram_Taylor) who was a physicist interested in sharing the conceptual beauty of physics with the general public. He was also a pioneer in the field of fluid mechanics. In fact, Taylor's groundbreaking paper on the stability of fluid flows between two rotating cylinders set off studies into turbulence. The [Taylor-Couette flow](https://en.wikipedia.org/wiki/Taylor%E2%80%93Couette_flow) is a critical tool for [studies of turbulence](https://pubmed.ncbi.nlm.nih.gov/20365623/).
 
 [![G.I. Taylor's Low Reynolds Number Flows](../images/notes/week4/low-reynolds-number-flows.jpg)](https://youtube.com/watch?v=8Dst6V4CQME)
 

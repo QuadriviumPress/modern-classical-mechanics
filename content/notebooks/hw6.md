@@ -54,9 +54,7 @@ In both textbooks there are many nice worked out examples.
 
 2. Homeworks are available ten days  before the deadline. 
 
-3. How do I(we)  hand in?  You can hand in the paper and pencil exercises as a **single scanned PDF document**. For this homework this applies to exercises 1-5. Your jupyter notebook file should be converted to a **PDF** file, attached to the same PDF file as for the pencil and paper exercises. All files should be uploaded to Gradescope. 
-
-**[Instructions for submitting to Gradescope](../resources/gradescope-submissions.md).**
+3. How do I(we)  hand in?  You can hand in the paper and pencil exercises as a **single scanned PDF document**. For this homework this applies to exercises 1-5. Your jupyter notebook file should be converted to a **PDF** file, attached to the same PDF file as for the pencil and paper exercises.
 
 +++
 

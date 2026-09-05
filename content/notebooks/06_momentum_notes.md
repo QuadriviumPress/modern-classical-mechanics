@@ -190,7 +190,7 @@ $$\vec{p}_{sys,f} = \vec{p}_{sys,i} + \vec{F}_{ext}\Delta t.$$
 
 ## Angular Momentum
 
-[Angular momentum](https://en.wikipedia.org/wiki/Angular_momentum) is a complex and rich quantity that has deep connections to the shape and structure of a system. The "configuration" or how it is distributed in space can have a big impact on the dynamics of a system. Our study of classical angular momentum will be a stepping stone to our study of [quantum angular momentum](https://en.wikipedia.org/wiki/Angular_momentum_operator) and the [spin]([https://en.wikipedia.org/wiki/Spin_(physics)]) of particles. 
+[Angular momentum](https://en.wikipedia.org/wiki/Angular_momentum) is a complex and rich quantity that has deep connections to the shape and structure of a system. The "configuration" or how it is distributed in space can have a big impact on the dynamics of a system. Our study of classical angular momentum will be a stepping stone to our study of [quantum angular momentum](https://en.wikipedia.org/wiki/Angular_momentum_operator) and the [spin](<https://en.wikipedia.org/wiki/Spin_(physics)>) of particles. 
 
 :::{admonition} Quantum Mechanical Spin
 :class: information
