@@ -63,7 +63,7 @@ If you would like to dive deeper into models and modeling, there is excellent wo
 ```{admonition} Dame Nancy Cartwright (philosopher of science)
 :class: note
 
-One of the more interesting scholars is [Dame Nancy Cartwright](https://en.wikipedia.org/wiki/Nancy_Cartwright_(philosopher)) who wrote a lot about the 'practice of science.' Her philosophical work informed many of the innovations in physics and broader science education -- including many science courses at MSU. 
+One of the more interesting scholars is [Dame Nancy Cartwright](https://en.wikipedia.org/wiki/Nancy_Cartwright_(philosopher)) who wrote a lot about the 'practice of science.' Her philosophical work informed many of the innovations in physics and broader science education -- including many science courses. 
 
 Her writing is very interesting, but the style of writing can be a challenge to read. This is the nature of academic writing in different disciplines. Her book called "How The Laws of Physics Lie" is worth a read. Here's a link to the [first chapter](http://www.generativescience.org/papers/nature/Cartwright-_1983.pdf).
 ```

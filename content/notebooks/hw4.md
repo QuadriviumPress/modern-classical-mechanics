@@ -51,7 +51,7 @@ on your code from homework 3 and we will try to make the motion of a falling obj
 
 2. Homeworks are available ten days before the deadline.
 
-3. How do I/we hand in? You can submit the paper-and-pencil exercises as a **single scanned PDF document**. For this homework, this applies to exercises 1–5. Your Jupyter notebook should be converted to a **PDF** and attached to the same PDF document.
+3. Submission instructions: Submit the paper-and-pencil exercises as a **single scanned PDF document**. For this homework, this applies to exercises 1–5. Convert the Jupyter notebook to a **PDF** and attach it to the same PDF document.
 
 +++
 
@@ -118,8 +118,6 @@ A particle is thereafter under the influence of a force $F=-kx+kx^3/\alpha^2$, w
 ### Exercise 5 (10pt), Midterms and Final Project Preparation
 
 Your final project will be a [computational essay](https://arxiv.org/abs/1909.12697) of your own design. The idea is informed by a proposal by [Stephen Wolfram](https://www.stephenwolfram.com/). In his [original post](https://writings.stephenwolfram.com/2017/11/what-is-a-computational-essay), Wolfram talks about the importance of the computational medium as a way of communicating science. 
-
-Tor, myself, and others have started building this idea into a [theory of computational learning in physics](https://www.per-central.org/items/detail.cfm?ID=15410), using computational essays to [argue for the importance of computing in physics](https://www-nature-com.proxy2.cl.msu.edu/articles/s41567-023-02371-2), building [the theory out](https://pubs-aip-org.proxy2.cl.msu.edu/books/monograph/148/chapter/64396056/Physics-Computational-Literacy-What-Why-and-How), and trying to identify the ways making course work and materials to promote [agency, creativity, and ownership](https://onlinelibrary-wiley-com.proxy2.cl.msu.edu/doi/full/10.1002/tea.21821).
 
 In this homework question, we are going to start building your plan for your computational essay. I ask that you complete this particular homework problem by yourself because it is important for each of you to do this planning.
 

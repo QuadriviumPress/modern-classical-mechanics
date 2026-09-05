@@ -80,7 +80,7 @@ And hopefully you can reuse many of the above solvers in other courses (our idea
 
 2. Homeworks are available ten days before the deadline.
 
-3. How do I/we hand in? You can submit the paper-and-pencil exercises as a **single scanned PDF document**. For this homework, this applies to exercises 1–5. Your Jupyter notebook should be converted to a **PDF** and attached to the same PDF document.
+3. Submission instructions: Submit the paper-and-pencil exercises as a **single scanned PDF document**. For this homework, this applies to exercises 1–5. Convert the Jupyter notebook to a **PDF** and attach it to the same PDF document.
 
 +++ {"editable": true}
 
