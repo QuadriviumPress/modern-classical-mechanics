@@ -10,7 +10,10 @@
   "scripts": {
     "start": "myst start",
     "build": "myst build --html --execute --strict",
-    "check": "myst build --html --execute --strict"
+    "check": "myst build --html --execute --strict",
+    "build:exports": "scripts/build-exports.sh all",
+    "build:pdf": "scripts/build-exports.sh pdf",
+    "build:docx": "scripts/build-exports.sh docx"
   },
   "devDependencies": {
     "mystmd": "1.10.1"

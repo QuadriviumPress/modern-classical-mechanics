@@ -35,6 +35,27 @@ For reproducible installs after `package-lock.json` exists, use `npm ci`.
 Generated output is written to `_build/` and is not committed. Pull requests
 are checked by CI, and pushes to `main` deploy `_build/html` to GitHub Pages.
 
+## Print editions
+
+The whole book can also be built as a PDF and a Word document, using the
+LaTeX template in [`templates/book/`](templates/book/). Requires a TeX Live
+install with XeLaTeX and latexmk for the PDF, and additionally
+[pandoc](https://pandoc.org/) for the DOCX (the DOCX is built from the PDF's
+intermediate `.tex` rather than MyST's own `--docx` writer, which drops
+equations in as raw LaTeX strings rather than editable Word math — see
+[`scripts/tex-to-docx.py`](scripts/tex-to-docx.py) for why).
+
+```bash
+npm run build:pdf      # exports/modern-classical-mechanics.pdf
+npm run build:docx     # + exports/modern-classical-mechanics.docx
+npm run build:exports  # both
+```
+
+`exports/` is a build artifact and is not committed; the `Exports` GitHub
+Actions workflow builds it monthly, on `v*` tags, and on demand, and the
+GitHub Pages deploy downloads its latest output so the site's download menu
+stays populated without every push paying for a TeX Live install.
+
 ## Editing
 
 Edit the Markdown cells in the source notebooks directly. Images referenced

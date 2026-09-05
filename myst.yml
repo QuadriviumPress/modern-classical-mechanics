@@ -7,6 +7,11 @@ project:
   description: >-
     An open collection of notes, activities, and computational resources for
     learning and teaching classical mechanics.
+  authors:
+    - name: Martin Veillette
+      corresponding: true
+      email: martin.veillette@gmail.com
+  date: 2026-01-01
   license:
     content: CC-BY-NC-4.0
   open_access: true
@@ -19,6 +24,110 @@ project:
     - open textbook
   settings:
     output_matplotlib_strings: remove
+    myst_to_tex:
+      code_style: listings
+  # These downloads are build artifacts: scripts/build-exports.sh writes them,
+  # and CI's Exports workflow runs that before deploy.yml builds the site, so
+  # they are on disk by the time MyST looks for them. A fresh clone or `myst
+  # start` has not built them yet -- `static: true` turns that from an
+  # unsuppressible error into the `static-action-file-copied` warning that
+  # error_rules below softens, so local dev stays quiet.
+  downloads:
+    - file: exports/modern-classical-mechanics.pdf
+      title: Download the book (PDF)
+      static: true
+    - file: exports/modern-classical-mechanics.docx
+      title: Download the book (Word)
+      static: true
+  error_rules:
+    - id: static-action-file-copied
+      severity: warn
+  exports:
+    - id: book
+      format: pdf+tex
+      template: ./templates/book
+      output: exports/modern-classical-mechanics.pdf
+      articles:
+        - file: content/index.md
+          level: 0
+        - title: Course Information
+          level: -1
+        - file: content/activities.md
+          level: 0
+        - file: content/resources.md
+          level: 0
+        - file: content/notebooks/01_start.md
+          level: 0
+        - file: content/notebooks/01_notes.md
+          level: 0
+        - file: content/notebooks/02_start.md
+          level: 0
+        - file: content/notebooks/02_notes.md
+          level: 0
+        - file: content/notebooks/03_start.md
+          level: 0
+        - file: content/notebooks/03_notes.md
+          level: 0
+        - file: content/notebooks/04_start.md
+          level: 0
+        - file: content/notebooks/04_notes.md
+          level: 0
+        - file: content/notebooks/05_start.md
+          level: 0
+        - file: content/notebooks/05_notes.md
+          level: 0
+        - file: content/notebooks/06_start.md
+          level: 0
+        - file: content/notebooks/06_notes.md
+          level: 0
+        - file: content/notebooks/06_momentum_notes.md
+          level: 0
+        - file: content/notebooks/07_start.md
+          level: 0
+        - file: content/notebooks/07_notes.md
+          level: 0
+        - file: content/notebooks/08_start.md
+          level: 0
+        - file: content/notebooks/08_notes.md
+          level: 0
+        - file: content/notebooks/09_start.md
+          level: 0
+        - file: content/notebooks/09_notes.md
+          level: 0
+        - file: content/notebooks/10_start.md
+          level: 0
+        - file: content/notebooks/10_notes.md
+          level: 0
+        - file: content/notebooks/11_start.md
+          level: 0
+        - file: content/notebooks/11_notes.md
+          level: 0
+        - file: content/notebooks/12_start.md
+          level: 0
+        - file: content/notebooks/12_notes.md
+          level: 0
+        - file: content/notebooks/13_start.md
+          level: 0
+        - file: content/notebooks/13_notes.md
+          level: 0
+        - title: Homework
+          level: -1
+        - file: content/notebooks/hw1.md
+          level: 0
+        - file: content/notebooks/hw2.md
+          level: 0
+        - file: content/notebooks/hw3.md
+          level: 0
+        - file: content/notebooks/hw4.md
+          level: 0
+        - file: content/notebooks/hw5.md
+          level: 0
+        - file: content/notebooks/hw6.md
+          level: 0
+        - file: content/notebooks/hw7.md
+          level: 0
+        - file: content/notebooks/hw8.md
+          level: 0
   toc:
     - file: content/index.md
     - title: Course information

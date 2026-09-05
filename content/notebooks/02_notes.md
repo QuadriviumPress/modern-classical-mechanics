@@ -181,10 +181,9 @@ $$\vec{a} \cdot \vec{b} = |\vec{a}||\vec{b}|\cos(\phi).$$
 
 The figure below shows the relationship between the vectors and the angle.
 
-![Dot Product of Two Vectors; the dot product is the product of the magnitudes of the vectors and the cosine of the angle between them](../images/notes/week2/Dot-product.png) 
+![Dot Product of Two Vectors; the dot product is the product of the magnitudes of the vectors and the cosine of the angle between them](../images/notes/week2/Dot-product.png)
 
-<br>
-Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Dot-product-1.svg)
+*Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Dot-product-1.svg)*
 
 Much like scalar multiplication, a dot produce is distributive:
 

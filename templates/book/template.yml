@@ -1,0 +1,39 @@
+myst: v1
+kind: tex
+title: Modern Classical Mechanics Book
+description: >-
+  The print edition of Modern Classical Mechanics. A LaTeX template with the
+  sectioning depths that keep the printed numbering aligned with the
+  website's, and the geometry and running heads of a textbook meant to be
+  printed on paper.
+version: '1.0.0'
+license: CC-BY-NC-4.0
+tags:
+  - book
+doc:
+  - id: title
+    required: true
+  - id: subtitle
+  - id: authors
+    required: true
+  - id: date
+  - id: license
+  - id: bibliography
+files:
+  - template.tex
+packages:
+  - amsmath
+  - amssymb
+  - booktabs
+  - caption
+  - enumitem
+  - fancyhdr
+  - fontspec
+  - geometry
+  - graphicx
+  - hyperref
+  - listings
+  - microtype
+  - natbib
+  - newunicodechar
+  - xcolor

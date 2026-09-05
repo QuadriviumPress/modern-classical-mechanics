@@ -1,0 +1,77 @@
+# Build the printable editions -- the book PDF and the Word document -- and
+# keep them as workflow artifacts.
+#
+# This is the only place they are built. Building them on every push to main
+# would cost every one-word prose fix a TeX Live and pandoc install and a
+# XeLaTeX pass; deploy.yml instead downloads this workflow's most recent
+# successful artifacts. So the download menu on the published site tracks the
+# most recent monthly, tagged, or manually requested export, not every commit.
+#
+# Keeping it out of ci.yml also keeps pull request feedback fast and
+# HTML-only: the TeX Live, pandoc, and Inkscape install alone is a few
+# minutes.
+name: Exports
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Build once per month and keep the downloadable editions reasonably
+    # fresh without installing the print toolchain on ordinary pushes.
+    - cron: '23 4 1 * *'
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: exports-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build PDF and DOCX
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: ./.github/actions/build-exports
+
+      # 90 days is the ceiling, and worth asking for: deploy.yml serves the
+      # site's downloads out of these artifacts, so once they expire the
+      # download menu goes empty until the next tag or manual run.
+      - uses: actions/upload-artifact@v7
+        with:
+          name: modern-classical-mechanics-exports
+          path: |
+            exports/*.pdf
+            exports/*.docx
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Publish durable release downloads
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 || \
+            gh release create "$GITHUB_REF_NAME" --generate-notes --title "$GITHUB_REF_NAME"
+          gh release upload "$GITHUB_REF_NAME" \
+            exports/modern-classical-mechanics.pdf \
+            exports/modern-classical-mechanics.docx \
+            --clobber
+
+      - name: Write build summary
+        if: always()
+        run: |
+          {
+            echo "## Print editions"
+            echo
+            echo "| File | Size |"
+            echo "|------|------|"
+            for f in exports/*.pdf exports/*.docx; do
+              [ -e "$f" ] || continue
+              printf '| `%s` | %s |\n' "$(basename "$f")" "$(du -h "$f" | cut -f1)"
+            done
+          } >> "$GITHUB_STEP_SUMMARY"

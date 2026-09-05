@@ -1,0 +1,150 @@
+%% Print edition of *Modern Classical Mechanics*.
+%%
+%% A local jtex template, referenced from myst.yml as `template: ./templates/book`.
+%% It began as MyST's stock `plain_latex_book` and diverges from it in three ways:
+%%
+%%   1. Sectioning depth pinned to match the website's numbering (weeks and
+%%      their `##` sections; deeper headings are left unnumbered).
+%%   2. Page geometry and running heads for something meant to be printed.
+%%   3. A copyright page in \frontmatter, since index.md is the website's
+%%      landing page and is not one of the printed book's articles.
+%%
+%% Built with XeLaTeX (MyST's default: `latexmk -f -xelatex`), which lets
+%% Unicode in the source pass through without a preamble fight.
+
+\documentclass[letterpaper,11pt,oneside,openany]{book}
+
+\usepackage[letterpaper,top=1in,bottom=1in,left=1.15in,right=1.15in,
+            headheight=14pt]{geometry}
+
+%% XeLaTeX, so fontspec rather than the pdfTeX pair fontenc+inputenc.
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}[SmallCapsFont={Latin Modern Roman Caps}]
+\setsansfont{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf,skip=6pt}
+\usepackage{booktabs}
+\usepackage{natbib}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\bibliographystyle{abbrvnat}
+
+%% The book leans on executed code cells throughout; `code_style: listings` in
+%% myst.yml routes them here rather than a bare `verbatim`, which never wraps
+%% and runs long lines (assignments, wide plt calls) off the page edge.
+\usepackage{listings}
+%% A code cell with no language on the fence (a plain code block, not a
+%% ```python cell) reaches here as `[language=undefined]` -- myst-to-tex
+%% interpolates a missing `node.lang` verbatim rather than omitting the key.
+%% Registering "undefined" as an empty language keeps `\begin{lstlisting}`
+%% from erroring instead of patching every such cell in the source.
+\lstdefinelanguage{undefined}{}
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  breakatwhitespace=false,
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  frame=single,
+  framesep=3pt,
+  xleftmargin=3pt,
+  xrightmargin=3pt,
+}
+
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+
+%% A handful of pages break a line right after a block image (`<br>` in the
+%% source, between a figure and its caption line). `\newline` there lands in
+%% vertical mode with nothing on the current line and LaTeX errors with
+%% "There's no line here to end"; falling back to a plain skip keeps the same
+%% visual gap without that failure.
+\let\mcmnewline\newline
+\renewcommand{\newline}{\ifhmode\mcmnewline\else\vspace{0.5\baselineskip}\fi}
+
+[- IMPORTS -]
+
+%% ---------------------------------------------------------------------------
+%% Numbering
+%%
+%% The website numbers weeks and `##` sections within a notebook and leaves
+%% everything deeper unnumbered; these counters are the LaTeX spelling of
+%% that, so a printed "Section 4.2" means the same thing as on the site.
+%% ---------------------------------------------------------------------------
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{1}
+
+%% ---------------------------------------------------------------------------
+%% Palette
+%% ---------------------------------------------------------------------------
+\definecolor{mcmblue}{HTML}{1769AA}
+\definecolor{mcmgray}{HTML}{555555}
+
+\hypersetup{
+  colorlinks,
+  linkcolor={mcmblue},
+  citecolor={mcmblue},
+  urlcolor={mcmblue},
+  bookmarksnumbered=true,
+  bookmarksopen=true,
+  pdftitle={[-doc.title-]},
+  pdfauthor={[# for author in doc.authors #][-author.name-][# if not loop.last #], [# endif #][# endfor #]}
+}
+
+%% ---------------------------------------------------------------------------
+%% Running heads
+%% ---------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\nouppercase\leftmark}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[C]{\small\thepage}}
+
+\title{\Huge \textbf{[-doc.title-]}[# if doc.subtitle #] \\[0.5em] \huge [-doc.subtitle-][# endif #]}
+\author{\textsc{
+[#- for author in doc.authors #]
+  [#- if not loop.first #] and [# endif #][-author.name-][# if not loop.last and not loop.first #], [# endif #]
+[#- endfor -#]
+}}
+[# if doc.date #]\date{[-doc.date.year-]}[# endif #]
+
+\begin{document}
+\sloppy
+
+\frontmatter
+\maketitle
+
+%% The copyright page. index.md carries the licence notice on the website, but
+%% index.md is a landing page and is not one of the printed book's articles,
+%% so the notice lives here instead. Keep it in step with index.md and with
+%% `license:` in myst.yml.
+\thispagestyle{empty}
+\null\vfill
+\noindent\small
+\textcopyright{} [-doc.date.year-] [# for author in doc.authors #][-author.name-][# if not loop.last #], [# endif #][# endfor #].\par\medskip
+\noindent This book is licensed under the Creative Commons
+Attribution\--NonCommercial 4.0 International License (CC\--BY\--NC\--4.0).
+You are free to share and adapt it for non-commercial purposes, with
+attribution, under the same licence:\par\smallskip
+\noindent\url{https://creativecommons.org/licenses/by-nc/4.0/}\par\vfill\normalsize
+
+\tableofcontents
+
+\mainmatter
+[- CONTENT -]
+
+[# if doc.bibliography #]
+\bibliography{[- doc.bibliography | join(", ") -]}
+[# endif #]
+
+\end{document}
