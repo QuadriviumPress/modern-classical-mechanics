@@ -206,8 +206,6 @@ The figure below shows the relationship between the vectors and the angle.
 
 ![Dot Product of Two Vectors; the dot product is the product of the magnitudes of the vectors and the cosine of the angle between them](../images/notes/week2/Dot-product.png)
 
-*Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Dot-product-1.svg)*
-
 Much like scalar multiplication, a dot produce is distributive:
 
 $$\vec{a} \cdot (\vec{b} + \vec{c}) = \vec{a} \cdot \vec{b} + \vec{a} \cdot \vec{c}$$
