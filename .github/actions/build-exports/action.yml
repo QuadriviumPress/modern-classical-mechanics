@@ -1,0 +1,57 @@
+name: Build print exports
+description: >-
+  Install the print toolchain and run scripts/build-exports.sh, leaving the
+  book PDF and Word document in exports/. Used by exports.yml only;
+  deploy.yml downloads that workflow's artifacts rather than rebuilding them.
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v7
+      with:
+        node-version: 22
+        cache: npm
+
+    - uses: actions/setup-python@v6
+      with:
+        python-version: "3.12"
+        cache: pip
+
+    - name: Install Python dependencies
+      shell: bash
+      run: |
+        pip install -r requirements.txt
+        python -m ipykernel install --user --name python3 --display-name "Python 3"
+
+    - name: Install the print toolchain
+      shell: bash
+      run: |
+        sudo apt-get update -qq
+        sudo apt-get install -y --no-install-recommends \
+          inkscape \
+          latexmk \
+          texlive-fonts-recommended \
+          texlive-latex-base \
+          texlive-latex-extra \
+          texlive-latex-recommended \
+          texlive-plain-generic \
+          texlive-xetex \
+          pandoc \
+          poppler-utils
+        # Not a nicety: MyST converts SVG to PDF with Inkscape and with
+        # nothing else (`svgToPdf` in myst-cli falls back to a warning). The
+        # book's own figures are all raster (PNG/JPG), but the landing page's
+        # GitHub badges are SVG.
+        inkscape --version
+        # poppler's pdftoppm rasterizes any such PDF figure for the Word
+        # file. Ubuntu's ImageMagick policy refuses to read PDF, so it is not
+        # an alternative here.
+        pdftoppm -v
+
+    - name: Install dependencies
+      shell: bash
+      run: npm ci
+
+    - name: Build the print editions
+      shell: bash
+      run: scripts/build-exports.sh all
