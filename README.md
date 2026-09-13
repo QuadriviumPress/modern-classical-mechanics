@@ -28,6 +28,7 @@ Use Node 22 (`nvm use` if you have nvm; see `.nvmrc`).
 npm install
 npm run start          # live preview
 npm run build          # static site in _build/html/
+npm run verify         # execute notebooks in a strict production build
 npm run check          # production-equivalent validation build
 ```
 

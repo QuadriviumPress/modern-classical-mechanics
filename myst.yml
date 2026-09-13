@@ -203,7 +203,9 @@ site:
   actions:
     - title: GitHub
       url: https://github.com/QuadriviumPress/modern-classical-mechanics
-  nav: []
+  nav:
+    - title: Sources & Attribution
+      url: https://github.com/QuadriviumPress/modern-classical-mechanics/blob/main/SOURCES.md
   options:
     logo: content/images/logo.png
     logo_alt: Modern Classical Mechanics

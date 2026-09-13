@@ -10,7 +10,8 @@
   "scripts": {
     "start": "myst start",
     "build": "myst build --html --execute --strict",
-    "check": "myst build --html --execute --strict",
+    "verify": "myst build --html --execute --strict",
+    "check": "npm run verify",
     "build:exports": "scripts/build-exports.sh all",
     "build:pdf": "scripts/build-exports.sh pdf",
     "build:docx": "scripts/build-exports.sh docx"
