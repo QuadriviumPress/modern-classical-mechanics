@@ -19,7 +19,7 @@ Every activity and homework notebook runs on the standard scientific Python stac
 - [NumPy](https://numpy.org/doc/stable/) — array math and vectorized computation.
 - [Matplotlib](https://matplotlib.org/stable/) — the plotting library used for every phase portrait, trajectory, and time series in the book.
 - [SciPy](https://docs.scipy.org/doc/scipy/), especially [`scipy.integrate.solve_ivp`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html) — the ODE solver introduced in Unit 10 for chaotic systems and used in later homework.
-- [MyST Markdown](https://mystmd.org/guide) — builds this site from the notebooks and Markdown pages. Useful if you're contributing content or want to build the site locally (see the [README](https://github.com/QuadriviumPress/modern-classical-mechanics#build)).
+- [MyST Markdown](https://mystmd.org/guide) — builds this site from the notebooks and Markdown pages. Useful if you're contributing content or want to build the site locally (see the [README](https://github.com/QuadriviumPress/modernClassicalMechanics#build)).
 
 ## Further reading
 
@@ -28,4 +28,4 @@ Every activity and homework notebook runs on the standard scientific Python stac
 
 ---
 
-Have a resource that helped you understand a topic in this book? Add it here and open a pull request on the [GitHub repository](https://github.com/QuadriviumPress/modern-classical-mechanics/pulls).
+Have a resource that helped you understand a topic in this book? Add it here and open a pull request on the [GitHub repository](https://github.com/QuadriviumPress/modernClassicalMechanics/pulls).

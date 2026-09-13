@@ -32,4 +32,4 @@ Activities live as MyST Markdown notebooks in [`content/notebooks/`](notebooks).
 
 1. Add a new `.md` file there, following the style of an existing `*_start.md` notebook (a motivating question or system, then Python code cells that simulate or explore it).
 2. Register it in the `project.toc` list in [`myst.yml`](../myst.yml) so it appears in the site navigation.
-3. Open a pull request on the [GitHub repository](https://github.com/QuadriviumPress/modern-classical-mechanics/pulls).
+3. Open a pull request on the [GitHub repository](https://github.com/QuadriviumPress/modernClassicalMechanics/pulls).

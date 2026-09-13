@@ -47,8 +47,8 @@ equations in as raw LaTeX strings rather than editable Word math — see
 [`scripts/tex-to-docx.py`](scripts/tex-to-docx.py) for why).
 
 ```bash
-npm run build:pdf      # exports/modern-classical-mechanics.pdf
-npm run build:docx     # + exports/modern-classical-mechanics.docx
+npm run build:pdf      # exports/modernClassicalMechanics.pdf
+npm run build:docx     # + exports/modernClassicalMechanics.docx
 npm run build:exports  # both
 ```
 

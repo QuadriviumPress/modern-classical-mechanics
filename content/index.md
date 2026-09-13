@@ -22,9 +22,9 @@ Each unit's **start** notebook is a hands-on activity — usually simulating a s
 (how-to-contribute)=
 ## How to Contribute
 
-We welcome contributions from anyone including students who want to help improve the site and its resources. The best way is to [create an issue](https://github.com/QuadriviumPress/modern-classical-mechanics/issues) or [issue a pull request](https://github.com/QuadriviumPress/modern-classical-mechanics/pulls) on the [GitHub repository](https://github.com/QuadriviumPress/modern-classical-mechanics).
+We welcome contributions from anyone including students who want to help improve the site and its resources. The best way is to [create an issue](https://github.com/QuadriviumPress/modernClassicalMechanics/issues) or [issue a pull request](https://github.com/QuadriviumPress/modernClassicalMechanics/pulls) on the [GitHub repository](https://github.com/QuadriviumPress/modernClassicalMechanics).
 
-[![GitHub issues](https://img.shields.io/github/issues/QuadriviumPress/modern-classical-mechanics)](https://github.com/QuadriviumPress/modern-classical-mechanics/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/QuadriviumPress/modern-classical-mechanics)](https://github.com/QuadriviumPress/modern-classical-mechanics/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/QuadriviumPress/modernClassicalMechanics)](https://github.com/QuadriviumPress/modernClassicalMechanics/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/QuadriviumPress/modernClassicalMechanics)](https://github.com/QuadriviumPress/modernClassicalMechanics/pulls)
 
 Questions and suggestions are welcome through the project's issue tracker or pull-request workflow.

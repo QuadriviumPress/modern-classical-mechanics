@@ -2,8 +2,8 @@
 #
 # Build the printable editions of *Modern Classical Mechanics* into exports/.
 #
-#   modern-classical-mechanics.pdf    the whole book as a PDF
-#   modern-classical-mechanics.docx   the whole book as a Word document
+#   modernClassicalMechanics.pdf    the whole book as a PDF
+#   modernClassicalMechanics.docx   the whole book as a Word document
 #
 # Usage:  scripts/build-exports.sh [pdf|docx|all]
 #         npm run build:exports            (both)

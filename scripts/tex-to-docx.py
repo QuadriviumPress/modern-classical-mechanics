@@ -155,18 +155,18 @@ def main() -> int:
     parser.add_argument(
         "--tex-dir",
         type=Path,
-        default=Path("exports/modern-classical-mechanics_pdf_tex"),
+        default=Path("exports/modernClassicalMechanics_pdf_tex"),
         help="directory holding the MyST LaTeX export (default: %(default)s)",
     )
     parser.add_argument(
         "--master",
-        default="modern-classical-mechanics.tex",
+        default="modernClassicalMechanics.tex",
         help="master .tex file inside --tex-dir (default: %(default)s)",
     )
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("exports/modern-classical-mechanics.docx"),
+        default=Path("exports/modernClassicalMechanics.docx"),
         help="Word file to write (default: %(default)s)",
     )
     parser.add_argument(

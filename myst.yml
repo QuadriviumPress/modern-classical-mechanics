@@ -1,6 +1,6 @@
 version: 1
 project:
-  id: modern-classical-mechanics
+  id: modernClassicalMechanics
   title: Modern Classical Mechanics
   short_title: Modern Classical Mechanics
   subtitle: Computational and project-based approaches to classical mechanics
@@ -15,7 +15,7 @@ project:
   license:
     content: CC-BY-NC-4.0
   open_access: true
-  github: QuadriviumPress/modern-classical-mechanics
+  github: QuadriviumPress/modernClassicalMechanics
   keywords:
     - classical mechanics
     - computational physics
@@ -33,10 +33,10 @@ project:
   # unsuppressible error into the `static-action-file-copied` warning that
   # error_rules below softens, so local dev stays quiet.
   downloads:
-    - file: exports/modern-classical-mechanics.pdf
+    - file: exports/modernClassicalMechanics.pdf
       title: Download the book (PDF)
       static: true
-    - file: exports/modern-classical-mechanics.docx
+    - file: exports/modernClassicalMechanics.docx
       title: Download the book (Word)
       static: true
   error_rules:
@@ -46,7 +46,7 @@ project:
     - id: book
       format: pdf+tex
       template: ./templates/book
-      output: exports/modern-classical-mechanics.pdf
+      output: exports/modernClassicalMechanics.pdf
       articles:
         - file: content/index.md
           level: 0
@@ -202,10 +202,10 @@ site:
   title: Modern Classical Mechanics
   actions:
     - title: GitHub
-      url: https://github.com/QuadriviumPress/modern-classical-mechanics
+      url: https://github.com/QuadriviumPress/modernClassicalMechanics
   nav:
     - title: Sources & Attribution
-      url: https://github.com/QuadriviumPress/modern-classical-mechanics/blob/main/SOURCES.md
+      url: https://github.com/QuadriviumPress/modernClassicalMechanics/blob/main/SOURCES.md
   options:
     logo: content/images/logo.png
     logo_alt: Modern Classical Mechanics

@@ -43,7 +43,7 @@ jobs:
       # download menu goes empty until the next tag or manual run.
       - uses: actions/upload-artifact@v7
         with:
-          name: modern-classical-mechanics-exports
+          name: modernClassicalMechanics-exports
           path: |
             exports/*.pdf
             exports/*.docx
@@ -58,8 +58,8 @@ jobs:
           gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 || \
             gh release create "$GITHUB_REF_NAME" --generate-notes --title "$GITHUB_REF_NAME"
           gh release upload "$GITHUB_REF_NAME" \
-            exports/modern-classical-mechanics.pdf \
-            exports/modern-classical-mechanics.docx \
+            exports/modernClassicalMechanics.pdf \
+            exports/modernClassicalMechanics.docx \
             --clobber
 
       - name: Write build summary
