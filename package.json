@@ -9,14 +9,16 @@
   "description": "MyST textbook on modern classical mechanics",
   "scripts": {
     "start": "myst start",
-    "build": "myst build --html --execute --strict",
-    "verify": "myst build --html --execute --strict",
-    "check": "myst build --html --execute --strict --check-links",
+    "build": "myst build --html --execute --strict && node scripts/setup-pwa.mjs",
+    "verify": "python3 scripts/verify_book.py",
+    "check": "npm run verify && myst build --html --execute --strict --check-links && node scripts/setup-pwa.mjs",
     "build:exports": "scripts/build-exports.sh all",
     "build:pdf": "scripts/build-exports.sh pdf",
     "build:docx": "scripts/build-exports.sh docx"
   },
   "devDependencies": {
-    "mystmd": "1.10.1"
+    "mystmd": "1.10.1",
+    "sharp": "0.35.4",
+    "yaml": "2.8.1"
   }
 }

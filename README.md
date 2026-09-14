@@ -18,6 +18,8 @@ presentation.
 - [`content/index.md`](content/index.md) — book landing page
 - [`content/notebooks/`](content/notebooks/) — unit notes and homework
 - [`content/images/`](content/images/) — figures referenced by the notebooks
+- [`scripts/verify_book.py`](scripts/verify_book.py) — fast structural / accessibility checks
+- [`pwa/`](pwa/) — offline page and service worker installed after HTML builds
 - [`.github/workflows/`](.github/workflows/) — CI and GitHub Pages deployment
 
 ## Build
@@ -27,14 +29,16 @@ Use Node 22 (`nvm use` if you have nvm; see `.nvmrc`).
 ```bash
 npm install
 npm run start          # live preview
-npm run build          # static site in _build/html/
-npm run verify         # execute notebooks in a strict production build
-npm run check          # production-equivalent validation build
+npm run build          # execute notebooks, strict HTML build, then PWA assets
+npm run verify         # fast structural checks (TOC, labels, images, alt text)
+npm run check          # verify + executed strict build + link check + PWA
 ```
 
 For reproducible installs after `package-lock.json` exists, use `npm ci`.
 Generated output is written to `_build/` and is not committed. Pull requests
 are checked by CI, and pushes to `main` deploy `_build/html` to GitHub Pages.
+The HTML build also installs progressive-web-app assets under `_build/html/`
+so the published site can be installed and read offline.
 
 ## Print editions
 
@@ -69,6 +73,7 @@ directives, math, figures, citations, and cross-references.
 
 ## License
 
-The book is licensed under the
-[Creative Commons Attribution-NonCommercial 4.0 International license](LICENSE)
-(CC BY-NC 4.0).
+Book content is licensed under
+[CC BY-NC 4.0](LICENSE-CONTENT.md). Scripts, PWA assets, templates, and other
+repository tooling are available under the [MIT License](LICENSE). See
+[SOURCES.md](SOURCES.md) for lineage and figure attribution.

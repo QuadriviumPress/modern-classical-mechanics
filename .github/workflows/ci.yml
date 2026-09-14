@@ -12,6 +12,6 @@ jobs:
   ci:
     uses: QuadriviumPress/bindery/.github/workflows/ci.yml@main
     with:
-      pre-build-command: python -m ipykernel install --user --name python3 --display-name "Python 3"
-      build-command: npm run check
+      pre-build-command: python -m ipykernel install --user --name python3 --display-name "Python 3" && npm run verify
+      build-command: myst build --html --execute --strict --check-links && node scripts/setup-pwa.mjs
       run-tests: false

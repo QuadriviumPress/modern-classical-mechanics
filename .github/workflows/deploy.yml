@@ -18,6 +18,6 @@ jobs:
     with:
       install-ipykernel: true
       timeout-minutes: 30
-      pre-build-command: bash scripts/fetch-exports.sh
-      build-command: npm run check
+      pre-build-command: bash scripts/fetch-exports.sh && npm run verify
+      build-command: myst build --html --execute --strict --check-links && node scripts/setup-pwa.mjs
       output-dir: _build/html
