@@ -2,6 +2,9 @@
 # Fetch print editions produced by exports.yml (or the latest release fallback).
 set -euo pipefail
 
+# `gh` requires GH_TOKEN; Actions exposes GITHUB_TOKEN by default.
+export GH_TOKEN="${GH_TOKEN:-${GITHUB_TOKEN:-}}"
+
 mkdir -p exports
 
 run_id=$(gh run list \
