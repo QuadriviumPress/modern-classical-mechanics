@@ -3,7 +3,7 @@
   "private": true,
   "packageManager": "npm@10.9.8",
   "engines": {
-    "node": "22.x",
+    "node": ">=22",
     "npm": ">=10 <11"
   },
   "description": "MyST textbook on modern classical mechanics",
@@ -11,7 +11,7 @@
     "start": "myst start",
     "build": "myst build --html --execute --strict",
     "verify": "myst build --html --execute --strict",
-    "check": "npm run verify",
+    "check": "myst build --html --execute --strict --check-links",
     "build:exports": "scripts/build-exports.sh all",
     "build:pdf": "scripts/build-exports.sh pdf",
     "build:docx": "scripts/build-exports.sh docx"
